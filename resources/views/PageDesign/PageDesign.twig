@@ -14,10 +14,18 @@
 {% set fixNavBarPos = config("Ceres.header.fixed_navbar") %}
 {% set showItemConfirm = config("Ceres.basket.add_item_to_basket_confirm") %}
 
-<html lang="{{ lang }}" data-framework="vue">
+{% set categories = services.category.getNavigationTree("item", lang) %}
+
+{% if services.template.isCategory() or services.template.isItem() %}
+    {% set categoryBreadcrumbs = services.category.getHierarchy() %}
+{% endif %}
+
+<html lang="{{ lang }}" data-framework="vue" prefix="og: http://ogp.me/ns#">
 
     <head>
         {% include getPartial('head') %}
+        {% block PartialHead %}
+        {% endblock %}
     </head>
 
     <body style="background: url(' {{ globalBackgroundImage }} ') no-repeat center center fixed; background-size:cover;">
@@ -27,7 +35,9 @@
         <resource name="basketItem" :data="{ currentBasketItem: { }, quantity: 1 }"></resource>
         <resource name="localization" :data="{{ services.localization.getLocalizationData() | json_encode() }}"></resource>
         <resource-list name="basketItems" route="/rest/io/basket/items/" response-template="Ceres::Basket.Basket" data="{{ services.basket.getBasketItemsForTemplate('Ceres::Basket.Basket') | json_encode() }}"></resource-list>
-
+        <resource name="navigationTree" :data="{{ categories | json_encode() }}"></resource>
+        <resource name="isLoadingBreadcrumbs" :data="false"></resource>
+        
         <div class="wrapper wrapper-top">
             <!-- messages -->
             <notifications template="#vue-notifications"
