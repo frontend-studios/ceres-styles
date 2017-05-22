@@ -157,7 +157,7 @@ body.menu-is-visible { overflow-y : hidden; }
 				width 	: auto;
 				position: relative;
 				transition: all 300ms;
-				>a { padding: 1.3rem 1rem; }
+				>a { padding: 1.3rem 1rem; color:$white; }
 				>ul {
 
 					display 		: block;
