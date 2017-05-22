@@ -1,5 +1,12 @@
 # Changelog for Hipster Theme
 
+## v1.0.3 (2017-05-22)
+
+### Changes
+- Compatibility with latest Ceres Update
+- Text Color for Navigation
+- Bugfixes
+
 ## v1.0.2 Beta-Status (2017-03-23)
 
 ### Changes
