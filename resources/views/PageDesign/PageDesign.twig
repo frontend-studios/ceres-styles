@@ -6,9 +6,9 @@
 {{ component( "Ceres::Customer.Components.Registration" ) }}
 {{ component( "Ceres::Basket.Components.AddItemToBasketOverlay" ) }}
 
-{% set globalBackgroundImage  = config("CeresHipster.global.globalBackgroundImage") %}
-
 <!DOCTYPE html>
+
+{% set globalBackgroundImage  = config("CeresHipster.global.globalBackgroundImage") %}
 
 {% set lang = services.sessionStorage.getLang() %}
 {% set fixNavBarPos = config("Ceres.header.fixed_navbar") %}
@@ -24,11 +24,13 @@
 
     <head>
         {% include getPartial('head') %}
+
         {% block PartialHead %}
         {% endblock %}
     </head>
 
     <body style="background: url(' {{ globalBackgroundImage }} ') no-repeat center center fixed; background-size:cover;">
+
         <resource name="user" :data="{ isLoggedIn: {{ frontend.Account.getIsAccountLoggedIn | json_encode() }} }" ></resource>
         <resource name="basket" route="/rest/io/basket/" data="{{ services.basket.getBasket() | json_encode() }}" :events="['AfterBasketChanged!basket']"></resource>
         <resource name="itemSearch" :data="{}"></resource>
@@ -37,7 +39,7 @@
         <resource-list name="basketItems" route="/rest/io/basket/items/" response-template="Ceres::Basket.Basket" data="{{ services.basket.getBasketItemsForTemplate('Ceres::Basket.Basket') | json_encode() }}"></resource-list>
         <resource name="navigationTree" :data="{{ categories | json_encode() }}"></resource>
         <resource name="isLoadingBreadcrumbs" :data="false"></resource>
-        
+
         <div class="wrapper wrapper-top">
             <!-- messages -->
             <notifications template="#vue-notifications"
