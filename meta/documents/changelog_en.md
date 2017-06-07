@@ -1,5 +1,12 @@
 # Changelog for Glamour Theme
 
+## v1.0.2 (2017-06-07)
+
+### Changes
+
+- Category View Update to Ceres
+- Bugfixes
+
 ## v1.0.1 (2017-05-04)
 
 ### Changes
