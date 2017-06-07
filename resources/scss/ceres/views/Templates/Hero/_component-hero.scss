@@ -57,23 +57,30 @@
 			.hero-category-inner{
 				bottom: 0;
 				left: 0;
-				background-color: rgba(white, .8);
+				background-color: rgba($brand-primary, .8);
 
 			    @include clearfix();
 			}
+		    &:hover {
+		    	.hero-category-inner {
+		    		background-color: rgba($brand-primary, 1);
+		    	}
+		    }
 
 			.hero-category-headline{
 				display: inline-block;
-				padding: 1rem;
+				padding: 1.2rem 1rem;
 				font-size: 1rem;
 			    float: left;
 				margin-bottom: 0;
+				color: $white;
 			}
 
 			.hero-category-cta{
 				padding: 1rem;
-				border-left: 1px solid $gray-lighter;
+				border-left: 0;
 				float: right;
+				color: $white;
 			}
 		}
 	}
