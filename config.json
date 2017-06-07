@@ -113,17 +113,17 @@
 	},
 	{
 	    "tab"       : "Homepage",
-	    "key"       : "homepage.homepageSale2TitleDE",
+	    "key"       : "homepage.homepageSaleTitleDE",
 	    "label"     : "Text für den Sale Teaser (DE)",
 	    "type"      : "text",
-	    "default"   : "SALE - 50% reduziert"
+	    "default"   : "SALE"
 	},
 	{
 	    "tab"       : "Homepage",
-	    "key"       : "homepage.homepageSale2TitleEN",
+	    "key"       : "homepage.homepageSaleTitleEN",
 	    "label"     : "Text for Sale Teaser (EN)",
 	    "type"      : "text",
-	    "default"   : "SALE - 50% off"
+	    "default"   : "SALE"
 	},
 	{
 	    "tab"       : "Homepage",
@@ -136,6 +136,34 @@
 	    "tab"       : "Homepage",
 	    "key"       : "homepage.homepageSaleLink",
 	    "label"     : "Link URL for Sale Teaser",
+	    "type"      : "text",
+	    "default"   : "/"
+	},
+	{
+	    "tab"       : "Homepage",
+	    "key"       : "homepage.homepageSale2TitleDE",
+	    "label"     : "Text für den New Teaser (DE)",
+	    "type"      : "text",
+	    "default"   : "NEU"
+	},
+	{
+	    "tab"       : "Homepage",
+	    "key"       : "homepage.homepageSale2TitleEN",
+	    "label"     : "Text for New Teaser (EN)",
+	    "type"      : "text",
+	    "default"   : "NEW"
+	},
+	{
+	    "tab"       : "Homepage",
+	    "key"       : "homepage.homepageSale2ImgUrl",
+	    "label"     : "Image URL for New Teaser",
+	    "type"      : "text",
+	    "default"   : "https://unsplash.it/1200/600?image=809"
+	},
+	{
+	    "tab"       : "Homepage",
+	    "key"       : "homepage.homepageSale2Link",
+	    "label"     : "Link URL for New Teaser",
 	    "type"      : "text",
 	    "default"   : "/"
 	},

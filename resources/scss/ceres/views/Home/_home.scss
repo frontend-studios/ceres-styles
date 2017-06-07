@@ -129,13 +129,7 @@
 	background: $brand-primary;
     position: relative;
     font-family: $font-family-heading;
-    h4 {
-    	padding: .2rem 0 0;
-	    margin: 0;
-	    text-transform: uppercase;
-	    font-size: 1.75rem;
-	    color: $white;
-    }
+	color: $white;
     a.section-link-all {
     	position: absolute;
 	    top: 50%;

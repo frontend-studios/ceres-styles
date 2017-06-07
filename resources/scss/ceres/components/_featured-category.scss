@@ -17,7 +17,7 @@
 		background-color: rgba($white, .8);
 
 	    @include clearfix();
-	    padding: .5rem 1rem;
+	    padding: 0;
 	}
 
 	.featured-category-headline{
@@ -28,8 +28,8 @@
 	    align-self: flex-start;
 	    font-size: 1.25rem;
 	    background: rgba($brand-primary,.8);
-	    margin: 1rem;
-	    width: auto;
+	    margin: 0;
+	    width: 100%;
 	    text-align: left;
 	    color: $white;
 	    transition: all .3s ease;
@@ -66,7 +66,7 @@
 
 	@include media-breakpoint-up(md){
 		.featured-category-headline{
-			font-size: 1.75rem;
+			font-size: 1.25rem;
 			padding: 1.5rem;
 		}
 
