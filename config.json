@@ -7,6 +7,108 @@
         "default"   : "true"
     },
     {
+        "tab"       : "Homepage",
+        "key"       : "homepage.sliderItemId1",
+        "label"     : "ID of the item variation to display in the first slide of the image slider",
+        "type"      : "text"
+    },
+    {
+        "tab"       : "Homepage",
+        "key"       : "homepage.sliderImageUrl1",
+        "label"     : "URL to the image of the first slide",
+        "type"      : "text"
+    },
+    {
+        "tab"       : "Homepage",
+        "key"       : "homepage.sliderItemId2",
+        "label"     : "ID of the item variation to display in the second slide of the image slider",
+        "type"      : "text"
+    },
+    {
+        "tab"       : "Homepage",
+        "key"       : "homepage.sliderImageUrl2",
+        "label"     : "URL to the image of the second slide",
+        "type"      : "text"
+    },
+    {
+        "tab"       : "Homepage",
+        "key"       : "homepage.sliderItemId3",
+        "label"     : "ID of the item variation to display in the third slide of the image slider",
+        "type"      : "text"
+    },
+    {
+        "tab"       : "Homepage",
+        "key"       : "homepage.sliderImageUrl3",
+        "label"     : "URL to the image of the third slide",
+        "type"      : "text"
+    },
+    {
+        "tab"       : "Homepage",
+        "key"       : "homepage.heroExtraItemId1",
+        "label"     : "ID of the item variation to display in the upper item preview",
+        "type"      : "text",
+        "default"   : ""
+    },
+    {
+        "tab"       : "Homepage",
+        "key"       : "homepage.heroExtraImageUrl1",
+        "label"     : "URL to the image of the upper item preview",
+        "type"      : "text"
+    },
+    {
+        "tab"       : "Homepage",
+        "key"       : "homepage.heroExtraItemId2",
+        "label"     : "ID of the item variation to display in the lower item preview",
+        "type"      : "text",
+        "default"   : ""
+    },
+    {
+        "tab"       : "Homepage",
+        "key"       : "homepage.heroExtraImageUrl2",
+        "label"     : "URL to the image of the lower item preview",
+        "type"      : "text"
+    },
+
+
+    {
+        "tab"       : "Homepage",
+        "key"       : "homepage.homepageCategory1",
+        "label"     : "ID of the category to display in the first category preview",
+        "type"      : "category_select"
+    },
+    {
+        "tab"       : "Homepage",
+        "key"       : "homepage.homepageCategory2",
+        "label"     : "ID of the category to display in the second category preview",
+        "type"      : "category_select"
+    },
+    {
+        "tab"       : "Homepage",
+        "key"       : "homepage.homepageCategory3",
+        "label"     : "ID of the category to display in the first list of items",
+        "type"      : "category_select"
+    },
+    {
+        "tab"       : "Homepage",
+        "key"       : "homepage.homepageCategory4",
+        "label"     : "ID of the category to display in the third category preview",
+        "type"      : "category_select"
+    },
+    {
+        "tab"       : "Homepage",
+        "key"       : "homepage.homepageCategory5",
+        "label"     : "ID of the category to display in the fourth category preview",
+        "type"      : "category_select"
+    },
+    {
+        "tab"       : "Homepage",
+        "key"       : "homepage.homepageCategory6",
+        "label"     : "ID of the category to display in the second list of items",
+        "type"      : "category_select"
+    },
+
+
+    {
         "tab"       : "Header",
         "key"       : "header.company_logo",
         "label"     : "URL to your company logo",
@@ -39,6 +141,18 @@
         "label"     : "Fix the navigation bar at the top of the page",
         "type"      : "checkbox",
         "default"   : "true"
+    },
+    {
+        "tab"           : "Footer",
+        "key"           : "footer.to_top_button",
+        "label"         : "Position of the Back-to-top button",
+        "type"          : "dropdown",
+        "possibleValues":
+        {
+            "right"          : "On the right at the bottom",
+            "bottom"         : "In the middle at the bottom"
+        },
+        "default"       : "right"
     },
     {
         "tab"           : "Footer",
@@ -243,13 +357,13 @@
         "type"                          : "multi_select",
         "possibleValues"                :
         {
-          "basket.item.item_id"         : "Item ID",
-          "basket.item.description"     : "Description",
-          "basket.item.availability"    : "Availability",
-          "basket.item.customNumber"    : "Variation number",
-          "basket.item.state"           : "Condition"
+          "basket.item.item_id"          : "Item ID",
+          "basket.item.description_short": "Preview text",
+          "basket.item.description_long" : "Item text",
+          "basket.item.availability"     : "Availability",
+          "basket.item.customNumber"     : "Variation number"
         },
-        "default"                       : "all"
+        "default"                       : "basket.item.item_id, basket.item.description_short, basket.item.availability, basket.item.customNumber"
     },
     {
         "tab"                               : "Shopping cart",
@@ -293,11 +407,17 @@
         "default"   : "false"
     },
     {
-        "tab"       : "Shopping cart",
-        "key"       : "basket.add_item_to_basket_confirm",
-        "label"     : "Add to shopping cart: Show overlay",
-        "type"      : "checkbox",
-        "default"   : "true"
+        "tab"               : "Shopping cart",
+        "key"               : "basket.add_item_to_basket_confirm",
+        "label"             : "Add to shopping cart: Show information",
+        "type"              : "dropdown",
+        "possibleValues"    :
+        {
+            "overlay"       : "Show overlay",
+            "preview"       : "Toggle shopping cart preview",
+            "no_information": "No information"
+        },
+        "default"           : "overlay"
     },
     {
         "tab"               : "Pagination and sorting",
@@ -423,11 +543,159 @@
         "default"                   : "texts.name1_asc"
     },
     {
-        "tab"               : "My account",
+        "tab"               : "Checkout and My account",
         "key"               : "my_account.orders_per_page",
         "label"             : "Number of orders to show per page in order history",
         "type"              : "text",
         "default"           : "5"
+    },
+    {
+        "tab"                       : "Checkout and My account",
+        "key"                       : "billing_address.show",
+        "label"                     : "Show invoice address fields in address form (DE)",
+        "type"                      : "multi_select",
+        "possibleValues"            :
+        {
+            "billing_address.name1"     : "Company",
+            "billing_address.vatNumber" : "VAT number",
+            "billing_address.birthday"  : "Date of birth",
+            "billing_address.name4"     : "Name affix",
+            "billing_address.address3"  : "Additional address 1",
+            "billing_address.address4"  : "Additional address 2",
+            "billing_address.stateId"   : "State",
+            "billing_address.salutation": "Form of address",
+            "billing_address.title"     :"Title"
+
+        },
+        "default"                   : ""
+    },
+    {
+        "tab"                       : "Checkout and My account",
+        "key"                       : "billing_address.require",
+        "label"                     : "Enable invoice address field validation (DE)",
+        "type"                      : "multi_select",
+        "possibleValues"            :
+        {
+            "billing_address.name1"     : "Company",
+            "billing_address.vatNumber" : "VAT number",
+            "billing_address.birthday"  : "Date of birth",
+            "billing_address.name4"     : "Name affix",
+            "billing_address.address3"  : "Additional address 1",
+            "billing_address.address4"  : "Additional address 2",
+            "billing_address.stateId"   : "State",
+            "billing_address.salutation": "Form of address",
+            "billing_address.title"     : "Title"
+
+        },
+        "default"                   : ""
+    },
+    {
+      "tab"                       : "Checkout and My account",
+      "key"                       : "delivery_address.show",
+      "label"                     : "Show delivery address fields in address form (DE)",
+      "type"                      : "multi_select",
+      "possibleValues"            :
+      {
+        "delivery_address.name1"      : "Company",
+        "delivery_address.name4"      : "Name affix",
+        "delivery_address.address3"   : "Additional address 1",
+        "delivery_address.address4"   : "Additional address 2",
+        "delivery_address.stateId"    : "State",
+        "delivery_address.salutation" : "Form of address",
+        "delivery_address.title"      : "Title"
+
+      },
+      "default"                   : ""
+    },
+    {
+      "tab"                       : "Checkout and My account",
+      "key"                       : "delivery_address.require",
+      "label"                     : "Enable delivery address field validation (DE)",
+      "type"                      : "multi_select",
+      "possibleValues"            :
+      {
+        "delivery_address.name1"      : "Company",
+        "delivery_address.name4"      : "Name affix",
+        "delivery_address.address3"   : "Additional address 1",
+        "delivery_address.address4"   : "Additional address 2",
+        "delivery_address.stateId"    : "State",
+        "delivery_address.salutation" : "Form of address",
+        "delivery_address.title"      : "Title"
+
+      },
+      "default"                   : ""
+    },
+    {
+      "tab"                       : "Checkout and My account",
+      "key"                       : "billing_address.en.show",
+      "label"                     : "Show invoice address fields in address form (UK)",
+      "type"                      : "multi_select",
+      "possibleValues"            :
+      {
+        "billing_address.name1"     : "Company",
+        "billing_address.vatNumber" : "VAT number",
+        "billing_address.birthday"  : "Date of birth",
+        "billing_address.name4"     : "Name affix",
+        "billing_address.address3"  : "Address 3",
+        "billing_address.address4"  : "Address 4",
+        "billing_address.salutation": "Form of address",
+        "billing_address.title"     : "Title"
+
+      },
+      "default"                   : ""
+    },
+    {
+      "tab"                       : "Checkout and My account",
+      "key"                       : "billing_address.en.require",
+      "label"                     : "Enable invoice address field validation (UK)",
+      "type"                      : "multi_select",
+      "possibleValues"            :
+      {
+        "billing_address.name1"     : "Company",
+        "billing_address.vatNumber" : "VAT number",
+        "billing_address.birthday"  : "Date of birth",
+        "billing_address.name4"     : "Name affix",
+        "billing_address.address3"  : "Address 3",
+        "billing_address.address4"  : "Address 4",
+        "billing_address.salutation": "Form of address",
+        "billing_address.title"     : "Title"
+
+      },
+      "default"                   : ""
+    },
+    {
+      "tab"                       : "Checkout and My account",
+      "key"                       : "delivery_address.en.show",
+      "label"                     : "Show delivery address fields in address form (UK)",
+      "type"                      : "multi_select",
+      "possibleValues"            :
+      {
+        "delivery_address.name1"     : "Company",
+        "delivery_address.name4"     : "Name affix",
+        "delivery_address.address3"  : "Address 3",
+        "delivery_address.address4"  : "Address 4",
+        "delivery_address.salutation": "Form of address",
+        "delivery_address.title"     : "Title"
+
+      },
+      "default"                   : ""
+    },
+    {
+      "tab"                       : "Checkout and My account",
+      "key"                       : "delivery_address.en.require",
+      "label"                     : "Enable delivery address field validation (UK)",
+      "type"                      : "multi_select",
+      "possibleValues"            :
+      {
+        "delivery_address.name1"     : "Company",
+        "delivery_address.name4"     : "Name affix",
+        "delivery_address.address3"  : "Address 3",
+        "delivery_address.address4"  : "Address 4",
+        "delivery_address.salutation": "Form of address",
+        "delivery_address.title"     : "Title"
+
+      },
+      "default"                   : ""
     },
     {
         "tab"               : "Registration",
@@ -458,7 +726,7 @@
             "log_messages"      : "Log messages",
             "show_error_code"   : "Show error codes"
         },
-        "default"           : ""
+        "default"           : "print_errors, print_success"
     },
     {
         "tab"               : "Logging and performance",
