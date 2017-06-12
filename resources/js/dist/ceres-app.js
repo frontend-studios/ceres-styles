@@ -15952,7 +15952,6 @@ module.exports = function ($) {
 // eslint-disable-next-line
 var init = (function($, window, document)
 {
-
     function CeresMain()
     {
 

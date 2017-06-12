@@ -2,7 +2,6 @@
 // eslint-disable-next-line
 var init = (function($, window, document)
 {
-
     function CeresMain()
     {
 
