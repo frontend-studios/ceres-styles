@@ -382,7 +382,11 @@ Custom classes
   .owl-thumbs {
     display: inline-block;
     .owl-thumb {
-      max-height: 8em;
+      object-fit: contain;
+      width: 11em;
+      height: 11em;
+      display: inline-block;
+      vertical-align: middle;
       background:$white;
       border:1px solid rgba($brand-primary, .5);
       margin:.5rem .5rem 0 0;
