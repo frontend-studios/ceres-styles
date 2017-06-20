@@ -52,7 +52,30 @@
 
 		.content{
 			width: calc( 100% - 3.5rem );
-			padding-left: .5rem
+			padding-left: .5rem;
+		}
+
+	}
+	&.list {
+		.method-list-item{
+			width: 100%;
+			margin-bottom: 1em;
+			min-height: 9em;
+		}
+		.content{
+			width: calc( 100% - 4rem );
+			padding-left: .5rem;
+			position: relative;
+			margin-bottom: 1rem;
+			span.pull-xs-right {
+				position: absolute;
+			    right: 0;
+			    bottom: -1rem;
+			}
+		}
+		.icon{
+			width: 4rem;
+			height: 4rem;
 		}
 	}
 
