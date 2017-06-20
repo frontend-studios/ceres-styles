@@ -1913,20 +1913,10 @@ function addHandle( attrs, handler ) {
 	var arr = attrs.split("|"),
 		i = arr.length;
 
-<<<<<<< HEAD
 	while ( i-- ) {
 		Expr.attrHandle[ arr[i] ] = handler;
 	}
 }
-=======
-    methods: {
-        /**
-         * Method to fire when the country has changed
-         */
-        countryChanged: function countryChanged() {
-            this.selectedStateId = null;
-        },
->>>>>>> 570aa2bd1332595c44bf3e4d158dddd3d67cec74
 
 /**
  * Checks document order of two siblings
@@ -12166,7 +12156,6 @@ Vue.component("country-select", {
          */
         countryChanged: function countryChanged() {
             this.selectedStateId = null;
-            this.localization.currentShippingCountryId = this.selectedCountryId;
         },
 
 
@@ -16371,6 +16360,7 @@ module.exports = function ($) {
 // eslint-disable-next-line
 var init = (function($, window, document)
 {
+
     function CeresMain()
     {
 
