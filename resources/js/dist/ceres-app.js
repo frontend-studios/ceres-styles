@@ -1560,6 +1560,7 @@ function createButtonPseudo( type ) {
 	};
 }
 
+<<<<<<< HEAD
 /**
  * Returns a function to use in pseudos for positionals
  * @param {Function} fn
@@ -1571,6 +1572,15 @@ function createPositionalPseudo( fn ) {
 			var j,
 				matchIndexes = fn( [], seed.length, argument ),
 				i = matchIndexes.length;
+=======
+    methods: {
+        /**
+         * Method to fire when the country has changed
+         */
+        countryChanged: function countryChanged() {
+            this.selectedStateId = null;
+        },
+>>>>>>> 570aa2bd1332595c44bf3e4d158dddd3d67cec74
 
 			// Match elements found at the specified indexes
 			while ( i-- ) {
