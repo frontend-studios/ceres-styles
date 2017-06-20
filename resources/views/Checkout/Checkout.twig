@@ -80,7 +80,25 @@
 
                             {{ LayoutContainer.show("Ceres::Checkout.BeforeShippingProfileList") }}
                             <div class="shipping-method-select">
-                                <shipping-profile-select template="#vue-shipping-profile-select"></shipping-profile-select>
+                                <div class="cmp cmp-method-list m-b-3">
+                                    <ul class="method-list">
+                                        <li class="method-list-item" data-id="10">
+                                            <input type="radio" name="ShippingProfileID" id="ShippingProfileID1610" value="10">
+                                            <label for="ShippingProfileID1610">
+                                                <div class="icon">
+                                                                        </div><!--
+                                                --><div class="content">
+                                                    GLS - Paketversand
+                                                    <div>
+                                                        <small>
+                                                            0,00 €
+                                                        </small>
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </li><!-- -->
+                                    </ul>
+                                </div>
                             </div>
                             {{ LayoutContainer.show("Ceres::Checkout.AfterShippingProfileList") }}
                         {% else %}
@@ -95,7 +113,60 @@
 
                             {{ LayoutContainer.show("Ceres::Checkout.BeforePaymentList") }}
                             <div class="payment-method-select">
-                                <payment-provider-select template="#vue-payment-provider-select"></payment-provider-select>
+                                <div class="cmp cmp-method-list m-b-3">
+                                    <ul class="method-list">
+                                        <li class="method-list-item" data-id="6000">
+                                            <input type="radio" name="MethodOfPaymentID" id="paymentMethod176000" value="6000">
+                                            <label for="paymentMethod176000">
+                                                <div class="icon">
+                                                    <div class="square-container">
+                                                        <div class="square-inner center-xy">
+                                                          <img alt="Vorkasse" src="layout/plugins/production/prepayment/images/icon.png">
+                                                        </div>
+                                                    </div>
+                                                </div><!--
+                                                --><div class="content">
+                                                Vorkasse
+                                                    <div>
+                                                        <small>
+                                                            0,00 €
+                                                        </small>
+                                                    </div>
+                                                    <div>
+                                                        <small>
+                                                            
+                                                        </small>
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </li><li class="method-list-item" data-id="6006">
+                                            <input type="radio" name="MethodOfPaymentID" id="paymentMethod176006" value="6006">
+                                            <label for="paymentMethod176006">
+                                                <div class="icon">
+                                                    <div class="square-container">
+                                                        <div class="square-inner center-xy">
+                                                          <img alt="PayPal Plus" src="https://cdn02.plentymarkets.com/xxtlyhj1jjig/plugin/production/paypal/images/logos/de-pp-logo.png">
+                                                        </div>
+                                                    </div>
+                                                </div><!--
+                                                --><div class="content">
+                                                PayPal Plus
+                                                    <div>
+                                                        <small>
+                                                            0,00 €
+                                                        </small>
+                                                    </div>
+                                                    <div>
+                                                        <small>
+                                                            
+                                                        </small>
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </li><!--
+                                        -->
+                                    </ul>
+                                </div>
                             </div>
                             {{ LayoutContainer.show("Ceres::Checkout.AfterPaymentList") }}
                         {% else %}
