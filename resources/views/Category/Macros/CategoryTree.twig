@@ -13,11 +13,31 @@
                     <ul data-level="1">
 
                         {% for child in category.children %}
+
                             {% if child.details | length > 0 %}
-                                <li>
-                                    <a href="{{ currentScopeUrl }}/{{ child.details[0].nameUrl }}" v-render-category="{{ child }}">{{ child.details[0].name }}</a>
-                                </li>
+                                {% if child.children %}
+
+                                    <li>
+                                        <a href="{{ currentScopeUrl }}/{{ child.details[0].nameUrl }}" v-render-category="{{ child }}">{{ child.details[0].name }}</a>
+                                            <ul>
+                                                 {% for childchild in child.children %}
+                                                    {% if childchild.details | length > 0 %}
+                                                        <li>
+                                                            <a href="{{ currentScopeUrl }}/{{ childchild.details[0].nameUrl }}" v-render-category="{{ childchild }}">{{ childchild.details[0].name }}</a>
+                                                        </li>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            </ul>
+                                    </li>
+
+                                {% else %}
+                                    <li>
+                                        <a href="{{ currentScopeUrl }}/{{ child.details[0].nameUrl }}" v-render-category="{{ child }}">{{ child.details[0].name }}</a>
+                                    </li>
+                                {% endif %}
                             {% endif %}
+
+
                         {% endfor %}
 
                     </ul>
