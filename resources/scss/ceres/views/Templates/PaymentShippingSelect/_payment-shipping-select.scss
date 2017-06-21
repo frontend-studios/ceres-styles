@@ -13,6 +13,7 @@
 		vertical-align:top;
 		margin-top: -1px;
 		margin-left: -1px;
+		margin-bottom: 1em;
 		background-color: $card-bg;
 
 		input{
@@ -54,19 +55,6 @@
 			width: calc( 100% - 3.5rem );
 			padding-left: .5rem;
 		}
-
-	}
-	&.list {
-		.method-list-item{
-			width: 100%;
-			margin-bottom: 1em;
-			min-height: 9em;
-		}
-		.content{
-			width: calc( 100% - 4rem );
-			padding-left: .5rem;
-			position: relative;
-		}
 		.payment-more {
 			display: block;
 			text-align: center;
@@ -77,6 +65,17 @@
 					transform: rotate(180deg);
 				}
 			}
+		}
+	}
+	&.list {
+		.method-list-item{
+			width: 100%;
+			min-height: 9em;
+		}
+		.content{
+			width: calc( 100% - 4rem );
+			padding-left: .5rem;
+			position: relative;
 		}
 		.icon{
 			width: 4rem;
