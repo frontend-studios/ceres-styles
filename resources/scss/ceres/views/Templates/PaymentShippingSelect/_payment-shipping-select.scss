@@ -37,7 +37,7 @@
 		.content,
 		.icon{
 			display: inline-block;
-			vertical-align: middle;
+			vertical-align: top;
 		}
 
 		.icon{
@@ -66,16 +66,25 @@
 			width: calc( 100% - 4rem );
 			padding-left: .5rem;
 			position: relative;
-			margin-bottom: 1rem;
-			span.pull-xs-right {
-				position: absolute;
-			    right: 0;
-			    bottom: -1rem;
+		}
+		.payment-more {
+			display: block;
+			text-align: center;
+			i {transition: all .2s ease;}
+			a[aria-expanded="true"] {
+				i {
+					transition: all .2s ease;
+					transform: rotate(180deg);
+				}
 			}
 		}
 		.icon{
 			width: 4rem;
 			height: 4rem;
+		}
+		.payment-details {
+			display: block;
+			margin-top: .5rem;
 		}
 	}
 
