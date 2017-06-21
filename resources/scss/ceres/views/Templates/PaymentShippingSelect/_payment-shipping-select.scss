@@ -13,7 +13,6 @@
 		vertical-align:top;
 		margin-top: -1px;
 		margin-left: -1px;
-		margin-bottom: 1em;
 		background-color: $card-bg;
 
 		input{
@@ -71,6 +70,7 @@
 		.method-list-item{
 			width: 100%;
 			min-height: 9em;
+			margin-bottom: 1em;
 		}
 		.content{
 			width: calc( 100% - 4rem );
