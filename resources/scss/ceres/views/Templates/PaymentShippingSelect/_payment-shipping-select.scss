@@ -32,6 +32,7 @@
 			margin-bottom: 0;
 			width:100%;
 			overflow: hidden;
+			min-height: 7em;
 		}
 
 		.content,
@@ -69,7 +70,6 @@
 	&.list {
 		.method-list-item{
 			width: 100%;
-			min-height: 9em;
 			margin-bottom: 1em;
 		}
 		.content{
@@ -100,6 +100,9 @@
 			width: 50%;
 			display: flex;
 			flex-flow: row nowrap;
+		}
+		label{
+			min-height: 9em;
 		}
 	}
 
