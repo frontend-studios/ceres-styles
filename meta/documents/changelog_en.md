@@ -1,4 +1,12 @@
-# Release Notes for Electronic Ceres
+# Changelog for Electronic Ceres
+
+## v1.1.0 (2017-09-20)
+
+### Changes
+- Categorytree on Listview and Singleitem included by Ceres Configuraton
+- Update Single Item View
+- Update Homepage Styling
+- Bugfixes
 
 ## v1.0.2 (2017-04-24)
 
