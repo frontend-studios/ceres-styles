@@ -13,7 +13,8 @@
 		bottom: 0;
 		left: 0;
 		z-index: 100;
-		background-color: rgba(white, .8);
+		background-color: none;
+		padding: 0;
 
 	    @include clearfix();
 	}
@@ -24,6 +25,9 @@
 		font-size: 1rem;
 		padding: .7rem;
 		margin-bottom: 0;
+		background: rgba(white, .8);
+		margin:0;
+		color: $gray-dark;
 	}
 
 	.featured-category-cta{
@@ -41,6 +45,12 @@
 
 		.fa{
 			margin-left: .5rem;
+		}
+	}
+	&:hover {
+		.featured-category-headline {
+			background: rgba($brand-primary, .8);
+			color: white;
 		}
 	}
 
