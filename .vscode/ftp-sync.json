@@ -1,0 +1,24 @@
+{
+    "remotePath": "./webseiten/frontendstudios/wordpress/ceres/ceres-styles/",
+    "host": "ftp.frontend-studios.de",
+    "username": "449883-ftp",
+    "password": "Z3ntr4l!99",
+    "port": 21,
+    "secure": false,
+    "protocol": "ftp",
+    "uploadOnSave": false,
+    "passive": false,
+    "debug": false,
+    "privateKeyPath": null,
+    "passphrase": null,
+    "ignore": [
+        "\\.vscode",
+        "\\.git",
+        "\\.DS_Store"
+    ],
+    "generatedFiles": {
+        "uploadOnSave": true,
+        "extensionsToInclude": [".css"],
+        "path": "./resources/css"
+    }
+}
