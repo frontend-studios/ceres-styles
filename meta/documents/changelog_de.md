@@ -1,4 +1,12 @@
-# Release Notes für Electronic Theme
+# Changelog für Electronic Theme
+
+## v1.1.0 (2017-09-20)
+
+### Änderungen
+- Kategoriebaum auf Listview und Singleitem nun über Ceres Konfiguration eingebunden
+- Update Single Item Ansicht
+- Anpassungen Startseite
+- Bugfixes
 
 ## v1.0.2 (2017-04-24)
 
