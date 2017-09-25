@@ -130,6 +130,13 @@
     position: relative;
     font-family: $font-family-heading;
 	color: $white;
+    h4 {
+    	padding: .2rem 0 0;
+	    margin: 0;
+	    text-transform: uppercase;
+	    font-size: 1.75rem;
+	    color: $white;
+    }
     a.section-link-all {
     	position: absolute;
 	    top: 50%;
