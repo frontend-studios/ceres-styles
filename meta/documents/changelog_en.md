@@ -1,5 +1,12 @@
 # Changelog for Glamour Theme
 
+## v1.1.0 (2017-09-26)
+
+### Changes
+
+- Changes on List View for Image Display
+- Bugfixes
+
 ## v1.0.2 (2017-06-07)
 
 ### Changes
