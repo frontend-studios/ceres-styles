@@ -1,5 +1,12 @@
 # Changelog for Hipster Theme
 
+## v1.0.4 (2017-11-17)
+
+### Changes
+- Compatibility with Ceres 1.7.0 and higher
+- Logical Update in PageDesign
+- Bugfixes
+
 ## v1.0.3 (2017-05-22)
 
 ### Changes

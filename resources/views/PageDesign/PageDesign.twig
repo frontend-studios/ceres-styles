@@ -5,19 +5,28 @@
 {{ component( "Ceres::Customer.Components.Login" ) }}
 {{ component( "Ceres::Customer.Components.Registration" ) }}
 {{ component( "Ceres::Basket.Components.AddItemToBasketOverlay" ) }}
-
 <!DOCTYPE html>
 
 {% set globalBackgroundImage  = config("CeresHipster.global.globalBackgroundImage") %}
-
 {% set lang = services.sessionStorage.getLang() %}
+
+{% set metaLang = "de" %}
+{% if lang == "de" or lang == "en" %}
+    {% set metaLang = lang %}
+{% endif %}
+
 {% set fixNavBarPos = config("Ceres.header.fixed_navbar") %}
-{% set showItemConfirm = config("Ceres.basket.add_item_to_basket_confirm") %}
+{% set basketAddInformation = config("Ceres.basket.add_item_to_basket_confirm") %}
+
+
+
+{% set shippingCat = config("Ceres.global.shippingCostsCategoryId") %}
 
 {% set categories = services.category.getNavigationTree("item", lang) %}
 
 {% if services.template.isCategory() or services.template.isItem() %}
     {% set categoryBreadcrumbs = services.category.getHierarchy() %}
+    {{ services.crossSelling.setType(config("Ceres.item.lists.cross_selling_type")) }}
 {% endif %}
 
 <html lang="{{ lang }}" data-framework="vue" prefix="og: http://ogp.me/ns#">
@@ -32,12 +41,12 @@
     <body style="background: url(' {{ globalBackgroundImage }} ') no-repeat center center fixed; background-size:cover;">
 
         <resource name="user" :data="{ isLoggedIn: {{ frontend.Account.getIsAccountLoggedIn | json_encode() }} }" ></resource>
-        <resource name="basket" route="/rest/io/basket/" data="{{ services.basket.getBasket() | json_encode() }}" :events="['AfterBasketChanged!basket']"></resource>
+        <resource name="basket" route="/rest/io/basket/" :data="{{ services.basket.getBasketForTemplate() | json_encode() }}" :events="['AfterBasketChanged!basket.totalVats']"></resource>
         <resource name="itemSearch" :data="{}"></resource>
         <resource name="basketItem" :data="{ currentBasketItem: { }, quantity: 1 }"></resource>
-        <resource name="localization" :data="{{ services.localization.getLocalizationData() | json_encode() }}"></resource>
+        <resource name="localization" :data="{{ services.localization.getLocalizationData() | json_encode() }}" :events="['LocalizationChanged!localization']"></resource>
         <resource-list name="basketItems" route="/rest/io/basket/items/" response-template="Ceres::Basket.Basket" data="{{ services.basket.getBasketItemsForTemplate('Ceres::Basket.Basket') | json_encode() }}"></resource-list>
-        <resource name="navigationTree" :data="{{ categories | json_encode() }}"></resource>
+
         <resource name="isLoadingBreadcrumbs" :data="false"></resource>
 
         <div class="wrapper wrapper-top">
@@ -62,6 +71,9 @@
             </div>
 
             {% include getPartial('footer') %}
+
+            {% block PartialFooter %}
+            {% endblock %}
 
         </div>
 
@@ -109,8 +121,26 @@
             <!-- ./REGISTRATION MODAL -->
 
             <!-- BASKET MODAL -->
-            <add-item-to-basket-overlay template="#vue-add-item-to-basket-overlay" :show-overlay="{{ showItemConfirm }}"></add-item-to-basket-overlay>
+            <add-item-to-basket-overlay template="#vue-add-item-to-basket-overlay" :basket-add-information="{{ basketAddInformation | json_encode() }}"></add-item-to-basket-overlay>
             <!-- ./BASKET MODAL -->
+
+            <!-- SHIPPINGCOSTS MODAL -->
+            <div id="shippingscosts-modal-wrapper">
+                <div class="modal fade" id="shippingscosts" tabindex="-1" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h3 class="modal-title">{{ trans('Ceres::Template.itemShippingCosts') }}</h3>
+                            </div>
+                            <div class="modal-body">
+                                {% include category_template(shippingCat, lang, services.webstoreConfig.getWebstoreConfig().webstoreId) ignore missing %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ./SHIPPINGCOSTS MODAL -->
 
         </div>
 
@@ -134,9 +164,12 @@
             <script src="{{ plugin_path('Ceres') }}/js/dist/ceres.min.js"></script>
         {% endif %}
 
+        {{ LayoutContainer.show("Ceres::Script.AfterScriptsLoaded") }}
+
         <script>
             vueApp = new Vue({
-                el: "body"
+                el: "body",
+                store: window.ceresStore
             });
         </script>
     </body>
