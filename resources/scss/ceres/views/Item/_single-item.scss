@@ -1,5 +1,18 @@
 
-.single{
+.single {
+    
+    .list-item-carousel {
+        .list-control-special{
+            width: 5%;
+            height: 5%;
+            position: absolute;
+            top: 40%;
+        }
+    }
+
+    #single-carousel {
+        background: $white;
+    }
 
     .main-image{
         img{
@@ -63,71 +76,30 @@
             }
         }
     }
-}
 
-
-.owl-carousel-single {
-    .owl-controls {
-        position: absolute;
-        top: 50%;
-        z-index:950;
-        width: 100%;
-        .owl-buttons {
-            &>div {
-                background: rgba(255,255,255,0.75);
-                padding: 1rem;
-                position: absolute;
-                transform: translateY(-50%);
-                &.owl-next {
-                    right:0;
-                }
-                &:hover {
-                    background: rgba(255,255,255,1);
-                }
-            }
+    .graduated-prices-table {
+        td:first-child {
+            padding-right: 1rem;
+            font-style: italic;
+        }  
+        
+        & i {
+            color: $brand-success;
+            font-size: 17px;
+            margin-left: 5px;
+            opacity: 0;
         }
     }
 
-    .owl_item{
-        margin: 5px;
-        a {
-            width: 100%;
-        }
+    .graduated-price-display-transition {
+        transition: all .3s ease-out;
+        opacity: 1;
     }
-}
 
-.owl-carousel-preview {
-    .owl-item {
-        .owl_item{
-            padding: 5px;
-            margin:5px 0;
-            cursor: pointer;
-            &.synced {
-                background:$brand-primary;
-            }
-        }
-
+    .graduated-price-display-enter, .graduated-price-display-leave {
+        transition: all .3s ease-out;
+        opacity: 0;
     }
-    .owl-controls {
-            position: absolute;
-            top: 50%;
-            z-index: 9999;
-            width: 100%;
-            .owl-buttons {
-                &>div {
-                    background: rgba(255,255,255,0.75);
-                    padding: .5rem;
-                    position: absolute;
-                    transform: translateY(-50%);
-                    &.owl-next {
-                        right:0;
-                    }
-                    &:hover {
-                        background: rgba(255,255,255,1);
-                    }
-                }
-            }
-        }
 }
 
 .availability_1,
@@ -164,13 +136,6 @@
     padding: .75rem .45rem .25rem 0;
 }
 
-.wishlist {
-    &:hover {
-        color: #d9534f!important;
-        text-decoration: none;
-    }
-}
-
 .single-rightside {
     .shariff {
         .orientation-horizontal {
@@ -186,9 +151,9 @@
 }
 @include media-breakpoint-only(md) {
     .single {
-         .price {
-                float: right;
-            }
+        .price {
+            float: right;
+        }
     }
 }
 
