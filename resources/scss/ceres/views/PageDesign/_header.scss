@@ -191,7 +191,7 @@
 	.navbar{
 		font-family:$font-family-heading;
 		background:$navbar-background-color;
-		border-bottom:1px solid darken($gray-lighter2, 2%);
+		border-bottom:0;
 		a {
 			color: $gray-dark;
 			&:hover {
