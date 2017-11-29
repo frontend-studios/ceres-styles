@@ -1,5 +1,10 @@
 # Release Notes for Dark Theme
 
+## v2.0.0 (2017-11-29)
+
+### Changes
+- Compatibility with Ceres and IO greater than 2.0.0
+
 ### Changes
 - Homepage elements customizable
 - Bugfixes
