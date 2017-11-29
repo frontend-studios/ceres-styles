@@ -1,6 +1,7 @@
 .cmp-basket-preview-item{
 	display:table;
 	padding: .5em 0;
+	margin-bottom: 5px;
 
 	&:first-child{
 		padding-top: 0;
@@ -84,7 +85,8 @@
 
 	.item-unit-price {
 	    width: 50%;
-	    float: left;
+		float: left;
+		white-space: nowrap;
 	}
 
 	.item-total-price {
@@ -97,16 +99,24 @@
 	
 
 	.item-remove{
-		position: absolute;
-	    bottom: 0;
-	    left:0;
 	    line-height: 1;
 	    cursor: pointer;					
 		color: $gray-lighter;
+		text-decoration: none;
+		width: 114px;
+		text-align: left;
 
-			&:hover {
-				color:#d9534f;
-				text-decoration: none;
-			}
+		& .btn-label {
+			background: transparent;
 		}
+
+		&:hover {
+			color:$brand-danger;
+			text-decoration: none;
+		}
+		&.btn-danger:hover {
+			color:white;
+		}
+		&:focus {outline:none;}
 	}
+}

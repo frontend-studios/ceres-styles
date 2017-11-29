@@ -87,14 +87,29 @@ $black:                 #000;
 $brand-primary:         #57b58a;
 $brand-secondary:       #d4021d;
 
-$brand-success:         #7ED321;
-$brand-info:            #5bc0de;
-$brand-warning:         #f0ad4e;
-$brand-danger:          #d9534f;
+$brand-success:         #7ED321 !default;
+$brand-info:            #5bc0de !default;
+$brand-warning:         #f0ad4e !default;
+$brand-danger:          #d9534f !default;
+
+$white:                 #fff;
+$black:                 #000;
 
 $custom-colors: (
   "gelb": "#ffff00",
-);
+) !default;
+
+$top-bar-bg:            $gray-dark;
+$top-bar-color:         #fff;
+$top-bar-basket-btn:    $brand-primary;
+$top-bar-basket-color:  #fff;
+
+$footer-bg:             $gray-lightest;
+$footer-color:          $gray-dark;
+
+$footer-features-bg:    darken($gray-lightest, 10%);
+$footer-features-color: $gray-dark;
+
 
 $top-bar-bg:            $gray-darker;
 $top-bar-color:         $gray-lighter;
@@ -125,9 +140,9 @@ $body-color:            $white;
 $text-color:            white;
 
 //** Global textual link color.
-$link-color:            $brand-primary;
+$link-color:            $brand-primary !default;
 //** Link hover color set via `darken()` function.
-$link-hover-color:      darken($link-color, 15%);
+$link-hover-color:      darken($link-color, 15%) !default;
 
 
 // Body
@@ -747,9 +762,9 @@ $figure-caption-font-size: 90% !default;
 
 // Breadcrumbs
 
-$breadcrumb-padding-y:          .5rem;
-$breadcrumb-padding-x:          1rem;
-$breadcrumb-item-padding:       .5rem;
+$breadcrumb-padding-y:          .5rem !default;
+$breadcrumb-padding-x:          1rem !default;
+$breadcrumb-item-padding:       .5rem !default;
 
 $breadcrumb-bg:                 transparent;
 $breadcrumb-divider-color:      $gray-light;
@@ -810,3 +825,8 @@ $pre-bg:                      #f7f7f9 !default;
 $pre-color:                   $gray-dark !default;
 $pre-border-color:            #ccc !default;
 $pre-scrollable-max-height:   340px !default;
+
+
+// Category
+
+$category-text-color:         #fff !default;

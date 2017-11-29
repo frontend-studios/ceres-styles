@@ -45,6 +45,12 @@
 		list-style: none;
 	}
 
+	.add-item{
+		position: absolute;
+	    top: 1em;
+	    right: 1em;
+	}
+
 	.item{
 		padding: 0;
 		border-bottom: 1px solid $gray-lighter;
@@ -55,8 +61,8 @@
 		input:checked{
 
 			& + .item-inner{
-				background-color: $brand-primary;
-				color: white;
+				box-shadow: inset 0 0 0 0.1rem $brand-primary;
+				color: $black;
 			}
 
 			& + .item-inner .item-edit .fa:hover{
@@ -88,27 +94,19 @@
 		top: .5rem;
 
 		.fa{
-    		width: 1em;
-		    height: 1em;
-		    color: $gray-light;
+			color: #fff;
+			margin-top: 1px;
 		    transition: all .2s ease-in-out;
-
-		    &:hover{
-				color: $brand-primary;
-				border-color: $brand-primary;
-	    	}
     	}
 	}
 	.item-remove {
 		position: absolute;
 	    right: 1.35rem;
-	    top: 3rem;
+	    bottom: 0.5rem;
 	    .fa {
-	    	color: $gray-light;
-	    	transition: all .2s ease-in-out;
-	    	&:hover{
-					color: $brand-danger;
-	    	}
+	    	color: #fff;
+			transition: all .2s ease-in-out;
+			margin-right: 3px;
 	    }
 	}
 
@@ -135,12 +133,6 @@
 			width:100%;
 		}
 
-		.add-item{
-			position: absolute;
-	    top: 1em;
-	    right: 1em;
-		}
-
 	}
 
 	@include media-breakpoint-up(lg){
@@ -156,25 +148,11 @@
 }
 
 	.add-item{
-		text-align:center;
-		cursor: pointer;
-    float: right;
 
     	.fa{
-				// width: .7em;
-		    // height: .7em;
-		    // font-size: 1.1em;
-		    // text-align: center;
-		    // padding: .4em;
-		    // border: 3px solid $gray-light;
-		    // border-radius: 50%;
-		    // line-height: .8;
-		    color: $gray-light;
-		    transition: all .2s ease-in-out;
-
-		    &:hover{
-					color: $brand-primary;
-					border-color: $brand-primary;
-	    	}
+			color: #fff;
+			transition: all .2s ease-in-out;
+			margin-left: 6px;
+			margin-top: 1px;
     	}
 	}
