@@ -265,7 +265,7 @@
 //navigation scss
 
 .navbar {
-	padding: .5rem 1rem;
+	padding: 0 1rem;
 }
 
 .brand-wrapper{
@@ -411,6 +411,7 @@
 }
 
 @include media-breakpoint-up(lg){
+	.navbar {padding:0;}
 
 	.brand-wrapper{
 		position: absolute;

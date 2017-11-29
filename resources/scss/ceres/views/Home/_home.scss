@@ -20,7 +20,7 @@
 							font-family: $font-family-heading;
 							text-shadow: none;
 							color: $white;
-							background: rgba($brand-primary, .8);
+							background: rgba(white, .8);
 							padding: .5rem 1rem;
 							font-size: 1.25rem;
 							display: inline-block;
@@ -34,7 +34,7 @@
 					}
 					.hero-category:hover {
 						h3, h1 {
-							background: rgba($brand-primary, 1);
+							background: rgba(white, 1);
 							transition: all .3s ease;
 						}
 					}
@@ -83,7 +83,7 @@
 				    align-self: flex-start;
 				    font-weight: normal;
 				    font-size: 1.25rem;
-				    background: rgba($brand-primary, .8);
+				    background: rgba(white, .8);
 				    margin: 1rem;
 				    display: block;
 				    width: auto;
@@ -94,7 +94,7 @@
 			}
 			&:hover {
 				.hero-category-headline {
-					background: rgba($brand-primary, 1);
+					background: rgba(white, 1);
 					transition: all .3s ease;
 				}
 			}
