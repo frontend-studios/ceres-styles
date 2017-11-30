@@ -96,7 +96,7 @@
 //navigation scss
 .wrapper-main {
 	#page-body {
-		margin-top: 129px;
+		margin-top: 110px;
 	}
 	.navbar{
 		font-family:$font-family-heading;
@@ -261,7 +261,7 @@
 	}
 	.wrapper-main {
 		#page-body {
-			margin-top: 150px;
+			margin-top: 105px;
 		}
 	}
 }
@@ -269,7 +269,7 @@
 @include media-breakpoint-up(md){
 	.wrapper-main {
 		#page-body {
-			margin-top: 129px;
+			margin-top: 136px;
 		}
 	}
 	.wrapper-main .navbar .navbar-nav .nav-item:hover .dropdown-menu {
@@ -323,6 +323,11 @@
 }
 
 @include media-breakpoint-up(lg){
+	.wrapper-main {
+		#page-body {
+			margin-top: 118px;
+		}
+	}
 
 	.brand-wrapper{
 		position: absolute;
