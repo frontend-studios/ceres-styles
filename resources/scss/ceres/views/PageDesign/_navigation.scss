@@ -115,7 +115,7 @@ body.menu-is-visible {
 			flex-wrap: wrap;
 
 			a 	{
-				color 	: $white;
+				color 	: $brand-primary;
 				display : inline-block;
 				padding : 1rem ;
 				flex: 1 0 80%;
@@ -240,6 +240,7 @@ body.menu-is-visible {
 					background-color : darken($menu-li-bg-hover, 5%);
 					color 			 : $menu-li-color-hover;
 					transition 		 : all .1s ease;
+					a {color: $white;}
 					>ul {
 						visibility 		: visible;
 						opacity 		: 1;
