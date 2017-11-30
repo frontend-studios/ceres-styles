@@ -4,7 +4,7 @@
         "key"       : "global.globalBackgroundImage",
         "label"     : "URL to global background image",
         "type"      : "text",
-        "default"   : "https://images.pexels.com/photos/370/lights-night-dark-abstract.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb"
+        "default"   : "https://static.pexels.com/photos/220067/pexels-photo-220067.jpeg"
     },
 	{
 	    "tab"       : "Homepage",
