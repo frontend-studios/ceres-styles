@@ -7,7 +7,8 @@
   right: 0;
   max-width: 1200px;
   width: 100%;
-  left: 0%;
+  left: 50%;
+  transform: translateX(-50%);
 
   .search-box-inner {
     display: flex;
