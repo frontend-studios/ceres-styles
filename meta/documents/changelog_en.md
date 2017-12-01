@@ -1,6 +1,6 @@
 # Release Notes for Kids Ceres
 
-## v2.0.0 (2017-11-29)
+## v2.0.1 (2017-11-29)
 
 ### Changes
 - Compatibility with Ceres and IO greater than 2.0.0
