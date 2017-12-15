@@ -33,9 +33,9 @@ class CeresGlamourServiceProvider extends ServiceProvider
         });
 
         // provide template to use for homepage
-        $eventDispatcher->listen('IO.tpl.category.item', function(TemplateContainer $container, $templateData) {
-            $container->setTemplate("CeresGlamour::Category.Item.CategoryItem");
-            return false;
-        });
+        // $eventDispatcher->listen('IO.tpl.category.item', function(TemplateContainer $container, $templateData) {
+        //     $container->setTemplate("CeresGlamour::Category.Item.CategoryItem");
+        //     return false;
+        // });
     }
 }

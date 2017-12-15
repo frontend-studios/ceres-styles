@@ -1,5 +1,30 @@
-{% extends 'Ceres::Homepage.Homepage' %}
+{% extends getPartial('page-design') %}
 {% set lang = services.sessionStorage.getLang() %}
+{% set configItemName = config("Ceres.item.name") %}
+
+{% set showDefaultHomepage = config("Ceres.default.homepage") %}
+{% set companyLogo  = config("Ceres.header.company_logo") %}
+{% set companyName  = config("Ceres.header.company_name") %}
+
+{% block PartialHead %}
+    <meta name="description" content="{{ config("Ceres.meta."~metaLang~".description_home") }}">
+    <meta name="robots" content="{{ config("Ceres.meta.robots_home") }}">
+
+    <meta property="og:title" content="{{ companyName }}"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content="{{ services.webstoreConfig.getWebstoreConfig().domainSsl }}"/>
+    <meta property="og:image"
+          content="{% if ('http' in companyLogo) or ('layout/' in companyLogo) %}{{ companyLogo }}{% else %}{{ plugin_path('Ceres') }}/{{ companyLogo }}{% endif %}"/>
+
+    <link rel="canonical"
+          href="{{ services.webstoreConfig.getWebstoreConfig().domainSsl }}{{ item.documents[0].data | itemURL }}">
+
+    <script type="application/ld+json">
+        {"@context": "http://schema.org","@type": "WebSite","url": "{{ services.webstoreConfig.getWebstoreConfig().domainSsl }}","potentialAction":{"@type": "SearchAction","target": "{{ services.webstoreConfig.getWebstoreConfig().domainSsl }}/search?query={search_term}","query-input": "required name=search_term"}}
+    </script>
+
+    <title>{{ config("Ceres.header.company_name") }}</title>
+{% endblock %}
 
 {% set homepageFirstSlideTitleDE  = config("CeresGlamour.homepage.homepageFirstSlideTitleDE") %}
 {% set homepageFirstSlideTitleEN  = config("CeresGlamour.homepage.homepageFirstSlideTitleEN") %}
@@ -51,16 +76,16 @@
 
 {% import "Ceres::PageDesign.Macros.LayoutContainer" as LayoutContainer %}
 
-{% set paginatedResultNew      = services.itemLoader.loadForTemplate('Ceres::ItemList.ItemListView', itemLoaderPresets.categoryList, {'categoryId':homepageNewId, 'page':1, 'items':4, 'facets': facetParams, 'sorting': itemSort}) %}
+{% set paginatedResultNew      = services.itemLoader.loadForTemplate('Ceres::ItemList.ItemListView', itemLoaderPresets.categoryList, {'categoryId': homepageNewId, 'page':1, 'items':4, 'sorting': itemSort, 'variationShowType': config("Ceres.item.variation_show_type")}) %}
 
-{% set paginatedResultTop      = services.itemLoader.loadForTemplate('Ceres::ItemList.ItemListView', itemLoaderPresets.categoryList, {'categoryId':homepageTopsellerId, 'page':1, 'items':4, 'facets': facetParams, 'sorting': itemSort}) %}
+{% set paginatedResultTop      = services.itemLoader.loadForTemplate('Ceres::ItemList.ItemListView', itemLoaderPresets.categoryList, {'categoryId': homepageTopsellerId, 'page':1, 'items':4, 'sorting': itemSort, 'variationShowType': config("Ceres.item.variation_show_type")}) %}
 
 
 {% set itemListNew             = paginatedResultNew.documents %}
 {% set itemListTop             = paginatedResultTop.documents %}
 
 
-{% block ThemeHomepage %}
+{% block PageBody %}
 
 {{ component( "Ceres::ItemList.Components.ItemList") }}
 {{ component( "Ceres::ItemList.Components.CategoryImageCarousel") }}
