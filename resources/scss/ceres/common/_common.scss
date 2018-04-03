@@ -1,8 +1,9 @@
 body {
     background-color:$body-bg !important;
 }
-.main{
 
+body .wrapper-main{
+    overflow-x: hidden;
 }
 
 
@@ -11,8 +12,6 @@ body {
     background-color: white; 
     color: $gray-dark;
 }
-
-
 .container-max{
     @extend .container-fluid;
     max-width: 1200px;
@@ -40,6 +39,18 @@ h1,.h1,h2,.h2,h3,.h3,h4,.h4 {
     text-transform: uppercase;
 }
 
+.page-not-found {
+    i.fa-search {
+        font-size: 10em;
+    }
+    .default-not-found {
+        background-color: rgb(247, 247, 249);
+    }
+    .not-found-text {
+        font-size: 115px;
+        text-shadow: 4px 3px 0 #F7F7F9, 9px 8px 0 rgba(218, 218, 227, 0.50);
+    }
+}
 
 .rating{
     line-height: 1;
@@ -57,11 +68,14 @@ h1,.h1,h2,.h2,h3,.h3,h4,.h4 {
     }
 }
 
-
-
-
 dt {
     font-weight: 400;
+}
+
+a:hover,
+a:focus,
+a:active {
+    text-decoration: none;
 }
 
 .border-left {
