@@ -3,6 +3,7 @@
 	height: 100%;
 	overflow: hidden;
 	color: $gray-dark;
+	font-family: $font-family-heading;
 
 	@include img-cover();
 
