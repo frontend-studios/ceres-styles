@@ -1,5 +1,10 @@
 # Changelog für Electronic Theme
 
+## v2.5.2 (2018-04-03)
+
+### Änderungen
+- Kompatibilität mit Ceres und IO ab Version 2.5.2
+
 ## v2.0.0 (2017-11-29)
 
 ### Änderungen
