@@ -31,11 +31,5 @@ class CeresGlamourServiceProvider extends ServiceProvider
             $container->setTemplate("CeresGlamour::Homepage.Homepage");
             return false;
         });
-
-        // provide template to use for homepage
-        // $eventDispatcher->listen('IO.tpl.category.item', function(TemplateContainer $container, $templateData) {
-        //     $container->setTemplate("CeresGlamour::Category.Item.CategoryItem");
-        //     return false;
-        // });
     }
 }
