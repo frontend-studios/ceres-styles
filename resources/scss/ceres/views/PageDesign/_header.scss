@@ -27,12 +27,12 @@
 			a{
 				padding: 0.5rem .8rem;
 				display: inline-block;
-				color: $top-bar-color;
+				color: $top-bar-color !important;
 
 				&[aria-expanded="true"],
 				&:hover{
-					background-color: $brand-primary;
-					color: #FFF;
+					background-color: $brand-primary !important;
+					color: #FFF !important;
 				}
 			}
 
@@ -125,7 +125,7 @@
 		.control-basket{
 			.toggle-basket-preview{
 				background-color: $top-bar-basket-btn;
-				color: $top-bar-basket-color;
+				color: $top-bar-basket-color !important;
 
 				.badge{
 					margin-left: .5rem;

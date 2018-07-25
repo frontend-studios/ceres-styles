@@ -231,7 +231,7 @@ body.menu-is-visible {
 				}
 
 				&:hover {
-					background-color : $menu-li-bg-hover;
+					background-color : $menu-li-bg-hover !important;
 					color 			 : $menu-li-color-hover;
 					transition 		 : all .1s ease;
 					>ul {
