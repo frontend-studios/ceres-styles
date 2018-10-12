@@ -1,7 +1,7 @@
 //Global
 body {
 	background-color:  $white;
-	font-family: $font-family-serif;
+	font-family: $font-family-sans-serif;
 	> #vue-app,
 	> #vue-error {
 		background-color: $white;
@@ -122,13 +122,12 @@ body {
 			.hero-category-inner {
 				padding: .5rem 1rem;
 				.hero-category-headline {
-					font-family: $font-family-heading;
 					padding: 1rem;
 					box-shadow: none;
 					align-self: flex-start;
 					font-weight: normal;
 					font-size: 1.25rem;
-					background-color: rgba($white, .9);
+					background-color: rgba($white, .8);
 					margin: 1rem;
 					display: block;
 					width: auto;
@@ -177,7 +176,8 @@ body {
 			transition: all .3s ease;
 		}
 		.featured-category-headline {
-			background: rgba($white, 1);
+			background: rgba($brand-primary, .8);
+			color: $white;
 		}
 	}
 }
@@ -368,7 +368,7 @@ body {
 //ProductThumb Start
 .cmp-product-thumb {
 	border: 1px solid $gray-lighter;
-	.thumb-inner {
+	/* .thumb-inner {
 		.thumb-content {
 			float: left;
 			width: 79%;
@@ -378,7 +378,7 @@ body {
 			float: left;
 			display: block;
 		}
-	}
+	} */
 }
 //ProductThumb End
 
