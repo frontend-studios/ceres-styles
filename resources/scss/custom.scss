@@ -162,14 +162,23 @@ body {
 		transform: unset;
 		left: unset;
 		box-shadow: 0 0 10px 0 rgba(0,0,0,.1);
-		background: rgba($white, .9);
 		text-transform: inherit;
+		background: rgba($white, .8);
 		color: $gray-dark;
 		font-size: 1.25rem;
 		padding: .5em;
 	}
 	.featured-category-inner {
 		background: transparent;
+	}
+	&:hover {
+		.featured-category-inner {
+			background: transparent;
+			transition: all .3s ease;
+		}
+		.featured-category-headline {
+			background: rgba($white, 1);
+		}
 	}
 }
 
@@ -348,10 +357,12 @@ body {
 			>a {
 				text-transform: uppercase;
 				color: white;
+				font-family: $font-family-menu;
 			}
 		}
 	}
 }
+
 //Navigation End
 
 //ProductThumb Start
