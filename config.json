@@ -1,4 +1,4 @@
-[	
+[
 	{
 	    "tab"       : "Homepage",
 	    "key"       : "homepage.homepageFirstSlideTitleDE",
@@ -196,45 +196,16 @@
 	    "default"   : "/"
 	},
 	{
-	    "tab"       : "Homepage",
-	    "key"       : "homepage.homepageNewTitleDE",
-	    "label"     : "Text für Titel Produktneuheiten",
-	    "type"      : "text",
-	    "default"   : "Unsere Neuheiten"
+        "tab"       : "Homepage",
+        "key"       : "homepage.homepageCategory1",
+        "label"     : "Erste Kategorie für die Artikel Darstellung",
+        "type"      : "category_select"
 	},
 	{
-	    "tab"       : "Homepage",
-	    "key"       : "homepage.homepageNewTitleEN",
-	    "label"     : "Text for new products heading",
-	    "type"      : "text",
-	    "default"   : "NEW"
+        "tab"       : "Homepage",
+        "key"       : "homepage.homepageCategory2",
+        "label"     : "Zweite Kategorie für die Artikel Darstellung",
+        "type"      : "category_select"
 	},
-	{
-	    "tab"       : "Homepage",
-	    "key"       : "homepage.homepageNewId",
-	    "label"     : "Categorie ID for New Products",
-	    "type"      : "text",
-	    "default"   : "16"
-	},
-	{
-	    "tab"       : "Homepage",
-	    "key"       : "homepage.homepageTopsellerTitleDE",
-	    "label"     : "Text für Titel Produktneuheiten",
-	    "type"      : "text",
-	    "default"   : "Unsere Topseller"
-	},
-	{
-	    "tab"       : "Homepage",
-	    "key"       : "homepage.homepageTopsellerTitleEN",
-	    "label"     : "Text for topseller products heading",
-	    "type"      : "text",
-	    "default"   : "TOPSELLER"
-	},
-	{
-	    "tab"       : "Homepage",
-	    "key"       : "homepage.homepageTopsellerId",
-	    "label"     : "Categorie ID for topseller Products",
-	    "type"      : "text",
-	    "default"   : "19"
-	}
+
 ]

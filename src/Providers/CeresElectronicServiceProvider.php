@@ -20,7 +20,7 @@ class CeresElectronicServiceProvider extends ServiceProvider
      */
 
     public function register() {
-         
+
     }
 
     public function boot(Twig $twig, Dispatcher $eventDispatcher, ConfigRepository $config)
@@ -31,5 +31,10 @@ class CeresElectronicServiceProvider extends ServiceProvider
             $container->setTemplate("CeresElectronic::Homepage.Homepage");
             return false;
         });
+
+        $eventDispatcher->listen('IO.init.templates', function (Partial $partial) {
+            $partial->set('page-design', 'CeresElectronic::PageDesign.PageDesign');
+        }, self::EVENT_LISTENER_PRIORITY);
+
     }
 }
