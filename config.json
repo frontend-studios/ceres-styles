@@ -206,6 +206,5 @@
         "key"       : "homepage.homepageCategory2",
         "label"     : "Zweite Kategorie für die Artikel Darstellung",
         "type"      : "category_select"
-	},
-
+	}
 ]
