@@ -43,6 +43,9 @@
 		padding: 0;
 		margin: 0;
 		list-style: none;
+		box-shadow: $box-shadow;
+		max-height: 500px;
+		overflow: scroll;
 	}
 
 	.add-item{
@@ -88,7 +91,7 @@
 		margin-bottom: 0;
 
 		& .item-controls {
-			@include media-breakpoint-between(xs, md) {
+			@include media-breakpoint-down(md) {
 				width: 83px;
 			}
 

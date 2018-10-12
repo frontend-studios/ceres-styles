@@ -6,6 +6,19 @@
 		display: block;
 		color: $gray-dark;
 
+		.hero-image {
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center;
+
+			&.contain {
+				background-size: contain;
+			}
+		}
+
 		.hero-category-inner{
 			position: absolute;
 			width: 100%;
@@ -102,14 +115,12 @@
 
 		.hero-category-headline{
 			background-color: rgba(white, .9);
-			color: $gray-dark;
 		    padding: .5em;
 		    text-align: right;
 		    display: inline-block;
 		    width: fit-content;
 		    align-self: flex-end;
-			box-shadow: 0 0 10px 0 rgba(0, 0, 0, .1);
-			font-family: $font-family-heading !important;
+		    box-shadow: 0 0 10px 0 rgba(0, 0, 0, .1);
 		}
 
 		.hero-category-cta{
@@ -133,7 +144,7 @@
 
 			.hero-category-headline{
 				padding: 1.5rem;
-				font-size: 1.25rem !important;
+				font-size: $font-size-h4;
 			}
 
 			.hero-category-cta{
@@ -171,8 +182,7 @@
 
 		.hero-xtras{
 			flex-flow: column nowrap;	
-			flex: 1 0 34%;
-			padding-left: 1rem;
+			flex: 1 0 24%;
 		}
 
 		.hero-category{
@@ -206,9 +216,9 @@
 		visibility: hidden;
 	}
 
-	&.refreshing {
+	&.with-icon {
 		&:after {
-			content: "\f021";
+			content: "";
 			font-family: FontAwesome;
 			position: absolute;
 			width: 100%;
@@ -224,9 +234,23 @@
 			opacity: 0;
 			transition: opacity .1s ease-out;
 			visibility: hidden;
+
+			
+		}
+
+		&.refreshing {
+			&:after {
+				content: "\f021";
+			}
+		}
+
+		&.sending {
+			&:after {
+				content: "\f1ce";
+				animation: fa-spin 1s infinite linear;
+			}
 		}
 	}
-
 
 	&.isLoading {
 		&:before {

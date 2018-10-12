@@ -1,26 +1,80 @@
 //header scss
+.unfixed
+{
+	left: 0;
+	right: 0;
+}
+
 .top-bar{
 
 	@media print {
 		display: none;
 	}
 
-	position: fixed;
 	width: 100%;
-	left: 50%;
-	transform: translateX(-50%);
-	background-color: $top-bar-bg;
-	max-width: 1200px;
-	margin: 0 auto;
-	
 	z-index: $zIndex-6;
 	color: $top-bar-color;
-	box-shadow: none;
+	background-color: $top-bar-bg;
+	box-shadow: 0 0 7px 0 rgba(0,0,0,.5);
 	a:not(.btn) {
 		text-decoration: none;
 		color: $top-bar-color;
 		outline: none;
 	}
+
+	.search-shown {
+		display: flex;
+		@include media-breakpoint-up(md) {
+			justify-content: space-between;
+			align-items: center;
+		}
+		@include media-breakpoint-down(sm) {
+			flex-direction: column-reverse;
+		}
+
+		.always-visible-search {
+			margin: 5px 5px;
+			background-color: $white;
+			flex: 1;
+			
+			.search-box-shadow-frame {
+				display: flex;
+				flex: 100;
+	
+				.search-input {
+					border: none;
+					outline: none;
+					padding: 0.4rem 1rem;
+					font-size: 1.3rem;
+					line-height: 1;
+					flex: 1 70%;
+				}
+		
+				.search-submit {
+					color: $brand-primary;
+					border: none;
+					font-size: 1.3rem;
+					line-height: 1;
+					padding: 0.4rem 1rem;
+				}
+			}
+		}
+
+		.controls-list {
+			&>li {
+				@include media-breakpoint-up(md) {
+					a:not(.btn) {
+						padding: 1rem .8rem;
+					}
+				}
+			}
+		}
+	}
+
+	&.pos-f-t {
+		position: fixed;
+	}
+
 	.controls-list{
 		margin-bottom: 0;
 		font-size: 0;
@@ -34,8 +88,8 @@
 			margin-right: 0;
 
 			// sets the height of the top-bar
-			@include media-breakpoint-between(xs, md) {
-
+			@include media-breakpoint-down(md) {
+				
 				a:not(.btn) {
 					padding: 0.5rem .5rem;
 					display: inline-block;
@@ -55,7 +109,7 @@
 
 			@include media-breakpoint-up(md) {
 				a:not(.btn) {
-					padding: 0.5rem .8rem;
+					padding: .5rem .8rem;
 					display: inline-block;
 					color: $gray-lighter;
 
@@ -76,9 +130,7 @@
 				margin: 0 2px;
 			}
 		}
-		.pipe {
-			border-left:1px solid $white;
-		}
+
 		.control-user{
 			flex: 1 0 auto;
 			margin-left: 1rem;
@@ -104,7 +156,7 @@
 						& .dropdown-menu {
 							max-height: 200px;
 
-							@include media-breakpoint-between(xs, md) {
+							@include media-breakpoint-down(md) {
 								width: 105px;
 
 								&.dropdown-menu-right {
@@ -122,7 +174,7 @@
 						overflow: hidden;
 						border: none !important;
 
-						@include media-breakpoint-between(xs, md) {
+						@include media-breakpoint-down(md) {
 							width: 105px;
 
 							&.dropdown-menu-right {
@@ -155,7 +207,6 @@
 			.account-menu {
 				padding:0;
 				margin:0;
-
 			}
 		}
 
@@ -232,15 +283,22 @@
 //navigation scss
 .wrapper-main {
 	#page-body {
-		margin-top: 118px;
 
 		@media print {
 			margin-top: 0;
 		}
 	}
+
+	#page-header {
+		background-color:$navbar-background-color;
+
+		&.top-bar {
+			background-color: $top-bar-bg;
+		}
+	}
+
 	.navbar{
 		font-family:$font-family-heading;
-		background:$navbar-background-color;
 		border-bottom:1px solid darken($gray-lighter2, 2%);
 		a {
 			color: $gray-dark;
@@ -311,6 +369,27 @@
 
 
 
+//navigation scss
+
+.navbar {
+	padding:0;
+	z-index: $zindex-navbar;
+	background-color: $navbar-background-color;
+	border-bottom: 1px solid $gray-lighter;
+
+	.navbar {
+
+		border-radius: 0;
+		padding:0;
+		z-index: $zindex-navbar;
+		border-bottom: 1px solid $gray-lighter;
+
+		.dropdown:hover .dropdown-menu {
+			display: block !important;
+			margin-top: 0;
+		}
+	}
+}
 
 .brand-wrapper{
 	position: relative;
@@ -325,11 +404,6 @@
 
   	img {
     	max-height: 3rem;
-  	}
-  	svg {
-  		path {
-  			fill: $white;
-  		}
   	}
 }
 
@@ -361,11 +435,10 @@
 	top: 50%;
 	right: 1rem;
 	transform: translate(0, -50%);
-	color: white;
 }
 
 // Mobile only
-@include media-breakpoint-between(xs, md) {
+@include media-breakpoint-down(md) {
 	.navbar {
 		.navbar-nav{
 
@@ -382,11 +455,7 @@
 
 
 @include media-breakpoint-up(sm){
-	.wrapper-main {
-		#page-body {
-			margin-top: 120px;
-		}
-	}
+
 	.top-bar{
 		.controls-list{
 			width: auto;
