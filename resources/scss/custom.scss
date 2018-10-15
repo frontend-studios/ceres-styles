@@ -428,6 +428,24 @@ body {
 //Footer End
 
 //Category Start
+.wrapper-main {
+	.breadcrumbs {
+		background: transparent;
+	}
+	>nav.container-max {
+		background: transparent;
+	}
+	.breadcrumb {
+		a {
+			color: #fff;
+		}
+	}
+}
+.breadcrumb-item.active {
+	color: $gray-light;
+}
+
+
 .list-controls {
 	position:relative;
 	.list-controls-inner {
@@ -439,10 +457,11 @@ body {
 
 //Single Start
 .single {
+	background-color: $white;
+	padding: 1rem;
 	.nav-tabs {
         border-bottom:1px solid $gray;
         .nav-item {
-            float: none;
             .nav-link {
                 border:1px solid $gray;
                 color: $gray;
