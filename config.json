@@ -1,9 +1,8 @@
-[	
+[
 	{
-	    "tab"       : "Header",
-	    "key"       : "header.company_logo",
-	    "label"     : "URL to your company logo",
-	    "type"      : "text",
-	    "default"   : "/layout/plugins/production/ceres/images/ceres-logo.svg"
+	    "tab"       : "Homepage",
+	    "key"       : "homepage.homepageCategory1",
+	    "label"     : "Kategorie für die Artikel Darstellung",
+	    "type"      : "category_select",
 	}
 ]

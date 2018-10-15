@@ -13,7 +13,7 @@ class CeresCoffeeServiceProvider extends ServiceProvider
      * Register the service provider.
      */
     public function register() {
-         
+
     }
     public function boot (Twig $twig, Dispatcher $eventDispatcher)
     {
@@ -22,5 +22,9 @@ class CeresCoffeeServiceProvider extends ServiceProvider
             $container->setTemplate("CeresCoffee::Homepage.Homepage");
             return false;
         });
+        $eventDispatcher->listen('IO.init.templates', function (Partial $partial) {
+           $partial->set('page-design', 'CeresCoffee::PageDesign.PageDesign');
+       }, self::EVENT_LISTENER_PRIORITY);
+
     }
 }
