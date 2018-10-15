@@ -1,7 +1,11 @@
 body {
+
+	background-color: $gray-lightest;
+
 	> #vue-app,
 	> #vue-error {
-		background-color:transparent;
+
+		background-color: $gray-lightest;
 		
 		&>.wrapper-top, &>.wrapper-left, &>.wrapper-right, &>.wrapper-bottom {
 			position 	: absolute;
@@ -86,6 +90,17 @@ body {
 
 				transition: width 0ms,
 							transform 300ms 10ms ease-in-out;
+			}
+		}
+
+		&.open-hover {
+			@include media-breakpoint-down(xs) {
+				position: fixed;
+			}
+
+			.basket-preview-hover-wrapper {
+				display: block;
+				transform: translateX(0%);
 			}
 		}
 

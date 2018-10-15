@@ -2,7 +2,7 @@
 
 	display: flex;
     flex-flow: column nowrap;
-    color: $gray-dark;
+
     .basket-header{
         flex: 0 0 auto;
         border-bottom: 1px solid $gray-lighter;
@@ -27,4 +27,9 @@
         }
         
     }
+}
+
+.basket-loading-frame {
+    display: table;
+    width: 100%;
 }
