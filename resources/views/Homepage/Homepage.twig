@@ -86,10 +86,10 @@
 			{% set homepageFeatCat2ImgUrl = config("CeresDark.homepage.homepageFeatCat2ImgUrl") %}
 			{% set homepageFeatCat2Link = config("CeresDark.homepage.homepageFeatCat2Link") %}
 
-			{% set category1 = services.category.get(config("CeresCoffee.homepage.homepageCategory1"), lang) %}
+			{% set category1 = services.category.get(config("CeresDark.homepage.homepageCategory1"), lang) %}
 			{% set categoryList1 = services.itemList.getItemList("category", category1.id, "variation.position_desc", 12).documents %}
 
-			{% set category2 = services.category.get(config("CeresCoffee.homepage.homepageCategory2"), lang) %}
+			{% set category2 = services.category.get(config("CeresDark.homepage.homepageCategory2"), lang) %}
 			{% set categoryList2 = services.itemList.getItemList("category", category2.id, "variation.position_desc", 12).documents %}
 
 			{{ component( "Ceres::ItemList.Components.ItemList") }}
