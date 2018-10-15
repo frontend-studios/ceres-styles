@@ -428,6 +428,16 @@ body {
 //Footer End
 
 //Category Start
+.parallax-img-container {
+	.parallax-text-container {
+		h1 {
+			margin-bottom: 0;
+			word-wrap: break-word;
+			color: white;
+		}
+	}
+}
+
 .wrapper-main {
 	.breadcrumbs {
 		background: transparent;
