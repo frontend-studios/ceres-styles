@@ -3,6 +3,6 @@
 	    "tab"       : "Homepage",
 	    "key"       : "homepage.homepageCategory1",
 	    "label"     : "Kategorie für die Artikel Darstellung",
-	    "type"      : "category_select",
+	    "type"      : "category_select"
 	}
 ]
