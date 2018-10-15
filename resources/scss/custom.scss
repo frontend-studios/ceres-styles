@@ -3,7 +3,7 @@ body {
 	background-color: $gray-dark;
 	> #vue-app,
 	> #vue-error {
-		background-color: $body-bg;
+		background-color: $gray-dark;
 	}
 }
 .page-content {
@@ -49,10 +49,19 @@ body {
 							font-size:1rem;
 						}
 					}
-					.hero-category:hover {
-						h3, h1 {
-							background: rgba(white, 1);
+					.hero-category {
+						.hero-category-inner {
+							bottom: 0;
+							left: 0;
+							background: rgba(white, .8);
+		   				   	color: $gray-dark;
 							transition: all .3s ease;
+						}
+						&:hover {
+							.hero-category-inner {
+								background: rgba(white, .8);
+								transition: all .3s ease;
+							}
 						}
 					}
 
@@ -90,7 +99,7 @@ body {
 		}
 	}
 	.hero-xtras {
-		padding-left: 1rem; 
+		padding-left: 1rem;
 		.hero-category {
 			.hero-category-inner {
 				padding: .5rem 1rem;
@@ -102,11 +111,11 @@ body {
 				    font-weight: normal;
 				    font-size: 1.25rem;
 				    background: rgba(white, .8);
+				   color: $gray-dark;
 				    margin: 1rem;
 				    display: block;
 				    width: auto;
 				    text-align: left;
-				    color: $gray-dark;
 				    transition: all .3s ease;
 				}
 			}
@@ -295,6 +304,15 @@ body {
 			color: $gray-dark;
 			&:hover {
 				color: $gray-darker;
+			}
+		}
+	}
+}
+#mainNavbarCollapsable {
+	ul.mainmenu {
+		>li {
+			>a {
+				font-family: $font-family-menu;
 			}
 		}
 	}
