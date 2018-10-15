@@ -1,0 +1,135 @@
+//Global
+body {
+	background-color:  $white;
+	font-family: $font-family-serif;
+	> #vue-app,
+	> #vue-error {
+		background-color: $white;
+	}
+}
+.page-content {
+    background-color:$white;
+}
+#page-body {
+	margin-top: 2rem;
+}
+//Global End
+
+//Header Start
+.wrapper-main {
+	.top-bar {
+		color: $top-bar-color;
+		background-color: $top-bar-bg;
+		.navbar {
+			font-family:$font-family-heading;
+       		text-transform: uppercase;
+       		background:$navbar-background-color;
+		}
+	}
+}
+//Header End
+
+
+//Homepage Start
+.c-edge-l {
+    position: absolute;
+    display: block;
+    width: 379px;
+    height: 340px;
+    background:url("../images/c-edge-l.png");
+    top: 86px;
+}
+.c-edge-r {
+    position: absolute;
+    display: block;
+    width: 340px;
+    height: 379px;
+    background:url("../images/c-edge-r.png");
+    top: 0;
+    transform:translateY(100%);
+    right: 0;
+}
+
+
+.home {
+    .teaser {
+        margin-top: 13em;
+        color:white;
+        h1 {
+            font-size: 5em;
+            margin-top: .5em;
+        }
+        h3 {
+            font-size: 1.75em;
+            margin-top: .5em;
+        }
+        i {
+            font-size: 10em;
+        }
+    }
+    .page-content {
+        margin-top: 40vh;
+    }
+}
+
+
+.sale {
+    text-align: center;
+    font-size: 2rem;
+    color: white;
+    text-transform: uppercase;
+    display: block;
+    background-color: red;
+}
+
+@include media-breakpoint-up(sm){
+
+}
+
+@include media-breakpoint-up(md){
+
+}
+
+@include media-breakpoint-up(lg){
+
+}
+//Homepage End
+
+
+//Footer Start
+.footer{
+	display: block;
+	background-color: $footer-bg;
+	>.container-max {
+		background-color:$footer-bg;
+		hr {
+			border-top:1px solid $white;
+		}
+	}
+	a{
+		color: $footer-color;
+	}
+	.footer-features{
+		border-top: 0;
+		background-color: $footer-features-bg;
+		color: $footer-features-color;
+		i {
+			color:$footer-features-color !important;
+		}
+	}
+	.footer-column {
+
+		h5{
+			font-weight: 700;
+			color: $white;
+		}
+		ul {
+			li{
+				a {
+					color:$white;
+				}
+			}
+		}
+	}
+}
+//Footer End

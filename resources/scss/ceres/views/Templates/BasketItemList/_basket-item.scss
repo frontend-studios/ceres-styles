@@ -4,7 +4,7 @@
 	flex-flow: row wrap;
 	border-bottom:1px solid $gray-lighter;
 
-	.toggle-description, //TODO remove this class. deprecated
+	.toggle-description,
 	.item-toggle{
 	    display: none;
 	}
@@ -119,15 +119,16 @@
 			width: 100%;
 			height: 1.5em;
 			border-bottom: 1px solid $gray-lighter;
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 );
 		}
 
 		&:after{
-			content: 'Mehr';
+			content: attr(data-show-more);
 			font-weight: 700;
 			color: $gray-light;
 		    display: inline-block;
 		    position: relative;
-		    background-color: $white;
+		    background-color: $body-bg;
 		    padding: 0 .5em;
 		    top: -.8em;
 		}
@@ -135,12 +136,12 @@
 
 	.toggle-description:checked{
 		& ~ .item-description{
-			max-height: 25em;// 10 lines
+			max-height: 70em;// 10 lines
 		}
 
 		& ~ .expand-btn{
 			&:after{
-				content: 'Weniger';
+				content: attr(data-show-less);
 			}
 		}
 	}
@@ -159,10 +160,28 @@
 	    line-height: 1;
 	    color: $gray-lighter;
 	    cursor: pointer;
-		transition: color 250ms;
-			&:hover {
-	    	color: $brand-danger;
+		transition: all .2s;
+		text-decoration: none;
+
+		&.btn-link {
+			> .message {
+				margin-right: 5px;
 			}
+
+			> .btn-trans {
+				right: 0;
+			}
+		}
+
+		&:hover {
+    		color: $brand-danger;
+		}
+
+		&.btn-danger:hover {
+			color:white;
+		}
+
+		&:focus {outline:none;}
 	}
 
 	@include media-breakpoint-up(sm){
@@ -213,11 +232,6 @@
 
 		.item-remove{
 		    bottom: 1em;
-		    color: $gray-lighter;
-
-		    &:hover{
-		    	color: $brand-danger;
-		    }
 		}
 
 	}
@@ -237,4 +251,14 @@
 			}
 		}
 	}
+}
+
+.img-basket-small {
+	display: block;
+	max-width: 100%;
+	max-height: 100%;
+}
+
+.no-pointer-events {
+	pointer-events: none;
 }

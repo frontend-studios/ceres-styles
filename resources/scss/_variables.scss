@@ -6,13 +6,17 @@
 // Variables
 // --------------------------------------------------
 
+// Root directory
+
+$root-directory: '..' !default;
+
 // Flags settings
-$flag-icon-css-path: '../images/flags' !default;
+$flag-icon-css-path: '#{$root-directory}/images/flags' !default;
 $flag-icon-rect-path: '/4x3' !default;
 $flag-icon-square-path: '/1x1' !default;
 
 //font awesome
-$fa-font-path: "../documents/fonts" !default;
+$fa-font-path: "#{$root-directory}/documents/fonts" !default;
 
 // Spacing
 //
@@ -91,7 +95,7 @@ $brand-danger:          #d9534f;
 
 $custom-colors: (
   "gelb": "#ffff00",
-);
+) !default;
 
 $top-bar-bg:            darken($brand-primary, 10%);
 $top-bar-color:         #fff;
@@ -104,12 +108,17 @@ $footer-color:          #fff;
 $footer-features-bg:    darken($brand-primary, 20%);
 $footer-features-color: #fff;
 
-$availability_1:        $brand-success;
-$availability_2:        $brand-success;
-$availability_3:        $brand-warning;
-$availability_4:        $brand-warning;
-$availability_5:        $brand-danger;
 
+$availability_1:        $brand-success !default;
+$availability_2:        $brand-success !default;
+$availability_3:        $brand-warning !default;
+$availability_4:        $brand-warning !default;
+$availability_5:        $brand-danger !default;
+$availability_6:        $brand-danger !default;
+$availability_7:        $brand-danger !default;
+$availability_8:        $brand-danger !default;
+$availability_9:        $gray-dark !default;
+$availability_10:       $gray-dark !default;
 
 
 //== Scaffolding
@@ -117,23 +126,23 @@ $availability_5:        $brand-danger;
 // ## Settings for some of the most global styles.
 
 //** Background color for `<body>`.
-$body-bg:               #a0cfb7;
-$body-color:            #583930;
+$body-bg:               white !default;
+//$body-color:            $gray-dark !default;
 //** Global text color on `<body>`.
-$text-color:            #583930;
+$text-color:            $gray-dark !default;
 
 //** Global textual link color.
-$link-color:            $brand-primary;
+$link-color:            $brand-primary !default;
 //** Link hover color set via `darken()` function.
-$link-hover-color:      darken($link-color, 15%);
+$link-hover-color:      darken($link-color, 15%) !default;
+
+
+$box-shadow:            0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
 
 
 // Body
 //
 // Settings for the `<body>` element.
-
-// font-family: 'Fjalla One', sans-serif;
-// font-family: 'Playfair Display', serif;
 
 //== Typography
 //
@@ -227,7 +236,7 @@ $caret-width-lg:         $caret-width !default;
 
 
 //Ceres 4 variables
-$aside-columns-width: 25em !default;
+$aside-columns-width: 30em !default;
 
 
 // Tables
@@ -455,11 +464,11 @@ $zindex-modal-bg:          $zIndex-7 !default;
 $zindex-modal:             $zIndex-8 !default;
 
 // Navbar
-$navbar-background-color:           #583930;
-$navbar-border-radius:              0;
-$navbar-padding-x:                  $spacer;
-$navbar-padding-y:                  ($spacer / 2);
-$navbar-brand-padding-y:            .25rem;
+$navbar-background-color:           $gray-lightest !default;
+$navbar-border-radius:              0 !default;
+$navbar-padding-x:                  $spacer !default;
+$navbar-padding-y:                  ($spacer / 2) !default;
+$navbar-brand-padding-y:            .25rem !default;
 
 $navbar-dark-color:                 $gray !default;
 $navbar-dark-hover-color:           white !default;
@@ -743,14 +752,14 @@ $figure-caption-font-size: 90% !default;
 
 // Breadcrumbs
 
-$breadcrumb-padding-y:          .5rem;
-$breadcrumb-padding-x:          1rem;
-$breadcrumb-item-padding:       .5rem;
+$breadcrumb-padding-y:          .5rem !default;
+$breadcrumb-padding-x:          1rem !default;
+$breadcrumb-item-padding:       .5rem !default;
 
-$breadcrumb-bg:                 #dac9a9;
-$breadcrumb-divider-color:      $gray-light;
-$breadcrumb-active-color:       $gray-light;
-$breadcrumb-divider:            "/";
+$breadcrumb-bg:                 darken($gray-lighter2, 2%) !default;
+$breadcrumb-divider-color:      $gray-light !default;
+$breadcrumb-active-color:       $gray-light !default;
+$breadcrumb-divider:            "/" !default;
 
 
 // Media objects
@@ -806,3 +815,8 @@ $pre-bg:                      #f7f7f9 !default;
 $pre-color:                   $gray-dark !default;
 $pre-border-color:            #ccc !default;
 $pre-scrollable-max-height:   340px !default;
+
+
+// Category
+
+$category-text-color:         #fff !default;
