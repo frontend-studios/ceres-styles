@@ -126,7 +126,7 @@ $availability_10:       $gray-dark !default;
 // ## Settings for some of the most global styles.
 
 //** Background color for `<body>`.
-$body-bg:               white !default;
+$body-bg:               #a0cfb7 !default;
 //$body-color:            $gray-dark !default;
 //** Global text color on `<body>`.
 $text-color:            $gray-dark !default;
@@ -153,7 +153,9 @@ $font-family-serif:     'Playfair Display', Georgia, 'Times New Roman', Times, s
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 $font-family-monospace: Menlo, Monaco, Consolas, "Courier New", monospace;
 $font-family-base:      $font-family-sans-serif;
-$font-family-heading:   'Fjalla One', sans-serif;
+$font-family-heading:  $font-family-sans-serif;
+
+$font-family-menu:   'Fjalla One', sans-serif;
 
 // Pixel value used to responsively scale all typography. Applied to the `<html>` element.
 $font-size-root: 14px !default;
@@ -464,7 +466,7 @@ $zindex-modal-bg:          $zIndex-7 !default;
 $zindex-modal:             $zIndex-8 !default;
 
 // Navbar
-$navbar-background-color:           $gray-lightest !default;
+$navbar-background-color:           $brand-primary !default;
 $navbar-border-radius:              0 !default;
 $navbar-padding-x:                  $spacer !default;
 $navbar-padding-y:                  ($spacer / 2) !default;
