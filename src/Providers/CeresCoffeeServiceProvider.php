@@ -14,23 +14,26 @@ use IO\Helper\ComponentContainer;
 
 class CeresCoffeeServiceProvider extends ServiceProvider
 {
+    const EVENT_LISTENER_PRIORITY = 99;
     /**
      * Register the service provider.
      */
+
     public function register() {
 
     }
+
     public function boot(Twig $twig, Dispatcher $eventDispatcher, ConfigRepository $config)
     {
-        // provide template to use for homepage
+
         $eventDispatcher->listen('IO.tpl.home', function(TemplateContainer $container, $templateData) {
             $container->setTemplate("CeresCoffee::Homepage.Homepage");
             return false;
         });
 
+        //partial replacement
         $eventDispatcher->listen('IO.init.templates', function (Partial $partial) {
             $partial->set('page-design', 'CeresCoffee::PageDesign.PageDesign');
-        }, self::EVENT_LISTENER_PRIORITY););
-
+        }, self::EVENT_LISTENER_PRIORITY);
     }
 }
