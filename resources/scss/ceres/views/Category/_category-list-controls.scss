@@ -1,7 +1,7 @@
 .list-controls {
   position:relative;
   .list-controls-inner {
-    background:$gray;
+    background:darken($gray-lighter2, 2%);
     padding:.5em;
   }
   .list-sort,
@@ -19,7 +19,6 @@
       float: left;
       cursor: pointer;
       display: inline-block;
-      color:$white;
       &:hover {
         color: $brand-danger;
       }
@@ -97,7 +96,7 @@
           .filter-badge {
             position: absolute;
             display: inline-block;
-            font-size: .65rem;
+            font-size: .85rem;
             background: $gray-lighter2;
             padding: .1rem 0;
             color: $gray;
@@ -134,12 +133,13 @@
     }
   }
 }
+
 .sidebar-categories {
-  background:$gray;
+  background:$white;
   font-family: $font-family-heading;
   height: 100%;
   .category-title {
-    background: $gray;
+    background: #efefef;
     padding: 1.2rem 2rem;
     text-transform: uppercase;
   }
@@ -150,13 +150,13 @@
       &.first-level.active {display:list-item;}
       a {
         display: block;
-        color: $white;
+        color: $gray-dark;
         padding: .75rem 15px;
         font-size: 1rem;
         cursor: pointer;
         &:hover {
-          color: $white;
-          background: $gray-darker;
+          color: $gray-darker;
+          background: $gray-lightest;
         }
       }
       ul {display:none;}
@@ -183,8 +183,7 @@
       }
       &.active {
         &>a {
-          background: $brand-primary;
-          color: $white;
+          background: $gray-lighter2;
         }
       }
     }

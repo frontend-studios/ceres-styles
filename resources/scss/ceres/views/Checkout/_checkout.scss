@@ -1,5 +1,4 @@
 .checkout{
-
 	.basket-items-list .item{
 		padding-left: 0;
 		padding-right: 0;
@@ -10,23 +9,6 @@
 		text-transform: uppercase;
 		text-align: center;
 	}
-	.error {
-		background: $brand-danger;
-		padding: .5em;
-		color: $white;
-		border-radius: .1rem;
-		transition: all .3s ease;
-		.method-list {color:$text-color;}
-		&.form-check-label {
-			padding: .5em 1.75rem;
-			a {
-				color: $white;
-				&:hover {
-					color: $gray-lighter2;
-				}
-			}
-		}
-	}
 
 	.cmp-address-list,
 	.form-check-label {
@@ -34,10 +16,14 @@
 	}
 
 	.error {
-		background: $brand-danger;
-		color: $white;
+		background: $brand-danger !important;
+		color: $white !important;
 		border-radius: .1rem;
 		transition: all .3s ease;
+
+		& .text-muted {
+			color: $white !important;
+		}
 
 		&.form-check-label {
 			padding: .5em 1.75rem;

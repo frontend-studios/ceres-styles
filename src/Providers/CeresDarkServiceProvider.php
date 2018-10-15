@@ -12,7 +12,6 @@ use Plenty\Plugin\Events\Dispatcher;
 use Plenty\Plugin\ConfigRepository;
 use IO\Helper\ComponentContainer;
 
-
 class CeresDarkServiceProvider extends ServiceProvider
 {
     const EVENT_LISTENER_PRIORITY = 99;
@@ -21,16 +20,20 @@ class CeresDarkServiceProvider extends ServiceProvider
      */
 
     public function register() {
-         
+
     }
 
     public function boot(Twig $twig, Dispatcher $eventDispatcher, ConfigRepository $config)
     {
 
-        // provide template to use for homepage
         $eventDispatcher->listen('IO.tpl.home', function(TemplateContainer $container, $templateData) {
             $container->setTemplate("CeresDark::Homepage.Homepage");
             return false;
         });
+
+        //partial replacement
+        $eventDispatcher->listen('IO.init.templates', function (Partial $partial) {
+            $partial->set('page-design', 'CeresDark::PageDesign.PageDesign');
+        }, self::EVENT_LISTENER_PRIORITY);
     }
 }

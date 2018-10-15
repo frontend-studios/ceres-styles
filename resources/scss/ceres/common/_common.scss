@@ -2,30 +2,25 @@ body .wrapper-main{
     overflow-x: hidden;
 }
 
+.hidden {
+    display: none;
+}
+
 .page-content{
     @extend .p-t-1;
-    background-color: $gray-dark; 
-    color: $white;
-    padding-left: 0;
-    padding-right: 0;
+    background-color: $gray-lightest;
     &.basket,
     &.checkout,
-    &.myaccount,
-    &.kontakt,
-    &.single {
-        background-color:$white;
+    &.contact,
+    &.myaccount {
+        &:not(.checkout):not(.basket) {
+            background-color: $white;
+        }
         color: $gray-darker;
-        padding-left: 15px;
-        padding-right: 15px;
         margin-top: 30px;
         padding-bottom: 30px;
     }
 }
-
-hr {
-    border-top:1px solid $gray-lighter;
-}
-
 .container-max{
     @extend .container-fluid;
     max-width: 1200px;
@@ -34,10 +29,6 @@ hr {
     &.login {
         margin-top: 2rem;
     }
-}
-
-.modal {
-    color: $gray-darker;
 }
 
 .page-not-found {
@@ -120,6 +111,7 @@ a:active {
         padding-right: 0;
         &.basket,
         &.checkout,
+        &.contact,
         &.myaccount {
             padding-left: 15px;
             padding-right: 15px;
@@ -127,3 +119,30 @@ a:active {
     }
 }
 
+.float-right {
+    float: right !important;
+}
+
+.bg-white {
+    background-color: $white !important;
+}
+
+.text-gray-dark {
+    color: $gray-dark;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.d-table {
+    display: table;
+}
+
+.border-radius-0 {
+    border-radius: 0;
+}
+
+.position-fixed {
+    position: fixed !important;
+}

@@ -2,7 +2,6 @@
     padding: .8rem;
     width: 100%;
     overflow: hidden;
-    border: 1px solid #fff;
     background-color: #fff;
     margin-bottom: $grid-gutter-width/2;
 
@@ -186,16 +185,6 @@
         opacity: 1;
     }
 
-
-    @include media-breakpoint-up(sm){
-        padding: 0;
-        margin-bottom: $grid-gutter-width;
-
-        .thumb-background{
-            display: block;
-        }
-    }
-
     .mobile-text-only{
         display: none;
     }
@@ -218,6 +207,10 @@
 
         .vat-porto-info {
             white-space: normal !important;
+        }
+
+        .thumb-image {
+            float: left;
         }
     }
 
@@ -295,7 +288,6 @@
 
         &:hover {
             z-index: 1000;
-
 
             .img-fluid {
                 transform: scale(1.05);

@@ -1,27 +1,27 @@
 {
-    "version"           : "2.0.0",
+    "version"           : "2.15.0",
     "name"              : "CeresDark",
-    "description"       : "Das ist ein Dark Theme für Ceres",
+    "description"       : "Das ist ein Glamour Theme für Ceres",
     "author"            : "Frontend Studios GmbH",
     "license"           : "AGPL-3.0",
     "pluginIcon"        : "icon_plugin_xs.png",
     "price"             : 0.00,
-    "shortDescription"  : {"de": "Das ist ein Dark Theme für Ceres","en":"This is a Dark Theme for Ceres"},
+    "shortDescription"  : {"de": "Das ist ein Glamour Theme für Ceres","en":"This is a Glamour Theme for Ceres"},
     "authorIcon"        : "icon_author_xs.png",
     "categories"        : ["3518"],
     "email"             : "dev@frontend-studios.de",
     "phone"             : "+49 40 851 792 84 30",
-    "keywords"          : ["plentymarkets", "plugins", "layout", "theme", "ceres", "dark", "frontend studios"],
+    "keywords"          : ["plentymarkets", "plugins", "layout", "theme", "ceres", "glamour", "frontend studios"],
     "type"              : "theme",
     "require"           : ["Ceres", "IO"],
     "namespace"         : "CeresDark",
     "serviceProvider"   : "CeresDark\\Providers\\CeresDarkServiceProvider",
-    "dataProviders"     :
+    "dataProviders"    :
     [
       {
         "key":"CeresDark\\Containers\\CeresDark",
         "name":"CeresDark",
-        "description":"Dark Theme für Ceres"
+        "description":"Glamour Theme for Ceres"
       }
     ]
 }

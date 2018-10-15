@@ -1,18 +1,80 @@
 //header scss
+.unfixed
+{
+	left: 0;
+	right: 0;
+}
+
 .top-bar{
-	position: fixed;
+
+	@media print {
+		display: none;
+	}
+
 	width: 100%;
-	
 	z-index: $zIndex-6;
 	color: $top-bar-color;
 	background-color: $top-bar-bg;
 	box-shadow: 0 0 7px 0 rgba(0,0,0,.5);
-	a{
+	a:not(.btn) {
 		text-decoration: none;
-		transition: all 300ms;
 		color: $top-bar-color;
 		outline: none;
 	}
+
+	.search-shown {
+		display: flex;
+		@include media-breakpoint-up(md) {
+			justify-content: space-between;
+			align-items: center;
+		}
+		@include media-breakpoint-down(sm) {
+			flex-direction: column-reverse;
+		}
+
+		.always-visible-search {
+			margin: 5px 5px;
+			background-color: $white;
+			flex: 1;
+			
+			.search-box-shadow-frame {
+				display: flex;
+				flex: 100;
+	
+				.search-input {
+					border: none;
+					outline: none;
+					padding: 0.4rem 1rem;
+					font-size: 1.3rem;
+					line-height: 1;
+					flex: 1 70%;
+				}
+		
+				.search-submit {
+					color: $brand-primary;
+					border: none;
+					font-size: 1.3rem;
+					line-height: 1;
+					padding: 0.4rem 1rem;
+				}
+			}
+		}
+
+		.controls-list {
+			&>li {
+				@include media-breakpoint-up(md) {
+					a:not(.btn) {
+						padding: 1rem .8rem;
+					}
+				}
+			}
+		}
+	}
+
+	&.pos-f-t {
+		position: fixed;
+	}
+
 	.controls-list{
 		margin-bottom: 0;
 		font-size: 0;
@@ -26,20 +88,41 @@
 			margin-right: 0;
 
 			// sets the height of the top-bar
-			a{
-				padding: 0.5rem .8rem;
-				display: inline-block;
-				color: $gray-lighter;
+			@include media-breakpoint-down(md) {
+				
+				a:not(.btn) {
+					padding: 0.5rem .5rem;
+					display: inline-block;
+					color: $gray-lighter;
+	
+					&[aria-expanded="true"] {
+						background-color: $brand-primary;
+						color: $white;
+					}
+				}
 
-				&[aria-expanded="true"],
-				&:hover{
-					background-color: $brand-primary;
-					color: #FFF;
+				.anicon {
+					padding: 0.5rem .8rem;
+				}
+
+			}
+
+			@include media-breakpoint-up(md) {
+				a:not(.btn) {
+					padding: .5rem .8rem;
+					display: inline-block;
+					color: $gray-lighter;
+
+					&[aria-expanded="true"],
+					&:hover{
+						background-color: $brand-primary;
+						color: $white;
+					}
 				}
 			}
 
 			// icons should be slightly larger
-			.fa{
+			.fa:not(.qty-sign){
 				font-size: 1.2rem;
 			}
 
@@ -67,11 +150,19 @@
 	
 					&.open {
 						& > .dropdown-toggle {
-							background-color: #282D2F;
+							background-color: $gray-darker;
 						}
 	
 						& .dropdown-menu {
 							max-height: 200px;
+
+							@include media-breakpoint-down(md) {
+								width: 105px;
+
+								&.dropdown-menu-right {
+									right: initial;
+								}
+							}
 						}
 					}
 	
@@ -83,13 +174,21 @@
 						overflow: hidden;
 						border: none !important;
 
+						@include media-breakpoint-down(md) {
+							width: 105px;
+
+							&.dropdown-menu-right {
+								right: initial;
+							}
+						}
+
 						a {
 							padding:1rem .8rem;
 							border:0;
 							border-top: 1px solid $gray-lighter;
 							display: block;
-							color: #fff;
-							background-color: #282D2F;
+							color: $white;
+							background-color: $gray-darker;
 							&:hover {
 								background-color: $brand-primary;
 							}
@@ -111,10 +210,6 @@
 			}
 		}
 
-		.control-languages a[aria-expanded="true"],
-		.control-search a[aria-expanded="true"] {
-			background:$gray-darker;
-		}
 		.control-wish-list {
 			a {
 				.badge-right{
@@ -163,6 +258,8 @@
 		}
 
 		.control-basket{
+			position: relative;
+
 			.toggle-basket-preview{
 				background-color: $top-bar-basket-btn;
 				color: $top-bar-basket-color;
@@ -186,12 +283,23 @@
 //navigation scss
 .wrapper-main {
 	#page-body {
-		margin-top: 118px;
+
+		@media print {
+			margin-top: 0;
+		}
 	}
+
+	#page-header {
+		background-color:$navbar-background-color;
+
+		&.top-bar {
+			background-color: $top-bar-bg;
+		}
+	}
+
 	.navbar{
 		font-family:$font-family-heading;
-		background:$navbar-background-color;
-		border-bottom:0;
+		border-bottom:1px solid darken($gray-lighter2, 2%);
 		a {
 			color: $gray-dark;
 			&:hover {
@@ -216,40 +324,39 @@
 				&:hover {
 					.nav-link {
 						background:transparent;
-						color:$white;
-						border-bottom:1px solid white;
+						color: $gray-darker;
 						cursor: pointer;
 						&.dropdown-toggle::after {
 							display: none;
 						}
 					}
 					.dropdown-menu {
-						background:$white;
+						background:$brand-primary;
 						border:0;
-						border-left:1px solid $gray-lighter;
-						border-right:1px solid $gray-lighter;
-						border-bottom:1px solid $gray-lighter;
+						border-left:0;
+						border-right:0;
+						border-bottom:0;
+						text-align: center;
 						&::before {
 							display: inline-block;
 						    width: 0;
 						    height: 0;
 						    content: "";
 						    border-bottom: .5em solid;
-						    border-top:0;
 						    border-right: .5em solid transparent;
 						    border-left: .5em solid transparent;
-						    color: white;
+						    color: $brand-primary;
 						    position: absolute;
 						    top: -.5em;
 						    left: 50%;
 						    transform: translateX(-50%);
 						}
 						.dropdown-item {
-							color: $gray-darker;
+							color: $white;
 							font-size: .9rem;
 							padding: .75rem 1rem !important;
 							&:hover {
-								background:$brand-primary;
+								background: darken($brand-primary, 10%);
 								color: white;
 							}
 						}
@@ -265,7 +372,23 @@
 //navigation scss
 
 .navbar {
-	padding: 0 1rem;
+	padding:0;
+	z-index: $zindex-navbar;
+	background-color: $navbar-background-color;
+	border-bottom: 1px solid $gray-lighter;
+
+	.navbar {
+
+		border-radius: 0;
+		padding:0;
+		z-index: $zindex-navbar;
+		border-bottom: 1px solid $gray-lighter;
+
+		.dropdown:hover .dropdown-menu {
+			display: block !important;
+			margin-top: 0;
+		}
+	}
 }
 
 .brand-wrapper{
@@ -281,9 +404,6 @@
 
   	img {
     	max-height: 3rem;
-  	}
-  	svg path {
-  		fill: $white;
   	}
 }
 
@@ -315,11 +435,10 @@
 	top: 50%;
 	right: 1rem;
 	transform: translate(0, -50%);
-	color:$white;
 }
 
 // Mobile only
-@include media-breakpoint-between(xs, md) {
+@include media-breakpoint-down(md) {
 	.navbar {
 		.navbar-nav{
 
@@ -346,7 +465,7 @@
 				// default font size for all items
 				font-size: .8rem;
 
-				.fa{
+				.fa:not(.qty-sign){
 					// icons should be slightly larger
 					font-size: 1rem;
 					line-height: .8rem;
@@ -411,7 +530,6 @@
 }
 
 @include media-breakpoint-up(lg){
-	.navbar {padding:0;}
 
 	.brand-wrapper{
 		position: absolute;
