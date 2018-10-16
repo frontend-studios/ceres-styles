@@ -29,21 +29,21 @@ body {
 //Homepage End
 
 //Header Start
-.top-bar{
-	background-color: transparent;
-	.navbar{
-		background-color: transparent;
-		border-bottom: none;
+#page-header {
+	background-color: transparent !important;
+	&.top-bar {
 		.container-max {
-			font-family:$font-family-menu;
-			background:$brand-primary;
-
-			a {
-				color: $white;
+			background-color: $top-bar-bg;
+		}
+		.navbar {
+			.container-max {
+				font-family: $font-family-menu;
+				background: $brand-primary;
 			}
 		}
 	}
 }
+
 #mainNavbarCollapsable {
 	ul.mainmenu {
 		>li {
@@ -187,20 +187,12 @@ body {
 .anicon {
 	>.anicon-search-item {
 		&::after {
-			background: $brand-primary;
+			background: $top-bar-bg;
 		}
 	}
 }
 
 .wrapper-main {
-	#page-header {
-		background-color: transparent;
-		&.top-bar {
-			.container-max {
-				background-color: $top-bar-bg;
-			}
-		}
-	}
 	.breadcrumbs {
 		background: transparent;
 	}
@@ -249,4 +241,9 @@ body {
             }
         }
     }
+}
+//Single end
+
+.cmp-product-thumb {
+	border: 1px solid $gray-light;
 }
