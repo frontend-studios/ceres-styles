@@ -30,16 +30,18 @@ body {
 
 //Header Start
 .top-bar{
-	color: $top-bar-color;
-	background-color: $top-bar-bg;
-	.navbar{
-		font-family:$font-family-menu;
-		background:$navbar-background-color;
-		border-bottom: none;
-		a {
-			color: $white;
-			&:hover {
-				color: $brand-primary;
+	.container-max {
+		color: $top-bar-color;
+		background-color: $top-bar-bg;
+		.navbar{
+			font-family:$font-family-menu;
+			background:$brand-primary;
+			border-bottom: none;
+			a {
+				color: $white;
+				&:hover {
+					color: $brand-primary;
+				}
 			}
 		}
 	}
@@ -49,6 +51,7 @@ body {
 		>li {
 			>a {
 				font-family: $font-family-menu;
+				color: white;
 			}
 		}
 	}
