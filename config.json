@@ -10,7 +10,7 @@
 		"key": "homepage.homepageImageFirstSlide",
 		"label": "Bildpfad für den ersten Slide",
 		"type": "text",
-		"default": "https://placekitten.com/1200/400"
+		"default": "https://unsplash.it/1200/400?image=976"
 	},
 	{
 		"tab": "Homepage",
@@ -22,7 +22,7 @@
 	{
 		"tab": "Homepage",
 		"key": "homepage.homepageProductNameFirstSlide",
-		"label": "Produkt-Name für den ersten Slide",
+		"label": "SEO-Text für den ersten Slide",
 		"type": "text",
 		"default": ""
 	},
@@ -31,7 +31,7 @@
 		"key": "homepage.homepageImageSecondSlide",
 		"label": "Bildpfad für den zweiten Slide",
 		"type": "text",
-		"default": "https://placekitten.com/1200/400"
+		"default": "https://picsum.photos/1200/400?image=55"
 	},
 	{
 		"tab": "Homepage",
@@ -43,7 +43,7 @@
 	{
 		"tab": "Homepage",
 		"key": "homepage.homepageProductNameSecondSlide",
-		"label": "Produkt-Name für den zweiten Slide",
+		"label": "SEO-Text für den zweiten Slide",
 		"type": "text",
 		"default": ""
 	},
@@ -52,7 +52,7 @@
 		"key": "homepage.homepageImageThirdSlide",
 		"label": "Bildpfad für den dritten Slide",
 		"type": "text",
-		"default": "https://placekitten.com/1200/400"
+		"default": "https://picsum.photos/1200/400?image=1069"
 	},
 	{
 		"tab": "Homepage",
@@ -64,10 +64,10 @@
 	{
 		"tab": "Homepage",
 		"key": "homepage.homepageProductNameThirdSlide",
-		"label": "Produkt-Name für den dritten Slide",
+		"label": "SEO-Text für den dritten Slide",
 		"type": "text",
 		"default": ""
-	},	
+	},
 	{
 		"tab": "Homepage",
 		"key": "homepage.homepageCategory1",
