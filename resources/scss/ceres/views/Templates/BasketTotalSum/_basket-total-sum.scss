@@ -1,7 +1,31 @@
 .cmp-totals{
-	dl{
 
-	}
+
+	// .totalSum {
+	// 	clear: right;
+
+
+	// 	dt{
+	// 		width: 68%;
+	// 		float:left;
+	// 	}
+
+	// 	dd{
+	// 		float: right;
+	// 	}
+	// }
+
+	// .vatTotals {
+
+	// 	dt{
+	// 		width: 68%;
+	// 		float:left;
+	// 	}
+
+	// 	dd{
+	// 		float: right;
+	// 	}
+	// }
 
 	dt, dd{
 		display: inline-block;
@@ -15,5 +39,9 @@
 	dd{
 		text-align: right;
 		width: 30%;
+	}
+	
+	.rebate-hint{
+		color: $gray;
 	}
 }

@@ -1,4 +1,4 @@
-# Release Notes für Food Theme
+# Release Notes für Colorful Theme
 
 ## v2.0.0 (2017-11-29)
 
@@ -17,4 +17,4 @@
 ### Funktionen
 - basiert auf dem Standard-Ceres
 - Komplett Update-fähig
-- Redesign des Ceres in Food-Style
+- Redesign des Ceres in Colorful-Style

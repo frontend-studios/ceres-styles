@@ -1,4 +1,4 @@
-# Release Notes for Food Ceres
+# Release Notes for Colorful Ceres
 
 ## v2.0.0 (2017-11-29)
 
@@ -18,4 +18,4 @@
 
 - based on basic Ceres Plugin
 - Completley Updatable
-- Redesigned Ceres in Food-Style
+- Redesigned Ceres in Colorful-Style

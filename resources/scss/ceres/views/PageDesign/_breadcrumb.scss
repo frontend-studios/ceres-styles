@@ -9,32 +9,32 @@
 		    z-index: 1000;
 		    display: block;
 		    width: 100%;
-		    max-width: 1200px;
-		    left: 50%;
-		    transform: translateX(-50%);
+		    max-width: 100%;
 		    background:$breadcrumb-bg;
-		    top:96px;
+		}
+		.breadcrumbs {
+			background: $breadcrumb-bg;
+		    z-index: 1000;
+
+			&.unfixed {
+				z-index: -1;
+			}
 		}
 		.breadcrumb{
-			margin-bottom: 0;
 			max-width: 1200px;
 		    margin: 0 auto;
 		    background: transparent;
 		    padding: .5rem 15px;
-		    a {
-				color: $white;
-				&:hover {
-					color: $brand-primary;
-				}
-			}
 		}
 	}
 	
 }
 @include media-breakpoint-up(lg){
 	.wrapper-main {
-		& > nav.container-max {
-		    top:102px;
+		.breadcrumb{
+			@include media-breakpoint-up(xl){
+				padding: .5rem 0;
+			}
 		}
 	}
 }

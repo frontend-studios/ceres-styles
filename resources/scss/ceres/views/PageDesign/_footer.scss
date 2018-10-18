@@ -1,47 +1,108 @@
 .to-top {
     display: block;
-    height: 4rem;
     background-color: $gray-dark;
-    color: white;
     text-align: center;
     padding: .5rem .5rem;
-    text-decoration:none!important;
-
-    transition: all 200ms;
-    
+	text-decoration:none!important;
+	cursor: pointer;
     &:hover {
-        background-color: $gray-light;
+    	background-color: $gray-darker;
+    }
+    i {
+    	color: white;
+	    font-size: 1.5em;
+	    padding: .5em 0;
     }
 }
 
-.footertop{
+.back-to-top-center {
+	text-decoration: none;
+	opacity: .5;
+	-webkit-transition: opacity .3s;
+	transition: opacity .3s;
+	border: 1px solid $gray-darker;
+	cursor: pointer;
+	text-align: center;
+	position: fixed;
+	bottom: -17px;
+	left: 50%;
+	width: 94px;
+	height: 50px;
+	margin-left: -47px;
+	z-index: 1000;
+	overflow: hidden;
+	background: #fff;
+	padding: 20px;
+	display: none;
+	border-top-left-radius: 25px;
+	border-top-right-radius: 25px;
+
+	&:hover {
+		opacity: 1;
+	}
+}
+
+.back-to-top-center i {
+	font-size: 29px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 90px;
+	height: 40px;
 	display: block;
-	background-color: $gray-lighter;
+	z-index: 1;
 }
 
-.footer .svg.plenty-brand path {
-    fill: white;
+.back-to-top {
+	margin: 0;
+	position: fixed;
+	bottom: 2rem;
+	right: 2rem;
+	width: 40px;
+	height: 40px;
+	z-index: 100;
+	display: none;
+	text-decoration: none;
+	opacity: 0.5;
+	transition: opacity 300ms;
+	border: 1px solid $gray-darker;
+	background: $gray-dark;
+	border-radius: $border-radius;
+	cursor: pointer;
+	text-align: center;
+
+	&:hover {
+		opacity: 1;
+	}
 }
 
+.back-to-top i {
+	font-size: 29px;
+	color: $code-bg;
+}
 
 .footer{
+
+	@media print {
+		display: none;
+	}
+
 	display: block;
 	background-color: $footer-bg;
-	max-width:1200px;
-	margin:0 auto;
-	>.container-max {
-		background-color:$footer-bg;	
-		hr {
-			border-top:1px solid white;
-		}
-	}	
-
+	
 	a{
 		color: $footer-color;
 	}
 
+	.svg.plenty-brand {
+ 		padding:0 .5em;
+ 		path {
+ 			fill: $gray-dark;
+ 		}
+ 	}
+
 	.footer-features{
-		border-top: 0;
+		border-top: 1px solid transparent;
 		background-color: $footer-features-bg;
 		color: $footer-features-color;
 		i {
@@ -88,16 +149,8 @@
 
 	.footer-column{
 
-		h5{
+		h2{
 			font-weight: 700;
-			color: $white;
-		}
-		ul {
-			li{
-				a {
-					color:$white;
-				}
-			}
 		}
 	}
 
@@ -118,13 +171,6 @@
 		}
 	}
 
-	.copyright {
-		small {
-			color:$white;
-		}
-	}
-
-
 	@include media-breakpoint-up(sm){
 		.footer-services{
 			flex-flow: row nowrap;
@@ -138,4 +184,18 @@
 	@include media-breakpoint-up(lg){
 
 	}
+}
+
+.plenty-brand {
+	height: 30px;
+	margin: 2em 0 0.2em;
+}
+
+.static-link-list {
+	margin-bottom: -15px;
+}
+
+.static-link-list a {
+	color: black;
+	margin-right: 10px;
 }
