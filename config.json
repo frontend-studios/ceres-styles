@@ -10,7 +10,7 @@
 		"key": "homepage.homepageImageFirstSlide",
 		"label": "Bildpfad für den ersten Slide",
 		"type": "text",
-		"default": "https://unsplash.it/1200/400?image=976"
+		"default": "https://unsplash.it/1200/400?image=1080"
 	},
 	{
 		"tab": "Homepage",
@@ -31,7 +31,7 @@
 		"key": "homepage.homepageImageSecondSlide",
 		"label": "Bildpfad für den zweiten Slide",
 		"type": "text",
-		"default": "https://picsum.photos/1200/400?image=55"
+		"default": "https://unsplash.it/1200/400?image=674"
 	},
 	{
 		"tab": "Homepage",
@@ -52,7 +52,7 @@
 		"key": "homepage.homepageImageThirdSlide",
 		"label": "Bildpfad für den dritten Slide",
 		"type": "text",
-		"default": "https://picsum.photos/1200/400?image=1069"
+		"default": "https://picsum.photos/1200/400?image=431"
 	},
 	{
 		"tab": "Homepage",
