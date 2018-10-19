@@ -1,74 +1,100 @@
 .cmp-search-box {
-  background-color: darken($brand-primary, 20%);
-  padding: 0px 15px;
-
-  z-index: 1070;
-  position: fixed;
-  top: 30px;
-  right: 0;
-  left: 0;
-  width: 100%;
-  max-width: 1200px;
-  margin:0 auto;
-
-  .search-box-inner {
-    display: flex;
-    flex-flow: row nowrap;
-    padding: 1rem 0em;
-
-    position: relative;
-    max-width: 1200px;
-    margin:0 auto;
-  }
-
-  .search-box-shadow-frame {
-    display: flex;
-    flex: 100;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
-  }
-
-  .search-input {
-    flex: 1 0 70%;
-    display: inline-block;
-    vertical-align: top;
-    font-size: 1.3rem;
-    line-height: 1;
-    border: none;
-    padding: .4rem 1rem;
-    outline: none;
-  }
-
-  .search-submit {
-    display: inline-block;
-    vertical-align: top;
-    font-size: 1.3rem;
-    line-height: 1;
-    background: #ffffff;
-    padding: .4rem 1rem;
-    color: $brand-primary;
-    border: none;
-    transition: all 300ms;
-    outline: none;
-
-    &:hover{
-      color: darken($brand-primary, 20%);
+    background-color: $gray-darker;
+    padding: 0px 15px;
+    z-index: 1070;
+    position: fixed;
+    top: 30px;
+    right: 0;
+    left: 0;
+    width: 100%;
+    .search-box-inner {
+        display: flex;
+        flex-flow: row nowrap;
+        padding: 1rem 0em;
+        position: relative;
+        max-width: 1200px;
+        margin: 0 auto;
     }
-  }
-}
+     @at-root .search-box-shadow-frame {
+        display: flex;
+        flex: 100;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+        position: relative;
 
-.autocomplete-suggestions {
-  box-shadow: 0 3px 8px 0 rgba(0,0,0,0.2),0 0 0 1px rgba(0,0,0,0.08);
-  background: #ffffff;
-  overflow: auto;
-}
+        .autocomplete-suggestions {
+            position: absolute;
+            box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.08);
+            background: #ffffff;
+            overflow: scroll;
+            -webkit-overflow-scrolling: touch;
+            z-index: 1070;
+            max-height: 310px;
+            width: 100%;
+            top: 100%;
 
-.autocomplete-suggestion {
-  padding: 5px 15px;
-  white-space: nowrap;
-  overflow: hidden;
-  cursor: pointer;
-}
+            & > .autocomplete-suggestion {
+                padding: 5px 15px;
+                white-space: nowrap;
+                overflow: hidden;
+                cursor: pointer;
+                display: flex;
 
-.autocomplete-selected {
-  background: $gray-lighter;
+                &:hover {
+                    background: $gray-lighter;
+                }
+
+                &.autocomplete-selected {
+                    background: $gray-lighter;
+                }
+
+                & > .autocomplete-item-name {
+                    align-self: center;
+                    color: $gray-dark;
+                }
+
+                & > .autocomplete-image-container {
+                    width: 40px;
+                    height: 40px;
+                    position: relative;
+                    margin-right: 5px;
+
+                    & > .autocomplete-image {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translateY(-50%) translateX(-50%);
+                        max-height: 40px;
+                        max-width: 100%;
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
+                }
+            }
+        }
+    }
+    .search-input {
+        flex: 1 0 70%;
+        display: inline-block;
+        vertical-align: top;
+        font-size: 1.3rem;
+        line-height: 1;
+        border: none;
+        padding: .4rem 1rem;
+        outline: none;
+    }
+    .search-submit {
+        display: inline-block;
+        vertical-align: top;
+        font-size: 1.3rem;
+        line-height: 1;
+        background: #ffffff;
+        padding: .4rem 1rem;
+        color: $brand-primary;
+        border: none;
+        transition: all 300ms;
+        outline: none;
+        &:hover {
+            color: darken($brand-primary, 20%);
+        }
+    }
 }

@@ -6,13 +6,17 @@
 // Variables
 // --------------------------------------------------
 
+// Root directory
+
+$root-directory: '..' !default;
+
 // Flags settings
-$flag-icon-css-path: '../images/flags' !default;
+$flag-icon-css-path: '#{$root-directory}/images/flags' !default;
 $flag-icon-rect-path: '/4x3' !default;
 $flag-icon-square-path: '/1x1' !default;
 
 //font awesome
-$fa-font-path: "../documents/fonts" !default;
+$fa-font-path: "#{$root-directory}/documents/fonts" !default;
 
 // Spacing
 //
@@ -69,7 +73,6 @@ $grid-gutter-width: 30px !default;
 //== Colors
 //
 //## Gray and brand colors for use across Bootstrap.
-
 $gray-darker:           #282d2f;
 $gray-dark:             #4D4F4D;
 $gray:                  #7A7A7A;
@@ -105,29 +108,39 @@ $footer-color:          $white;
 
 $footer-features-bg:    transparent;
 $footer-features-color: $white;
-
-
 $availability_1:        $brand-success !default;
 $availability_2:        $brand-success !default;
 $availability_3:        $brand-warning !default;
 $availability_4:        $brand-warning !default;
 $availability_5:        $brand-danger !default;
+$availability_6:        $brand-danger !default;
+$availability_7:        $brand-danger !default;
+$availability_8:        $brand-danger !default;
+$availability_9:        $gray-dark !default;
+$availability_10:       $gray-dark !default;
+
 
 //== Scaffolding
 //
 // ## Settings for some of the most global styles.
 
 //** Background color for `<body>`.
-$body-bg:               white !default;
-//$body-color:            $gray-dark !default;
+$body-bg:               $gray-dark;
+$body-color:            #693a2d;
 //** Global text color on `<body>`.
-$text-color:            $gray-dark !default;
+$text-color:            #693a2d;
 
 //** Global textual link color.
-$link-color:            $brand-primary !default;
+$link-color:            $brand-primary;
 //** Link hover color set via `darken()` function.
-$link-hover-color:      darken($link-color, 15%) !default;
+$link-hover-color:      darken($link-color, 15%);
 
+$box-shadow:            0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+
+
+// Body
+//
+// Settings for the `<body>` element.
 
 //== Typography
 //
@@ -224,7 +237,7 @@ $caret-width-lg:         $caret-width !default;
 
 
 //Ceres 4 variables
-$aside-columns-width: 25em !default;
+$aside-columns-width: 30em !default;
 
 
 // Tables
@@ -452,7 +465,7 @@ $zindex-modal-bg:          $zIndex-7 !default;
 $zindex-modal:             $zIndex-8 !default;
 
 // Navbar
-$navbar-background-color:           $gray-lightest;
+$navbar-background-color:           $gray-dark;
 $navbar-border-radius:              0;
 $navbar-padding-x:                  $spacer;
 $navbar-padding-y:                  ($spacer / 2);
@@ -744,7 +757,7 @@ $breadcrumb-padding-y:          .5rem !default;
 $breadcrumb-padding-x:          1rem !default;
 $breadcrumb-item-padding:       .5rem !default;
 
-$breadcrumb-bg:                 transparent !default;
+$breadcrumb-bg:                 darken($gray-lighter2, 2%) !default;
 $breadcrumb-divider-color:      $gray-light !default;
 $breadcrumb-active-color:       $gray-light !default;
 $breadcrumb-divider:            "/" !default;
@@ -803,3 +816,8 @@ $pre-bg:                      #f7f7f9 !default;
 $pre-color:                   $gray-dark !default;
 $pre-border-color:            #ccc !default;
 $pre-scrollable-max-height:   340px !default;
+
+
+// Category
+
+$category-text-color:         #fff !default;

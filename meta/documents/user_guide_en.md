@@ -1,10 +1,10 @@
-# Ceres Kids – Ceres Plugin in Kids-Style
+# Ceres Colorful – Ceres Plugin in Colorful-Style
 
 <div class="container-toc"></div>
 
-## Activate Kids Theme
+## Activate Colorful Theme
 
-Go to plentymarkets Backend Plugin Area. You have to provide the Kids theme in productive and assign the client (store). Switch to "Content" tab and check the "Template: Style" entry in "CeresKids" section. Save, finished!
+Go to plentymarkets Backend Plugin Area. You have to provide the Colorful theme in productive and assign the client (store). Switch to "Content" tab and check the "Template: Style" entry in "CeresKids" section. Save, finished!
 
 <div class="alert alert-info" role="alert">
     Ceres and IO Plugin are required.

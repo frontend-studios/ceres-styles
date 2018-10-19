@@ -12,4 +12,4 @@ E-Mail: <a href="mailto:dev@frontend-studios.de">dev@frontend-studios.de</a>
  
 ### Telefon
  
-Telefon: +49 561 9885097-0
+Telefon: +49 40 851 792 84 30

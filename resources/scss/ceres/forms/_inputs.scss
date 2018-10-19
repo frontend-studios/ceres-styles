@@ -6,6 +6,20 @@ $border-color: $gray-lighter;
 $border-active: $gray-light;
 $border-width: 1px;
 
+.input-unit.textarea{
+    background-color: #fff;
+
+    & > textarea {
+        overflow-y: auto;
+        white-space: normal;
+    }
+
+    & > label {
+        background-color: #fff;
+        opacity: 0.9;
+    }
+}
+
 .input-unit{
     position:relative;
     
@@ -13,13 +27,26 @@ $border-width: 1px;
     margin-bottom: $grid-gutter-width/2;
     border:$border-width solid $border-color;
 	border-radius: $border-radius;
-	overflow: hidden;
+    overflow: hidden;
 
+    &.media-xs-d {
+        @include media-breakpoint-down(xs) { 
+            margin-bottom: $grid-gutter-width/2 !important;
+        }
+    }
 
-    input[type],
+    &.no-bottom {
+        margin-bottom: 0px; 
+    }
+
+  input[type="date"]{
+    max-height: 38px;
+  }
+
+    input[type], textarea,
 	input:not([type="checkbox"]),
 	input:not([type="radio"]),
-	.input-unit-preview{
+	.input-unit-preview {
 
 	    color: $color;
 	    background-color: $background;
@@ -35,7 +62,7 @@ $border-width: 1px;
         text-overflow: ellipsis;
         overflow: hidden;
         white-space: nowrap;
-
+        display: block;
 
 	    transition: all .2s;
 
@@ -157,6 +184,58 @@ $border-width: 1px;
     }
 }
 
+.file-input
+{
+    height: 38px;
+    cursor: pointer;
+    
+    > input[type="file"]
+    {
+        width: 0;
+        height: 0;
+        padding: 0;
+        visibility: hidden;
+    }
+    
+    > .input-unit-preview
+    {
+        height: 38px;
+    }
+    
+    > .input-unit-btn
+    {
+        content: "";
+        position: absolute;
+        width: 38px;
+        height: 38px;
+        background-color: $border-color;
+        display: block;
+        right: 0;
+        top: 0;
+        
+        i {
+            margin: 10px;
+            width: 18px;
+            height: 18px;
+            font-weight: 300;
+            background-color: $border-color;
+            color: $text-color;
+        }
+    }
+    
+    &.success .input-unit-btn,
+    &.success .input-unit-btn i {
+        background-color: $brand-success;
+        color: #fff;
+    }
+    
+    &.error .input-unit-btn,
+    &.error .input-unit-btn i {
+        background-color: $brand-danger;
+        color: #fff;
+    }
+}
+
 .input-unit.multiple{
 	display: flex;
     flex-flow: row nowrap;
@@ -171,4 +250,8 @@ $border-width: 1px;
     }
 }
 
-
+.remove-disabled-coloring {
+    &:disabled {
+        background-color: initial !important;
+    }
+}
