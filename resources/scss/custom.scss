@@ -19,8 +19,9 @@ body {
 .home {
 	.carousel-control {
 		@include media-breakpoint-up(md) {
-			top: 20%;
-			bottom: 30% !important;
+			top: 30%;
+			bottom: 40% !important;
+			width: 10%;
 		}
 	}
 }
@@ -285,7 +286,6 @@ body {
 		top: unset;
 		left: auto;
 		right: .8rem;
-		padding: .5rem .75rem;
 		border-style: none;
 		transform: unset;
 
@@ -301,10 +301,10 @@ body {
 		    i {
 		        right: 0;
 		        top: 0;
-		        position: absolute;
+		        position: relative;
 		        transition: .3s ease-out;
-		        color: blue;
-		        border: 1px solid blue;
+		        color: $brand-primary;
+		        border: 1px solid $brand-primary;
 		        padding: .5rem .75rem;
 		    }
 
