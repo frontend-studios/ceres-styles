@@ -25,13 +25,16 @@ h1, h2, h3, h4, h5, h6 {
 	       h1 {
 	            font-size: 5em;
 	            margin-top: .5em;
+		     color: $brand-primary;
 	       }
 	       h3 {
 	            font-size: 1.75em;
 	            margin-top: .5em;
+		     color: $brand-primary;
 	       }
 	       i {
 	            font-size: 10em;
+		     color: $brand-primary;
 		}
 	}
        .page-content {
@@ -59,18 +62,18 @@ h1, h2, h3, h4, h5, h6 {
 #mainNavbarCollapsable {
 	ul.mainmenu {
 		>li {
-		    	color: white;
-			border-left: 1px solid white;
-			>a {
+		    	color: $white;
+			border-left: 1px solid $white;
+			> a {
 				padding: 1rem 1rem;
 				font-size: 1.1rem;
 				font-family: $font-family-menu;
 				color: $brand-primary;
+				&:last-child {
+					border-left: 1px solid transparent;
+				}
 			}
-			&:last-child {
-				border-left: 1px solid transparent;
-			}
-			&:nth-child(1) {
+			&:first-child {
 				border-left: 1px solid transparent;
 			}
 		}
