@@ -9,6 +9,7 @@ body {
 }
 .page-content {
     background-color: $white;
+    padding: 1rem;
 }
 /* #page-body {
 	margin-top: 2rem;
@@ -69,7 +70,13 @@ body {
 		>li {
 			>a {
 				font-family: $font-family-menu;
-				color: white;
+				color: $brand-primary;
+				text-transform: uppercase;
+			}
+			&:hover {
+				a {
+					color:$white;
+				}
 			}
 		}
 	}
@@ -220,9 +227,7 @@ body {
 		background: transparent;
 	}
 	.breadcrumb {
-		a {
-			color: #fff;
-		}
+		padding: .5rem 1rem;
 	}
 }
 .breadcrumb-item.active {
@@ -233,7 +238,7 @@ body {
 .list-controls {
 	position:relative;
 	.list-controls-inner {
-		background:$gray;
+		background:$gray-lighter;
 		padding:.5em;
 	}
 }
