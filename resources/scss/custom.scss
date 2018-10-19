@@ -207,7 +207,8 @@ body {
 		h1 {
 			margin-bottom: 0;
 			word-wrap: break-word;
-			color: white;
+			color: $white;
+			margin-top: 2rem;
 		}
 	}
 }
@@ -228,11 +229,17 @@ body {
 	}
 	.breadcrumb {
 		padding: .5rem 1rem;
+		.breadcrumb-item {
+			a {
+				color: white;
+			}
+		}
+		&.active {
+			color: $gray-lighter;
+		}
 	}
 }
-.breadcrumb-item.active {
-	color: $gray-light;
-}
+
 
 
 .list-controls {
@@ -248,22 +255,24 @@ body {
 .single {
 	background-color: $white;
 	padding: 1rem;
+	@include media-breakpoint-up(md) {
+		margin-top: 2.5rem;
+	}
 	.nav-tabs {
         border-bottom:1px solid $gray;
         .nav-item {
-            .nav-link {
-                border:1px solid $gray;
-                color: $gray;
-                &.active,
-                &:hover {
-                    border:1px solid $gray;
-                    color: $white;
-                    background:$gray;
-                }
-            }
-            &+.nav-item {
-                margin-left: 0;
-            }
+		 .nav-link {
+                   border:1px solid $nav-tabs-border-color;
+                   font-family: $font-family-serif;
+                   font-size: 1.5rem;
+		     color: $brand-primary;
+                   &.active,
+                   &:hover {
+                       border:1px solid $nav-tabs-border-color;
+                       color: $gray-darker;
+                       background:$gray-lighter2;
+                   }
+               }
         }
     }
     .crossprice {
@@ -309,7 +318,7 @@ body {
 		        position: relative;
 		        transition: .3s ease-out;
 		        color: $brand-primary;
-		        border: 1px solid $brand-primary;
+
 		        padding: .5rem .75rem;
 		    }
 
