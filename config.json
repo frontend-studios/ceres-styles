@@ -1,51 +1,35 @@
-[	
-	{
-	    "tab"       : "Homepage",
-	    "key"       : "homepage.homepageTopsellerID",
-	    "label"     : "Kategorie ID für die Topseller auf der Startseite",
-	    "type"      : "text",
-	    "default"   : "17"
+[{
+		"tab": "Homepage",
+		"key": "homepage.homepageHeadlineDE",
+		"label": "Text für die große Headline auf der Startseite (DE)",
+		"type": "text",
+		"default": "Bist du ein Rockstar?"
 	},
 	{
-	    "tab"       : "Homepage",
-	    "key"       : "homepage.homepageHeadlineDE",
-	    "label"     : "Text für die große Headline auf der Startseite (DE)",
-	    "type"      : "text",
-	    "default"   : "Bist du ein Rockstar?"
+		"tab": "Homepage",
+		"key": "homepage.homepageHeadlineEN",
+		"label": "Text for your Big Headline on Homepage (EN)",
+		"type": "text",
+		"default": "Are you a Rockstar?"
 	},
 	{
-	    "tab"       : "Homepage",
-	    "key"       : "homepage.homepageHeadlineEN",
-	    "label"     : "Text for your Big Headline on Homepage (EN)",
-	    "type"      : "text",
-	    "default"   : "Are you a Rockstar?"
+		"tab": "Homepage",
+		"key": "homepage.homepageSublineDE",
+		"label": "Text für die zweite Überschrift (DE)",
+		"type": "text",
+		"default": "Dann bist du hier genau richtig!"
 	},
 	{
-	    "tab"       : "Homepage",
-	    "key"       : "homepage.homepageSublineDE",
-	    "label"     : "Text für die zweite Überschrift (DE)",
-	    "type"      : "text",
-	    "default"   : "Dann bist du hier genau richtig!"
+		"tab": "Homepage",
+		"key": "homepage.homepageSublineEN",
+		"label": "Text for second headline (EN)",
+		"type": "text",
+		"default": "You are right then!"
 	},
 	{
-	    "tab"       : "Homepage",
-	    "key"       : "homepage.homepageSublineEN",
-	    "label"     : "Text for second headline (EN)",
-	    "type"      : "text",
-	    "default"   : "You are right then!"
-	},
-	{
-	    "tab"       : "Homepage",
-	    "key"       : "homepage.homepageSectionHeadingDE",
-	    "label"     : "Text für die Produkt-Übersicht (DE)",
-	    "type"      : "text",
-	    "default"   : "Unsere rockigsten Produkte"
-	},
-	{
-	    "tab"       : "Homepage",
-	    "key"       : "homepage.homepageSectionHeadingEN",
-	    "label"     : "Text for product overview (EN)",
-	    "type"      : "text",
-	    "default"   : "Favourite Rockstar Products"
+		"tab": "Homepage",
+		"key": "homepage.homepageCategory1",
+		"label": "Kategorie für die Artikel Darstellung",
+		"type": "category_select"
 	}
 ]

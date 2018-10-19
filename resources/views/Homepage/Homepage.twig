@@ -1,64 +1,125 @@
-{% extends 'Ceres::Homepage.Homepage' %}
-{% set lang         = services.sessionStorage.getLang() %}
-
-{% set homepageTopsellerID  = config("CeresRockstar.homepage.homepageTopsellerID") %}
-{% set homepageHeadlineDE  = config("CeresRockstar.homepage.homepageHeadlineDE") %}
-{% set homepageHeadlineEN  = config("CeresRockstar.homepage.homepageHeadlineEN") %}
-{% set homepageSublineDE  = config("CeresRockstar.homepage.homepageSublineDE") %}
-{% set homepageSublineEN  = config("CeresRockstar.homepage.homepageSublineEN") %}
-{% set homepageSectionHeadingDE  = config("CeresRockstar.homepage.homepageSectionHeadingDE") %}
-{% set homepageSectionHeadingEN  = config("CeresRockstar.homepage.homepageSectionHeadingEN") %}
+{% extends getPartial('page-design') %}
 
 {% import "Ceres::PageDesign.Macros.LayoutContainer" as LayoutContainer %}
 
-{% set paginatedResult      = services.itemLoader.loadForTemplate('Ceres::ItemList.ItemListView', itemLoaderPresets.categoryList, {'categoryId':17, 'page':1, 'items':8, 'facets': facetParams, 'sorting': itemSort}) %}
+{% set showDefaultHomepage = config("Ceres.default.homepage") %}
 
-{% set itemList             = paginatedResult.documents %}
+{% set ownLogo = config("nvoodTheme.header.ownLogo") %}
 
-{% block ThemeHomepage %}
+{% set companyName = trans("Ceres::Template.headerCompanyName") %}
 
-{{ component( "Ceres::ItemList.Components.ItemList") }}
-{{ component( "Ceres::ItemList.Components.CategoryImageCarousel") }}
-{{ component( "Ceres::Basket.Components.AddToBasket" ) }}
+{% block PartialHead %}
+	<meta name="description" content="{{ trans('Ceres::Template.homepageMetaDescription') }}">
+	<meta name="robots" content="{{ config(" ceres.meta.robots_home") }}"="Ceres.meta.robots_home" )=")" }}""="}}""">
 
-<div class="home container-max">
+	<meta property="og:title" content="{{ companyName }}"/>
+	<meta property="og:type" content="article"/>
+	<meta property="og:url" content="{{ services.webstoreConfig.getWebstoreConfig().domainSsl }}"/>
 
-    <div class="row teaser">
-        <div class="col-xs-12 text-xs-center">
-            <i class="fa fa-bolt fa-5x" aria-hidden="true"></i>
-            <h1>
-                {% if services.sessionStorage.getLang() == "de" %}
-                    {{ homepageHeadlineDE }}
-                {% elseif services.sessionStorage.getLang() == "en" %}
-                    {{ homepageHeadlineEN }}
-                {% endif %}
-            </h1>
-            <h3>
-                {% if services.sessionStorage.getLang() == "de" %}
-                    {{ homepageSublineDE }}
-                {% elseif services.sessionStorage.getLang() == "en" %}
-                    {{ homepageSublineEN }}
-                {% endif %}
-            </h3>
-        </div>
-    </div>
-    <div class="row page-content categoriegrid">
-        <div class="col-xs-12 p-y-2">
-            <h1 class="m-b-2">
-                {% if services.sessionStorage.getLang() == "de" %}
-                    {{ homepageSectionHeadingDE }}
-                {% elseif services.sessionStorage.getLang() == "en" %}
-                    {{ homepageSectionHeadingEN }}
-                {% endif %}
-            </h1>
-            <ul class="product-list row grid">
-                {% for item in itemList %}
-                    <li class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                        {% include "Ceres::Category.Item.Partials.CategoryListItem" with { 'item': item } %}
-                    </li>
-                {% endfor %}
-            </ul>
-        </div>
-    </div>
-</div>
+	<meta property="og:image" content="{{ ownLogo }}"/>
+
+	<script type="application/ld+json">
+		{
+			"@context": "http://schema.org",
+			"@type": "WebSite",
+			"url": "{{ services.webstoreConfig.getWebstoreConfig().domainSsl }}",
+			"potentialAction": {
+				"@type": "SearchAction",
+				"target": "{{ services.webstoreConfig.getWebstoreConfig().domainSsl }}/search?query={search_term}",
+				"query-input": "required name=search_term"
+			}
+		}
+	</script>
+
+	<title>{{ companyName }}</title>
+{% endblock %}
+
+{% block PageBody %}
+
+	{% if ceresConfig.homepage.showShopBuilderContent or request.get('isContentBuilder') == 1 %}
+
+		<div class="home container-max">
+			<div class="row">
+				<div class="col">
+					{% for content in container("Ceres::Homepage")if content.plugin == "Plenty" %}
+						{{ content.result|raw }}
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+
+	{% else %}
+		{% block ThemeHomepage %}
+
+			{% set homepageHeadlineDE  = config("CeresRockstar.homepage.homepageHeadlineDE") %}
+			{% set homepageHeadlineEN  = config("CeresRockstar.homepage.homepageHeadlineEN") %}
+			{% set homepageSublineDE  = config("CeresRockstar.homepage.homepageSublineDE") %}
+			{% set homepageSublineEN  = config("CeresRockstar.homepage.homepageSublineEN") %}
+
+			{% set category1 = services.category.get(config("CeresRockstar.homepage.homepageCategory1"), lang) %}
+			{% set categoryList1 = services.itemList.getItemList("category", category1.id, "variation.position_desc", 12).documents %}
+
+			{{ component( "Ceres::ItemList.Components.ItemList") }}
+			{{ component( "Ceres::ItemList.Components.CategoryImageCarousel") }}
+			{{ component( "Ceres::Basket.Components.AddToBasket" ) }}
+
+			<div class="home container-max">
+				<div class="row teaser">
+					<div class="col-xs-12 text-xs-center">
+						<i class="fa fa-bolt fa-5x" aria-hidden="true"></i>
+						<h1>
+							{% if lang == "de" %}
+								{{ homepageHeadlineDE }}
+							{% elseif lang == "en" %}
+								{{ homepageHeadlineEN }}
+							{% endif %}
+						</h1>
+						<h3>
+							{% if lang == "de" %}
+								{{ homepageSublineDE }}
+							{% elseif lang == "en" %}
+								{{ homepageSublineEN }}
+							{% endif %}
+						</h3>
+					</div>
+				</div>
+
+
+				<div class="row page-content">
+					<div class="m-b-1 p-x-2">
+						<h2>{{ category1.details[0].name }}</h2>
+					</div>
+					<div class="col-xs-12 col-lg-12">
+						{% if categoryList1 | length > 4 %}
+							<div class="list-item-carousel owl-carousel owl-theme list-carousel-first">
+								{% for item in categoryList1 %}
+									{% include "Ceres::Category.Item.Partials.CategoryListItem" with {
+										'item' : item,
+										enableCarousel: false,
+										'tags' : item.data.tags,
+										'showOrderProperties' : false,
+										disableLazyLoad: true
+									} %}
+								{% endfor %}
+							</div>
+						{% else %}
+							<ul class="product-list row grid list-carousel-first">
+								{% for item in categoryList1 %}
+									<li class="col-xs-12 col-sm-6 col-md-3">
+										{% include "Ceres::Category.Item.Partials.CategoryListItem" with {
+											'item' : item,
+											enableCarousel: false,
+											'tags' : item.data.tags,
+											'showOrderProperties' : false
+										} %}
+									</li>
+								{% endfor %}
+							</ul>
+						{% endif %}
+					</div>
+				</div>
+
+			</div>
+		{% endblock %}
+	{% endif %}
 {% endblock %}

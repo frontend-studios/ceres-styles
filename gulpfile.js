@@ -165,7 +165,7 @@ function buildSass( outputFile, outputStyle )
             outputStyle     : outputStyle
         },
         prefixOptions: {
-            browsers: ['last 2 versions', '> 5%', 'Firefox ESR']
+            browsers: ['last 4 versions', '> 5%', 'Firefox ESR']
         }
     };
 

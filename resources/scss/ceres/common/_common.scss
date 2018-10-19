@@ -1,35 +1,48 @@
+body .wrapper-main{
+    overflow-x: hidden;
+}
 
-.main{
-
+.hidden {
+    display: none;
 }
 
 .page-content{
     @extend .p-t-1;
-    background-color: white; 
-    color: $gray-dark;
+    background-color: $gray-lightest;
+    &.basket,
+    &.checkout,
+    &.contact,
+    &.myaccount {
+        &:not(.checkout):not(.basket) {
+            background-color: $white;
+        }
+        color: $gray-darker;
+        margin-top: 30px;
+        padding-bottom: 30px;
+    }
 }
-
-hr {
-    border-top:1px solid $gray-lighter;
-}
-
 .container-max{
     @extend .container-fluid;
     max-width: 1200px;
     z-index: auto;
+
+    &.login {
+        margin-top: 2rem;
+    }
 }
 
-.modal {
-    color: $gray-darker;
+.page-not-found {
+    i.fa-search {
+        font-size: 10em;
+    }
+    .default-not-found {
+        background-color: rgb(247, 247, 249);
+    }
+    .not-found-text {
+        font-size: 115px;
+        text-shadow: 4px 3px 0 #F7F7F9, 9px 8px 0 rgba(218, 218, 227, 0.50);
+    }
 }
-
-
-
-// .shariff .orientation-horizontal li{
-//     min-width: 0;
-//     max-width: none;
-// }
-
 
 .rating{
     line-height: 1;
@@ -47,11 +60,14 @@ hr {
     }
 }
 
-
-
-
 dt {
     font-weight: 400;
+}
+
+a:hover,
+a:focus,
+a:active {
+    text-decoration: none;
 }
 
 .border-left {
@@ -59,3 +75,74 @@ dt {
 }
 
 
+.carousel-control-next, .carousel-control-prev {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15%;
+    color: #fff;
+    text-align: center;
+    opacity: .5;
+}
+.carousel-control-prev {
+    left: 0;
+}
+.carousel-control-next {
+    right: 0;
+}
+.carousel-control-next-icon, .carousel-control-prev-icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: transparent no-repeat center center;
+    background-size: 100% 100%;
+}
+
+.pagination > li {
+    cursor: pointer;
+}
+
+@include media-breakpoint-up(xl){
+    .page-content{
+        padding-left: 0;
+        padding-right: 0;
+        &.basket,
+        &.checkout,
+        &.contact,
+        &.myaccount {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
+}
+
+.float-right {
+    float: right !important;
+}
+
+.bg-white {
+    background-color: $white !important;
+}
+
+.text-gray-dark {
+    color: $gray-dark;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.d-table {
+    display: table;
+}
+
+.border-radius-0 {
+    border-radius: 0;
+}
+
+.position-fixed {
+    position: fixed !important;
+}

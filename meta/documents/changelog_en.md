@@ -1,22 +1,21 @@
-# Changelog for Ceres
+# Release Notes for Colorful Ceres
 
 ## v2.0.0 (2017-11-29)
 
 ### Changes
 - Compatibility with Ceres and IO greater than 2.0.0
 
-## v1.0.1 Beta-Status (2017-03-20)
+## v1.0.1 (2017-04-19)
 
 ### Changes
+- Custom Topseller-ID, Slider-Images
+- Custom Text for popular products on homepage
+- Bugfixes
 
-- Adjustments Homepage (userfriendly)
-- Adjustments Font-Family
-- Other design adjustments
-
-## v0.9.9 Beta-Status (2017-02-22)
+## v1.0.0 Beta-Status (2017-02-28)
 
 ### Features
 
 - based on basic Ceres Plugin
 - Completley Updatable
-- Redesigned Ceres in Rockstar-Style
+- Redesigned Ceres in Colorful-Style

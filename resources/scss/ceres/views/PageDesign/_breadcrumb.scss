@@ -1,3 +1,5 @@
+//navigation scss
+
 @include media-breakpoint-up(md){
 	.wrapper-main {
 		& > nav.container-max {
@@ -9,29 +11,30 @@
 		    width: 100%;
 		    max-width: 100%;
 		    background:$breadcrumb-bg;
-		    top:96px;
+		}
+		.breadcrumbs {
+			background: $breadcrumb-bg;
+		    z-index: 1000;
+
+			&.unfixed {
+				z-index: -1;
+			}
 		}
 		.breadcrumb{
-			margin-bottom: 0;
 			max-width: 1200px;
 		    margin: 0 auto;
 		    background: transparent;
-		    padding: .5rem 0;
-
-		    a {
-		    	color:$white;
-		    	&:hover {
-		    		color: $brand-primary;
-		    	}
-		    }
+		    padding: .5rem 15px;
 		}
 	}
 	
 }
 @include media-breakpoint-up(lg){
 	.wrapper-main {
-		& > nav.container-max {
-		    top:88px;
+		.breadcrumb{
+			@include media-breakpoint-up(xl){
+				padding: .5rem 0;
+			}
 		}
 	}
 }

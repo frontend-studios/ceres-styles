@@ -6,13 +6,17 @@
 // Variables
 // --------------------------------------------------
 
+// Root directory
+
+$root-directory: '..' !default;
+
 // Flags settings
-$flag-icon-css-path: '../images/flags' !default;
+$flag-icon-css-path: '#{$root-directory}/images/flags' !default;
 $flag-icon-rect-path: '/4x3' !default;
 $flag-icon-square-path: '/1x1' !default;
 
 //font awesome
-// $fa-font-path: "../documents/fonts" !default;
+$fa-font-path: "#{$root-directory}/documents/fonts" !default;
 
 // Spacing
 //
@@ -104,12 +108,16 @@ $footer-color:          $white;
 $footer-features-bg:    #101010;
 $footer-features-color: $white;
 
-
-$availability_1:        $brand-success;
-$availability_2:        $brand-success;
-$availability_3:        $brand-warning;
-$availability_4:        $brand-warning;
-$availability_5:        $brand-danger;
+$availability_1:        $brand-success !default;
+$availability_2:        $brand-success !default;
+$availability_3:        $brand-warning !default;
+$availability_4:        $brand-warning !default;
+$availability_5:        $brand-danger !default;
+$availability_6:        $brand-danger !default;
+$availability_7:        $brand-danger !default;
+$availability_8:        $brand-danger !default;
+$availability_9:        $gray-dark !default;
+$availability_10:       $gray-dark !default;
 
 
 //== Scaffolding
@@ -117,23 +125,26 @@ $availability_5:        $brand-danger;
 // ## Settings for some of the most global styles.
 
 //** Background color for `<body>`.
-$body-bg:               #101010;
-$body-color:            white;
+$body-bg:               $gray-dark;
+$body-color:            #693a2d;
 //** Global text color on `<body>`.
-$text-color:            white;
+$text-color:            #693a2d;
 
 //** Global textual link color.
 $link-color:            $brand-primary;
 //** Link hover color set via `darken()` function.
 $link-hover-color:      darken($link-color, 15%);
 
+$box-shadow:            0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+
 
 // Body
 //
 // Settings for the `<body>` element.
 
-// font-family: 'Fjalla One', sans-serif;
-// font-family: 'Playfair Display', serif;
+//== Typography
+//
+//## Font, line-height, and color for body text, headings, and more.
 @import url('https://fonts.googleapis.com/css?family=Bree+Serif');
 //== Typography
 //
@@ -143,8 +154,10 @@ $font-family-helvetica: $font-family-sans-serif;
 $font-family-serif:     'Playfair Display', Georgia, 'Times New Roman', Times, serif;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 $font-family-monospace: Menlo, Monaco, Consolas, "Courier New", monospace;
-$font-family-base:      $font-family-sans-serif;
+$font-family-base:   $font-family-sans-serif;
 $font-family-heading:   'Bree Serif', sans-serif;
+
+$font-family-menu:   'Bree Serif', sans-serif;
 
 // Pixel value used to responsively scale all typography. Applied to the `<html>` element.
 $font-size-root: 14px !default;
@@ -227,7 +240,7 @@ $caret-width-lg:         $caret-width !default;
 
 
 //Ceres 4 variables
-$aside-columns-width: 25em !default;
+$aside-columns-width: 30em !default;
 
 
 // Tables
@@ -454,23 +467,23 @@ $zindex-navbar-sticky:     $zIndex-3 !default;
 $zindex-modal-bg:          $zIndex-7 !default;
 $zindex-modal:             $zIndex-8 !default;
 
-
 // Navbar
-$navbar-background-color:           #101010;
+$navbar-background-color:           $gray-dark;
 $navbar-border-radius:              0;
 $navbar-padding-x:                  $spacer;
 $navbar-padding-y:                  ($spacer / 2);
 $navbar-brand-padding-y:            .25rem;
 
-$navbar-dark-color:                 $gray;
-$navbar-dark-hover-color:           white;
-$navbar-dark-active-color:          white;
-$navbar-dark-disabled-color:        $gray-light;
+$navbar-dark-color:                 $gray !default;
+$navbar-dark-hover-color:           white !default;
+$navbar-dark-active-color:          white !default;
+$navbar-dark-disabled-color:        $gray-light !default;
 
-$navbar-light-color:                rgba(0,0,0,.3);
-$navbar-light-hover-color:          rgba(0,0,0,.6);
-$navbar-light-active-color:         rgba(0,0,0,.8);
-$navbar-light-disabled-color:       rgba(0,0,0,.15);
+$navbar-light-color:                rgba(0,0,0,.3) !default;
+$navbar-light-hover-color:          rgba(0,0,0,.6) !default;
+$navbar-light-active-color:         rgba(0,0,0,.8) !default;
+$navbar-light-disabled-color:       rgba(0,0,0,.15) !default;
+
 
 // Navs
 
@@ -747,7 +760,7 @@ $breadcrumb-padding-y:          .5rem !default;
 $breadcrumb-padding-x:          1rem !default;
 $breadcrumb-item-padding:       .5rem !default;
 
-$breadcrumb-bg:                 $navbar-background-color;
+$breadcrumb-bg:                 darken($gray-lighter2, 2%) !default;
 $breadcrumb-divider-color:      $gray-light !default;
 $breadcrumb-active-color:       $gray-light !default;
 $breadcrumb-divider:            "/" !default;
@@ -806,3 +819,8 @@ $pre-bg:                      #f7f7f9 !default;
 $pre-color:                   $gray-dark !default;
 $pre-border-color:            #ccc !default;
 $pre-scrollable-max-height:   340px !default;
+
+
+// Category
+
+$category-text-color:         #fff !default;
