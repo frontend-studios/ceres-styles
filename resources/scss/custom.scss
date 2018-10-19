@@ -76,6 +76,12 @@ h1, h2, h3, h4, h5, h6 {
 			&:first-child {
 				border-left: 1px solid transparent;
 			}
+			&:hover {
+				 a {
+				transition: all 0s;
+ 	   			color: white;
+				}
+			}
 		}
 	}
 }
@@ -206,6 +212,7 @@ h1, h2, h3, h4, h5, h6 {
 			margin-bottom: 0;
 			word-wrap: break-word;
 			color: white;
+			margin-top: 2rem;
 		}
 	}
 }
@@ -215,6 +222,10 @@ h1, h2, h3, h4, h5, h6 {
 			background: $top-bar-bg;
 		}
 	}
+}
+
+.categoriegrid {
+    padding: 1rem;
 }
 
 .wrapper-main {
@@ -233,7 +244,6 @@ h1, h2, h3, h4, h5, h6 {
 .breadcrumb-item.active {
 	color: $gray-light;
 }
-
 
 .list-controls {
 	position:relative;
@@ -270,5 +280,5 @@ h1, h2, h3, h4, h5, h6 {
 //Single end
 
 .cmp-product-thumb {
-	border: 1px solid $gray-light;
+	border: 1px solid $top-bar-bg;
 }
