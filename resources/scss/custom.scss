@@ -19,7 +19,7 @@ body {
 .home {
 	.carousel-control {
 		@include media-breakpoint-up(md) {
-			top: 10%;
+			top: 20%;
 			bottom: 30% !important;
 		}
 	}
@@ -36,9 +36,12 @@ body {
 			background-color: $top-bar-bg;
 		}
 		.navbar {
+			background-color: transparent;
+			border-bottom: none;
 			.container-max {
-				font-family: $font-family-heading;
-				background: $brand-primary;
+				font-family: $font-family-menu;
+				color: $brand-primary;
+				background: $white;
 			}
 		}
 		.controls-list {
@@ -64,7 +67,7 @@ body {
 	ul.mainmenu {
 		>li {
 			>a {
-				font-family: $font-family-heading;
+				font-family: $font-family-menu;
 				color: white;
 			}
 		}
@@ -269,5 +272,30 @@ body {
 //Single end
 
 .cmp-product-thumb {
-	border: 1px solid $gray-light;
+	border: 1px solid $brand-primary;
+	.price-view-port {
+    		flex: 0 0 0;
+		padding-right: .5rem;
+	}
+	.add-to-basket-lg-container {
+		bottom: .8rem;
+		transition: all .3s ease;
+		opacity: 0;
+		border-width: unset;
+		top: unset;
+		left: auto;
+		right: .8rem;
+		padding: .5rem .75rem;
+		border-style: none;
+		transform: unset;
+		&:hover {
+			>i {
+				color: $brand-primary;
+				border: 1px solid $brand-primary;
+				padding: .5rem .75rem;
+				border-radius: 3px;
+			}
+		opacity: 1 !important;
+		}
+	}
 }
