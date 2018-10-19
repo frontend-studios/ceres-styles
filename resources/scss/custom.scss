@@ -288,14 +288,19 @@ body {
 		padding: .5rem .75rem;
 		border-style: none;
 		transform: unset;
-		&:hover {
-			>i {
-				color: $brand-primary;
-				border: 1px solid $brand-primary;
-				padding: .5rem .75rem;
-				border-radius: 3px;
-			}
-		opacity: 1 !important;
+	}
+	&:hover {
+		>i {
+			color: $brand-primary;
+			border: 1px solid $brand-primary;
+			padding: .5rem .75rem;
+			border-radius: 3px;
 		}
+	opacity: 1 !important;
+	}
+	> i {
+		right: 0;
+		top: unset;
+		bottom: 0;
 	}
 }
