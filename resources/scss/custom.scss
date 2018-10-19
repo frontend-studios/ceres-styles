@@ -1,12 +1,14 @@
 //Global
 body {
-	background-color: transparent;
+	background-color: $top-bar-bg;
 	font-family: $font-family-sans-serif;
 	> #vue-app,
 	> #vue-error {
-		background-color: transparent;
+		background-color: $top-bar-bg;
 	}
 }
+
+
 .page-content {
     background-color: $white;
 }
@@ -17,7 +19,7 @@ body {
 
 //Homepage Start
 .home {
-	teaser {
+	.teaser {
         margin-top: 13em;
         color:$brand-primary;
 	       h1 {
@@ -47,27 +49,12 @@ body {
 //Homepage End
 
 //Header Start
-#page-header {
-	background-color: transparent !important;
-	&.top-bar {
-		.container-max {
-			background-color: $top-bar-bg;
-		}
-		.navbar {
-			.container-max {
-				font-family: $font-family-menu;
-				background: $brand-primary;
-			}
-		}
-	}
-}
-
 #mainNavbarCollapsable {
 	ul.mainmenu {
 		>li {
 			>a {
 				font-family: $font-family-menu;
-				color: white;
+				color: $brand-primary;
 			}
 		}
 	}

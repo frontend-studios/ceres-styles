@@ -31,5 +31,9 @@ class CeresRockstarServiceProvider extends ServiceProvider
             return false;
         });
 
+        $eventDispatcher->listen('IO.init.templates', function (Partial $partial) {
+            $partial->set('page-design', 'CeresRockstar::PageDesign.PageDesign');
+        }, self::EVENT_LISTENER_PRIORITY);
+
     }
 }
