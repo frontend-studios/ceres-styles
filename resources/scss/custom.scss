@@ -288,19 +288,32 @@ body {
 		padding: .5rem .75rem;
 		border-style: none;
 		transform: unset;
+
+		> i {
+			right: 0;
+			top: unset;
+			bottom: 0;
+		}
 	}
 	&:hover {
+		.add-to-basket-lg-container {
+		    opacity: 1;
+		    i {
+		        right: 0;
+		        top: 0;
+		        position: absolute;
+		        transition: .3s ease-out;
+		        color: blue;
+		        border: 1px solid blue;
+		        padding: .5rem .75rem;
+		    }
+
+		}
 		>i {
 			color: $brand-primary;
 			border: 1px solid $brand-primary;
 			padding: .5rem .75rem;
 			border-radius: 3px;
 		}
-	opacity: 1 !important;
-	}
-	> i {
-		right: 0;
-		top: unset;
-		bottom: 0;
 	}
 }
