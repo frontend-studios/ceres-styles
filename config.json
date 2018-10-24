@@ -1,77 +1,101 @@
-[{
-		"tab": "Global",
-		"key": "global.globalBackgroundImage",
-		"label": "URL to global background image",
-		"type": "text",
-		"default": "https://cdn02.plentymarkets.com/nfeas6ecjm03/frontend/pattern.png"
-	},
-	{
-		"tab": "Homepage",
-		"key": "homepage.homepageImageFirstSlide",
-		"label": "Bildpfad für den ersten Slide",
-		"type": "text",
-		"default": "https://cdn02.plentymarkets.com/nfeas6ecjm03/frontend/k1.jpeg"
-	},
-	{
-		"tab": "Homepage",
-		"key": "homepage.homepageProductLinkFirstSlide",
-		"label": "Produkt-URL für den ersten Slide",
-		"type": "text",
-		"default": ""
-	},
-	{
-		"tab": "Homepage",
-		"key": "homepage.homepageProductNameFirstSlide",
-		"label": "SEO-Text für den ersten Slide",
-		"type": "text",
-		"default": ""
-	},
-	{
-		"tab": "Homepage",
-		"key": "homepage.homepageImageSecondSlide",
-		"label": "Bildpfad für den zweiten Slide",
-		"type": "text",
-		"default": "https://cdn02.plentymarkets.com/nfeas6ecjm03/frontend/k2.jpeg"
-	},
-	{
-		"tab": "Homepage",
-		"key": "homepage.homepageProductLinkSecondSlide",
-		"label": "Produkt-URL für den zweiten Slide",
-		"type": "text",
-		"default": ""
-	},
-	{
-		"tab": "Homepage",
-		"key": "homepage.homepageProductNameSecondSlide",
-		"label": "SEO-Text für den zweiten Slide",
-		"type": "text",
-		"default": ""
-	},
-	{
-		"tab": "Homepage",
-		"key": "homepage.homepageImageThirdSlide",
-		"label": "Bildpfad für den dritten Slide",
-		"type": "text",
-		"default": "https://cdn02.plentymarkets.com/nfeas6ecjm03/frontend/k2.jpeg"
-	},
-	{
-		"tab": "Homepage",
-		"key": "homepage.homepageProductLinkThirdSlide",
-		"label": "Produkt-URL für den dritten Slide",
-		"type": "text",
-		"default": ""
-	},
-	{
-		"tab": "Homepage",
-		"key": "homepage.homepageProductNameThirdSlide",
-		"label": "SEO-Text für den dritten Slide",
-		"type": "text",
-		"default": ""
-	},
-	{
-		"tab": "Homepage",
-		"key": "homepage.homepageCategory1",
-		"label": "Kategorie für die Artikel Darstellung",
-		"type": "category_select"
-	}
-]
+{
+    "formatVersion": 1,
+    "menu": {
+        "Config.GlobalTab": {
+            "label": "Config.GlobalTab",
+            "formFields": {
+                "global.globalBackgroundImage": {
+                    "type": "inputText",
+                    "required": false,
+                    "label": "Config.globalGlobalBackgroundImageLabel",
+                    "options": {
+                        "defaultValue": "https://cdn02.plentymarkets.com/nfeas6ecjm03/frontend/pattern.png"
+                    }
+                }
+            }
+        },
+        "Config.HomepageTab": {
+            "label": "Config.HomepageTab",
+            "formFields": {
+                "homepage.homepageImageFirstSlide": {
+                    "type": "inputText",
+                    "required": false,
+                    "label": "Config.homepageHomepageImageFirstSlideLabel",
+                    "options": {
+                        "defaultValue": "https://cdn02.plentymarkets.com/nfeas6ecjm03/frontend/k1.jpeg"
+                    }
+                },
+                "homepage.homepageProductLinkFirstSlide": {
+                    "type": "inputText",
+                    "required": false,
+                    "label": "Config.homepageHomepageProductLinkFirstSlideLabel",
+                    "options": {
+                        "defaultValue": ""
+                    }
+                },
+                "homepage.homepageProductNameFirstSlide": {
+                    "type": "inputText",
+                    "required": false,
+                    "label": "Config.homepageHomepageProductNameFirstSlideLabel",
+                    "options": {
+                        "defaultValue": ""
+                    }
+                },
+                "homepage.homepageImageSecondSlide": {
+                    "type": "inputText",
+                    "required": false,
+                    "label": "Config.homepageHomepageImageSecondSlideLabel",
+                    "options": {
+                        "defaultValue": "https://cdn02.plentymarkets.com/nfeas6ecjm03/frontend/k2.jpeg"
+                    }
+                },
+                "homepage.homepageProductLinkSecondSlide": {
+                    "type": "inputText",
+                    "required": false,
+                    "label": "Config.homepageHomepageProductLinkSecondSlideLabel",
+                    "options": {
+                        "defaultValue": ""
+                    }
+                },
+                "homepage.homepageProductNameSecondSlide": {
+                    "type": "inputText",
+                    "required": false,
+                    "label": "Config.homepageHomepageProductNameSecondSlideLabel",
+                    "options": {
+                        "defaultValue": ""
+                    }
+                },
+                "homepage.homepageImageThirdSlide": {
+                    "type": "inputText",
+                    "required": false,
+                    "label": "Config.homepageHomepageImageThirdSlideLabel",
+                    "options": {
+                        "defaultValue": "https://cdn02.plentymarkets.com/nfeas6ecjm03/frontend/k2.jpeg"
+                    }
+                },
+                "homepage.homepageProductLinkThirdSlide": {
+                    "type": "inputText",
+                    "required": false,
+                    "label": "Config.homepageHomepageProductLinkThirdSlideLabel",
+                    "options": {
+                        "defaultValue": ""
+                    }
+                },
+                "homepage.homepageProductNameThirdSlide": {
+                    "type": "inputText",
+                    "required": false,
+                    "label": "Config.homepageHomepageProductNameThirdSlideLabel",
+                    "options": {
+                        "defaultValue": ""
+                    }
+                },
+                "homepage.homepageCategory1": {
+                    "type": "categoryPicker",
+                    "required": false,
+                    "label": "Config.homepageHomepageCategory1Label",
+                    "options": {}
+                }
+            }
+        }
+    }
+}

@@ -1,4 +1,9 @@
-# Release Notes for Colorful Ceres
+# Release Notes for Kids Ceres
+
+## v2.0.0 (2017-10-24)
+
+### Changes
+- Compatibility with Ceres and IO greater than 2.16.0
 
 ## v2.0.0 (2017-11-29)
 
@@ -18,4 +23,4 @@
 
 - based on basic Ceres Plugin
 - Completley Updatable
-- Redesigned Ceres in Colorful-Style
+- Redesigned Ceres in Kids-Style
