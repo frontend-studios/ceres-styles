@@ -42,8 +42,8 @@ h1, h2, h3, h4, h5, h6 {
       }
 	.carousel-control {
 		@include media-breakpoint-up(md) {
-			top: 10%;
-			bottom: 30% !important;
+			top: 20%;
+			bottom: 40% !important;
 		}
 	}
 }

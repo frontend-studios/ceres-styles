@@ -1,35 +1,48 @@
-[{
-		"tab": "Homepage",
-		"key": "homepage.homepageHeadlineDE",
-		"label": "Text für die große Headline auf der Startseite (DE)",
-		"type": "text",
-		"default": "Bist du ein Rockstar?"
-	},
-	{
-		"tab": "Homepage",
-		"key": "homepage.homepageHeadlineEN",
-		"label": "Text for your Big Headline on Homepage (EN)",
-		"type": "text",
-		"default": "Are you a Rockstar?"
-	},
-	{
-		"tab": "Homepage",
-		"key": "homepage.homepageSublineDE",
-		"label": "Text für die zweite Überschrift (DE)",
-		"type": "text",
-		"default": "Dann bist du hier genau richtig!"
-	},
-	{
-		"tab": "Homepage",
-		"key": "homepage.homepageSublineEN",
-		"label": "Text for second headline (EN)",
-		"type": "text",
-		"default": "You are right then!"
-	},
-	{
-		"tab": "Homepage",
-		"key": "homepage.homepageCategory1",
-		"label": "Kategorie für die Artikel Darstellung",
-		"type": "category_select"
-	}
-]
+{
+    "formatVersion": 1,
+    "menu": {
+        "Config.HomepageTab": {
+            "label": "Config.HomepageTab",
+            "formFields": {
+                "homepage.homepageHeadlineDE": {
+                    "type": "inputText",
+                    "required": false,
+                    "label": "Config.homepageHomepageHeadlineDELabel",
+                    "options": {
+                        "defaultValue": "Bist du ein Rockstar?"
+                    }
+                },
+                "homepage.homepageHeadlineEN": {
+                    "type": "inputText",
+                    "required": false,
+                    "label": "Config.homepageHomepageHeadlineENLabel",
+                    "options": {
+                        "defaultValue": "Are you a Rockstar?"
+                    }
+                },
+                "homepage.homepageSublineDE": {
+                    "type": "inputText",
+                    "required": false,
+                    "label": "Config.homepageHomepageSublineDELabel",
+                    "options": {
+                        "defaultValue": "Dann bist du hier genau richtig!"
+                    }
+                },
+                "homepage.homepageSublineEN": {
+                    "type": "inputText",
+                    "required": false,
+                    "label": "Config.homepageHomepageSublineENLabel",
+                    "options": {
+                        "defaultValue": "You are right then!"
+                    }
+                },
+                "homepage.homepageCategory1": {
+                    "type": "categoryPicker",
+                    "required": false,
+                    "label": "Config.homepageHomepageCategory1Label",
+                    "options": {}
+                }
+            }
+        }
+    }
+}

@@ -1,11 +1,11 @@
-# Ceres Colorful – Das Ceres Plugin in Colorful-Style
+# Ceres Rockstar – Das Ceres Plugin im Rockstar-Style
 
 <div class="container-toc"></div>
 
-## Colorful Theme aktivieren
+## Rockstar Theme aktivieren
 
-Im plentymarkets Backend in der Plugin-Liste das Colorful Plugin in Productive bereitstellen und den Mandant zuweisen.
-Anschließend im Tab "Content" im Bereich "CeresRockstar" den Haken bei "Template: Style" setzen, speichern, fertig!
+Im plentymarkets Backend in der Plugin-Liste das Rockstar Plugin in Productive bereitstellen und den Mandant zuweisen.
+Anschließend im Tab "Content" im Bereich "CeresRockstar" den Haken bei "Template: Override style" setzen, speichern, fertig!
 
 <div class="alert alert-info" role="alert">
     Sie benötigen das Ceres und IO Plugin als Basis

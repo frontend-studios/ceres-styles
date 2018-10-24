@@ -1,4 +1,9 @@
-# Release Notes für Colorful Theme
+# Release Notes für Rockstar Theme
+
+## v2.16.0 (2017-10-24)
+
+### Änderungen
+- Kompatibilität mit Ceres und IO ab Version 2.16.0
 
 ## v2.0.0 (2017-11-29)
 
