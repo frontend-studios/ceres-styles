@@ -56,6 +56,9 @@ h1, h2, h3, h4, h5, h6 {
 	.navbar {
 		border-bottom: none;
 		background-color: $top-bar-bg;
+		.navbar-toggler {
+			color: $white;
+		}
 	}
 }
 
@@ -258,6 +261,9 @@ h1, h2, h3, h4, h5, h6 {
 .single {
 	background-color: $white;
 	padding: 1rem;
+	@include media-breakpoint-up(md) {
+		margin-top: 2rem;
+	}
 	.nav-tabs {
         border-bottom:1px solid $gray;
         .nav-item {
