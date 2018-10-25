@@ -22,7 +22,6 @@
                     "required": false,
                     "label": "Config.homepageHomepageImageFirstSlideLabel",
                     "options": {
-	                 "name"                      : "Config.homepageHomepageImageFirstSlideLabel",
                         "defaultValue": "https://cdn02.plentymarkets.com/nfeas6ecjm03/frontend/k1.jpeg"
                     }
                 },
