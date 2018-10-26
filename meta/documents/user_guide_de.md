@@ -5,7 +5,7 @@
 ## Dark Theme aktivieren
 
 Im plentymarkets Backend in der Plugin-Liste das Dark Plugin in Productive bereitstellen und den Mandant zuweisen.
-Anschließend im Tab "Content" im Bereich "CeresDark" den Haken bei "Template: Style" setzen, speichern, fertig!
+Anschließend im Tab "Content" im Bereich "CeresDark" den Haken bei "Template: Override Style" setzen, speichern, fertig!
 
 <div class="alert alert-info" role="alert">
     Sie benötigen das Ceres und IO Plugin als Basis
