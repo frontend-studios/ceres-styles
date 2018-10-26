@@ -1,7 +1,7 @@
 .list-controls {
   position:relative;
   .list-controls-inner {
-    background:$gray-lightest;
+    background:darken($gray-lighter2, 2%);
     padding:.5em;
   }
   .list-sort,
@@ -26,10 +26,15 @@
   }
   .filter-toggle {
 
+    text-decoration: none;
+
+    & i {
+      transition: all .3s ease;
+    }
+
     &[aria-expanded="true"]{
       i {
         transform: rotate(-90deg);
-        transition: all .2s ease;
       }
     }
   }
@@ -91,7 +96,7 @@
           .filter-badge {
             position: absolute;
             display: inline-block;
-            font-size: .65rem;
+            font-size: .85rem;
             background: $gray-lighter2;
             padding: .1rem 0;
             color: $gray;

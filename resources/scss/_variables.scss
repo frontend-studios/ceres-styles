@@ -70,7 +70,6 @@ $grid-gutter-width: 30px !default;
 //
 //## Gray and brand colors for use across Bootstrap.
 
-
 $gray-darker:           #282d2f !default;
 $gray-dark:             #4D4F4D !default;
 $gray:                  #7a7f7f !default;
@@ -111,6 +110,11 @@ $availability_2:        $brand-success !default;
 $availability_3:        $brand-warning !default;
 $availability_4:        $brand-warning !default;
 $availability_5:        $brand-danger !default;
+$availability_6:        $brand-danger !default;
+$availability_7:        $brand-danger !default;
+$availability_8:        $brand-danger !default;
+$availability_9:        $gray-dark !default;
+$availability_10:       $gray-dark !default;
 
 
 //== Scaffolding
@@ -128,7 +132,7 @@ $link-color:            $brand-primary !default;
 //** Link hover color set via `darken()` function.
 $link-hover-color:      darken($link-color, 15%) !default;
 
-
+$box-shadow:            0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
 // Body
 //
 // Settings for the `<body>` element.
@@ -136,6 +140,7 @@ $link-hover-color:      darken($link-color, 15%) !default;
 
 //== Typography
 //
+//## Font, line-height, and color for body text, headings, and more.
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display');
 
 //## Font, line-height, and color for body text, headings, and more.
@@ -145,7 +150,8 @@ $font-family-serif:     Georgia, "Times New Roman", Times, serif !default;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 $font-family-monospace: Menlo, Monaco, Consolas, "Courier New", monospace !default;
 $font-family-base:      $font-family-sans-serif !default;
-$font-family-heading:   'Playfair Display', serif;
+$font-family-heading: $font-family-sans-serif, serif;
+$font-family-menu: 'Playfair Display', serif;
 
 // Pixel value used to responsively scale all typography. Applied to the `<html>` element.
 $font-size-root: 14px !default;
@@ -456,7 +462,7 @@ $zindex-modal-bg:          $zIndex-7 !default;
 $zindex-modal:             $zIndex-8 !default;
 
 // Navbar
-$navbar-background-color:           $gray-lightest !default;
+$navbar-background-color:           $brand-primary !default;
 $navbar-border-radius:              0 !default;
 $navbar-padding-x:                  $spacer !default;
 $navbar-padding-y:                  ($spacer / 2) !default;
@@ -807,3 +813,6 @@ $pre-bg:                      #f7f7f9 !default;
 $pre-color:                   $gray-dark !default;
 $pre-border-color:            #ccc !default;
 $pre-scrollable-max-height:   340px !default;
+
+//Category
+$category-text-color:         #fff !default;

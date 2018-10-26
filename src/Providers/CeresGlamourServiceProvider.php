@@ -20,7 +20,7 @@ class CeresGlamourServiceProvider extends ServiceProvider
      */
 
     public function register() {
-         
+
     }
 
     public function boot(Twig $twig, Dispatcher $eventDispatcher, ConfigRepository $config)
@@ -31,5 +31,10 @@ class CeresGlamourServiceProvider extends ServiceProvider
             $container->setTemplate("CeresGlamour::Homepage.Homepage");
             return false;
         });
+
+        $eventDispatcher->listen('IO.init.templates', function (Partial $partial) {
+            $partial->set('page-design', 'CeresGlamour::PageDesign.PageDesign');            
+        }, self::EVENT_LISTENER_PRIORITY);
+
     }
 }
