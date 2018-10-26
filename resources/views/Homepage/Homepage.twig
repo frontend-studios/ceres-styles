@@ -7,7 +7,7 @@
 {% set companyName = trans("Ceres::Template.headerCompanyName") %}
 
 {% block PartialHead %}
-	<meta name="description" content="{{ trans('Ceres::Template.homepageMetaDescription') }}">	
+	<meta name="description" content="{{ trans('Ceres::Template.homepageMetaDescription') }}">
 	 <meta name="robots" content="{% if forceNoIndex %}NOINDEX{% else %}{{ config("Ceres.meta.robots_home") }}{% endif %}">
 	<meta property="og:title" content="{{ companyName }}"/>
 	<meta property="og:type" content="article"/>
@@ -66,11 +66,7 @@
 					<div class="row teaser">
 						<div class="col-xs-12 text-xs-center">
 							<i class="fa {{ homepageIcon }} fa-5x" aria-hidden="true"></i>
-							{% if lang == "de" %}
-								<h1>{{ homepageHeadlineDE }}</h1>
-							{% else lang == "en" %}
-								<h3>{{ homepageSublineDE }}</h3>
-							{% endif %}
+							
 						</div>
 					</div>
 
