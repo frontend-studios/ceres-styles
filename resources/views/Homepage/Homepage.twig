@@ -3,53 +3,45 @@
 {% import "Ceres::PageDesign.Macros.LayoutContainer" as LayoutContainer %}
 
 {% set showDefaultHomepage = config("Ceres.default.homepage") %}
-
-{% set ownLogo = config("nvoodTheme.header.ownLogo") %}
-
-{% set companyName = trans("Ceres::Template.headerCompanyName") %}
+{% set companyLogo  = config("Ceres.header.company_logo") %}
+{% set companyName  = trans("Ceres::Template.headerCompanyName") %}
 
 {% block PartialHead %}
-	<meta name="description" content="{{ trans('Ceres::Template.homepageMetaDescription') }}">
-	<meta name="robots" content="{{ config(" ceres.meta.robots_home") }}"="Ceres.meta.robots_home") }}"">
+    <meta name="description" content="{{ trans('Ceres::Template.homepageMetaDescription') }}">
+    <meta name="robots" content="{% if forceNoIndex %}NOINDEX{% else %}{{ config("Ceres.meta.robots_home") }}{% endif %}">
+    <meta property="og:title" content="{{ companyName }}"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content="{{ services.webstoreConfig.getWebstoreConfig().domainSsl }}"/>
+    <meta property="og:image"
+          content="{% if ('http' in companyLogo) or ('layout/' in companyLogo) %}{{ companyLogo }}{% else %}{{ plugin_path('Ceres') }}/{{ companyLogo }}{% endif %}"/>
 
-	<meta property="og:title" content="{{ companyName }}"/>
-	<meta property="og:type" content="article"/>
-	<meta property="og:url" content="{{ services.webstoreConfig.getWebstoreConfig().domainSsl }}"/>
+    <script type="application/ld+json">
+        {"@context": "http://schema.org","@type": "WebSite","url": "{{ services.webstoreConfig.getWebstoreConfig().domainSsl }}","potentialAction":{"@type": "SearchAction","target": "{{ services.webstoreConfig.getWebstoreConfig().domainSsl }}/search?query={search_term}","query-input": "required name=search_term"}}
+    </script>
 
-	<meta property="og:image" content="{{ ownLogo }}"/>
-
-	<script type="application/ld+json">
-		{
-			"@context": "http://schema.org",
-			"@type": "WebSite",
-			"url": "{{ services.webstoreConfig.getWebstoreConfig().domainSsl }}",
-			"potentialAction": {
-				"@type": "SearchAction",
-				"target": "{{ services.webstoreConfig.getWebstoreConfig().domainSsl }}/search?query={search_term}",
-				"query-input": "required name=search_term"
-			}
-		}
-	</script>
-
-	<title>{{ companyName }}</title>
+    <title>{{ companyName }}</title>
 {% endblock %}
 
 {% block PageBody %}
 
-	{% if ceresConfig.homepage.showShopBuilderContent or request.get('isContentBuilder') == 1 %}
+    {% if ceresConfig.homepage.showShopBuilderContent or request.get('isContentBuilder') == 1 %}
 
-		<div class="home container-max">
-			<div class="row">
-				<div class="col">
-					{% for content in container("Ceres::Homepage")if content.plugin == "Plenty" %}
-						{{ content.result|raw }}
-					{% endfor %}
-				</div>
-			</div>
-		</div>
+        <div class="home container-max">
+            <div class="row">
+                <div class="col clearfix">
+                    {% for content in container("Ceres::Homepage") if content.plugin == "Plenty" %}
+                        {{ content.result|raw }}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
 
-	{% else %}
-		{% block ThemeHomepage %}
+    {% else %}
+
+        {% if showDefaultHomepage == "true" %}
+            {% include 'Ceres::Homepage.MarketingHomepage.twig' %}
+        {% else %}
+            {% block ThemeHomepage %}
 
                      {% set category1 = services.category.get(config("CeresColorful.homepage.homepageCategory1"), lang) %}
                      {% set categoryList1 = services.itemList.getItemList("category", category1.id, "variation.position_desc", 12).documents %}
@@ -153,10 +145,12 @@
        					{% endif %}
        				</div>
        			</div>
-
-
-
 			</div>
-		{% endblock %}
-	{% endif %}
-{% endblock %}
+			{% endblock %}
+	        {% endif %}
+
+	    {% endif %}
+
+
+
+	{% endblock %}

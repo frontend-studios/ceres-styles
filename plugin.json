@@ -1,17 +1,18 @@
 {
-    "version"           : "2.15.0",
+    "version"           : "2.16.0",
     "name"              : "CeresColorful",
-    "description"       : "Das ist ein Glamour Theme für Ceres",
+    "description"       : "Das ist ein Colorful Theme für Ceres",
     "author"            : "Frontend Studios GmbH",
     "license"           : "AGPL-3.0",
     "pluginIcon"        : "icon_plugin_xs.png",
     "price"             : 0.00,
-    "shortDescription"  : {"de": "Das ist ein Glamour Theme für Ceres","en":"This is a Glamour Theme for Ceres"},
+    "isClosedSource": true,
+    "shortDescription"  : {"de": "Das ist ein Colorful Theme für Ceres","en":"This is a Colorful Theme for Ceres"},
     "authorIcon"        : "icon_author_xs.png",
     "categories"        : ["3518"],
     "email"             : "dev@frontend-studios.de",
     "phone"             : "+49 40 851 792 84 30",
-    "keywords"          : ["plentymarkets", "plugins", "layout", "theme", "ceres", "glamour", "frontend studios"],
+    "keywords"          : ["plentymarkets", "plugins", "layout", "theme", "ceres", "Colorful", "frontend studios"],
     "type"              : "theme",
     "require"           : ["Ceres", "IO"],
     "namespace"         : "CeresColorful",
@@ -21,7 +22,7 @@
       {
         "key":"CeresColorful\\Containers\\CeresColorful",
         "name":"CeresColorful",
-        "description":"Glamour Theme for Ceres"
+        "description":"Colorful Theme for Ceres"
       }
     ]
 }

@@ -19,12 +19,11 @@ body {
 .home {
 	.carousel-control {
 		@include media-breakpoint-up(md) {
-			top: 10%;
+			top: 30%;
 			bottom: 30% !important;
 		}
 	}
 }
-
 
 //Homepage End
 
