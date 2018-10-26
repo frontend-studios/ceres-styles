@@ -233,6 +233,12 @@ body {
 				}
 			}
 		}
+		li.active {
+			a {
+				background: $brand-primary;
+				color: $white;
+			}
+		}
 	}
 }
 .cmp-currency-select {
@@ -245,8 +251,15 @@ body {
 				}
 			}
 		}
+		li.active {
+			a {
+				background: $brand-primary;
+				color: $white;
+			}
+		}
 	}
 }
+
 
 
 .anicon {
