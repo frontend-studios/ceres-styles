@@ -110,7 +110,6 @@ body {
     }
 }
 
-
 .sale {
     text-align: center;
     font-size: 2rem;
@@ -119,22 +118,18 @@ body {
     display: block;
     background-color: red;
 }
-
-@include media-breakpoint-up(sm){
-
-}
-
-@include media-breakpoint-up(md){
-
-}
-
-@include media-breakpoint-up(lg){
-
-}
 //Homepage End
+#mainNavbarCollapsable {
+	ul.mainmenu {
+		>li {
+			>a {
+				color: white;
+			}
+		}
+	}
+}
 
 //product Start
-
 .cmp-product-thumb  {
 	border: 1px solid $gray-lighter;
 }

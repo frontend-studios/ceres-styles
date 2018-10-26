@@ -1,8 +1,40 @@
-[
-	{
-	    "tab"       : "Homepage",
-	    "key"       : "homepage.homepageCategory1",
-	    "label"     : "Kategorie für die Artikel Darstellung",
-	    "type"      : "category_select"
-	}
-]
+{
+    "formatVersion": 1,
+    "menu": {
+        "Config.HomepageTab": {
+            "label": "Config.HomepageTab",
+            "formFields": {
+                "homepage.homepageCategory1": {
+                    "type": "categoryPicker",
+                    "required": false,
+                    "label": "Config.homepageHomepageCategory1Label",
+                    "options": {}
+                },
+                "homepage.homepageHeadline": {
+                    "type": "inputText",
+                    "required": false,
+                    "label": "Config.homepageHomepageHeadlineLabel",
+                    "options": {
+                        "defaultValue": "Purer Kaffee Genuss"
+                    }
+                },
+                "homepage.homepageSubHeadline": {
+                    "type": "inputText",
+                    "required": false,
+                    "label": "Config.homepageHomepageSubHeadlineLabel",
+                    "options": {
+                        "defaultValue": "Finest aromas!"
+                    }
+                },
+                "homepage.homepageHeadlineEN": {
+                    "type": "inputText",
+                    "required": false,
+                    "label": "Config.homepageHomepageHeadlineENLabel",
+                    "options": {
+                        "defaultValue": "Pure coffee enjoyment"
+                    }
+                }
+            }
+        }
+    }
+}
