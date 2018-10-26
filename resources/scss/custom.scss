@@ -28,7 +28,7 @@ body {
         }
     }
     .page-content {
-        margin-top: 40px;
+        margin-top: 20vh;
     }
 }
 #page-body {
@@ -79,18 +79,21 @@ body {
     }
     .navbar {
         text-transform: uppercase;
-        background-color: $gray-darker;
+        background-color: rgba($gray-darker, .75);
         border-bottom: 0;
     }
     #page-body {
         margin-top: 117px;
     }
 }
+       .breadcrumbs {
+		background: transparent;
+	}
+	>nav.container-max {
+		background: transparent;
+	}
 }
 .breadcrumbs {
-    background: transparent;
-    z-index: 1000;
-    top: 88px;
     .breadcrumb {
         + {
             .breadcrumb-item {
@@ -129,12 +132,6 @@ body {
 
 #mainNavbarCollapsable {
     ul.mainmenu {
-        > li {
-            > a {
-                padding: 1rem 0.75rem;
-                width: 100%;
-            }
-        }
         li {
             a {
                 color: $white;
