@@ -59,7 +59,7 @@ body {
     #page-header {
        background-color: transparent;
 
-    &.top-bar {
+    .top-bar {
         background-color: rgba($gray-darker,.75);
         color: $white;
         .socialmedia {
