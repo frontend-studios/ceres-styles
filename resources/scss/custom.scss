@@ -30,7 +30,7 @@ body {
 //Header Start
 #page-header {
 	background-color: transparent !important;
-	&.top-bar {
+	.top-bar {
 		.container-max {
 			background-color: $top-bar-bg;
 		}
