@@ -188,6 +188,35 @@ body {
 	}
 }
 
+.no-touch {
+	#mainNavbarCollapsable {
+		ul.mainmenu {
+			>li {
+				&:hover {
+					a {
+						background-color: #111;
+						transition: all .1s ease;
+						color: white;
+					}
+				}
+			}
+		}
+	}
+}
+.touch {
+	#mainNavbarCollapsable {
+		ul.mainmenu {
+			>li.hover {
+				a {
+					background-color: #111;
+					transition: all .1s ease;
+					color: white;
+				}
+			}
+		}
+	}
+}
+
 
 .anicon {
 	>.anicon-search-item {
