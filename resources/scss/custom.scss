@@ -218,6 +218,37 @@ body {
 }
 
 
+.cmp-country-settings, .cmp-currency-select {
+	background-color: $gray-lightest;
+	color: $brand-primary;
+}
+
+.cmp-country-settings {
+	ul {
+		li {
+			a {
+				&:hover {
+					background: $brand-primary;
+					color: $white;
+				}
+			}
+		}
+	}
+}
+.cmp-currency-select {
+	ul {
+		li {
+			a {
+				&:hover {
+					background: $brand-primary;
+					color: $white;
+				}
+			}
+		}
+	}
+}
+
+
 .anicon {
 	>.anicon-search-item {
 		&::before {
