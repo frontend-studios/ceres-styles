@@ -1,5 +1,11 @@
 # Changelog for Electronic Ceres
 
+## v2.16.0 (2018-10-24)
+
+### Changes
+- Compatibility with Ceres and IO greater than 2.16.0
+
+
 ## v2.5.2 (2018-04-03)
 
 ### Changes

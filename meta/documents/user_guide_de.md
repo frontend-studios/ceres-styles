@@ -5,7 +5,7 @@
 ## Electronic Theme aktivieren
 
 Im plentymarkets Backend in der Plugin-Liste das Electronic Plugin in Productive bereitstellen und den Mandant zuweisen.
-Anschließend im Tab "Content" im Bereich "CeresElectronic" den Haken bei "Template: Style" setzen, speichern, fertig!
+Anschließend im Tab "Content" im Bereich "CeresElectronic" den Haken bei "Template: Override style" setzen, speichern, fertig!
 
 <div class="alert alert-info" role="alert">
     Sie benötigen das Ceres und IO Plugin als Basis
