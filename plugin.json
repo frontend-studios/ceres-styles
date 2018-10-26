@@ -6,6 +6,7 @@
     "license"           : "AGPL-3.0",
     "pluginIcon"        : "icon_plugin_xs.png",
     "price"             : 0.00,
+    "isClosedSource": true,
     "shortDescription"  : {"de": "Das ist ein Hipster Theme für Ceres", "en":"This is a Hipster Theme for Ceres"},
     "authorIcon"        : "icon_author_xs.png",
     "categories"        : ["3518"],

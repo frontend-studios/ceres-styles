@@ -1,50 +1,69 @@
-[
-	{
-      "tab"       : "Global",
-      "key"       : "global.globalBackgroundImage",
-      "label"     : "URL to global background image",
-      "type"      : "text",
-      "default"   : "https://unsplash.it/1200/1200?image=876"
-  },
-	{
-      "tab"       : "Homepage",
-      "key"       : "homepage.homepageIcon",
-      "label"     : "Icon Klasse von Font-Awesome ('hidden', zum Ausblenden)",
-      "type"      : "text",
-      "default"   : "fa-gg-circle"
-  },
-  {
-      "tab"       : "Homepage",
-      "key"       : "homepage.homepageHeadlineDE",
-      "label"     : "Text für die große Headline auf der Startseite",
-      "type"      : "text",
-      "default"   : "Das ist ein Mega-Hipster Theme"
-  },
-	{
-	    "tab"       : "Homepage",
-	    "key"       : "homepage.homepageSublineDE",
-	    "label"     : "Text für die zweite Überschrift",
-	    "type"      : "text",
-	    "default"   : "Weiter unten beginnt erst der Content"
-	},
-	{
-           "tab"       : "Homepage",
-           "key"       : "homepage.homepageHeadlineEN",
-           "label"     : "Text for big Headline",
-           "type"      : "text",
-           "default"   : "Mega-Hipster Theme"
-       },
-     	{
-     	    "tab"       : "Homepage",
-     	    "key"       : "homepage.homepageSublineEN",
-     	    "label"     : "Text for second Headline",
-     	    "type"      : "text",
-     	    "default"   : "2nd Headline"
-     	},
-	{
-		"tab"       : "Homepage",
-		"key"       : "homepage.homepageCategory1",
-		"label"     : "Kategorieauswahl der Artikelanzeige der Startseite",
-		"type"      : "category_select"
-	}
-]
+{
+    "formatVersion": 1,
+    "menu": {
+        "Config.GlobalTab": {
+            "label": "Config.GlobalTab",
+            "formFields": {
+                "global.globalBackgroundImage": {
+                    "type": "inputText",
+                    "required": false,
+                    "label": "Config.globalGlobalBackgroundImageLabel",
+                    "options": {
+                        "defaultValue": "https://unsplash.it/1200/1200?image=876"
+                    }
+                }
+            }
+        },
+        "Config.HomepageTab": {
+            "label": "Config.HomepageTab",
+            "formFields": {
+                "homepage.homepageIcon": {
+                    "type": "inputText",
+                    "required": false,
+                    "label": "Config.homepageHomepageIconLabel",
+                    "options": {
+                        "defaultValue": "fa-gg-circle"
+                    }
+                },
+                "homepage.homepageHeadlineDE": {
+                    "type": "inputText",
+                    "required": false,
+                    "label": "Config.homepageHomepageHeadlineDELabel",
+                    "options": {
+                        "defaultValue": "Das ist ein Mega-Hipster Theme"
+                    }
+                },
+                "homepage.homepageSublineDE": {
+                    "type": "inputText",
+                    "required": false,
+                    "label": "Config.homepageHomepageSublineDELabel",
+                    "options": {
+                        "defaultValue": "Weiter unten beginnt erst der Content"
+                    }
+                },
+                "homepage.homepageHeadlineEN": {
+                    "type": "inputText",
+                    "required": false,
+                    "label": "Config.homepageHomepageHeadlineENLabel",
+                    "options": {
+                        "defaultValue": "Mega-Hipster Theme"
+                    }
+                },
+                "homepage.homepageSublineEN": {
+                    "type": "inputText",
+                    "required": false,
+                    "label": "Config.homepageHomepageSublineENLabel",
+                    "options": {
+                        "defaultValue": "2nd Headline"
+                    }
+                },
+                "homepage.homepageCategory1": {
+                    "type": "categoryPicker",
+                    "required": false,
+                    "label": "Config.homepageHomepageCategory1Label",
+                    "options": {}
+                }
+            }
+        }
+    }
+}

@@ -60,7 +60,7 @@ body {
        background-color: transparent;
 
     &.top-bar {
-        background-color: $gray-dark;
+        background-color: rgba($gray-darker,.75);
         color: $white;
         .socialmedia {
             i {
@@ -112,7 +112,7 @@ body {
 //Category
 
 .categoriegrid {
-       padding-top: 0rem !important;
+       padding: 1rem !important;
 }
 
 .parallax-img-container {
@@ -121,7 +121,7 @@ body {
         color: $white;
         .category-description {
             word-wrap: break-word;
-            background: rgba(34,34,34,.75);
+            background-color: rgba($gray-darker,.75);
             margin-top: 1rem;
             p {
                 padding: 1rem 0.5rem;
