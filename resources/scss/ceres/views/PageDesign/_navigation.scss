@@ -41,6 +41,12 @@ $menu-big-menu-li-bg			: transparent;
 $menu-big-menu-li-bg-hover		: $brand-primary;
 $menu-big-menu-li-color			: $white;
 $menu-big-menu-li-color-hover	: $text-color;
+// megamenu
+$megamenu-bg 					: $white;
+$megamenu-color-top-btn			: $brand-primary;
+$megamenu-color-bottom-btn		: $black;
+$megamenu-btn-hover 			: darken($top-bar-basket-btn, 20%);
+$megamenu-btn-more 				: $gray;
 
 body.menu-is-visible { 
 	overflow-y : hidden;
@@ -109,7 +115,7 @@ body.menu-is-visible {
 			flex-wrap: wrap;
 
 			a 	{
-				color 	: $white;
+				color 	: inherit;
 				display : inline-block;
 				padding : 1rem ;
 				flex: 1 0 80%;
@@ -218,7 +224,8 @@ body.menu-is-visible {
 						min-width	: 150px;
 						text-align  : initial;
 
-						&:hover {
+						.no-touch &:hover,
+						.touch &.hover {
 							background  	: $menu-big-menu-li-bg-hover;
 							color 			: $menu-big-menu-li-color;
 							text-decoration : none;
@@ -230,7 +237,8 @@ body.menu-is-visible {
 					}
 				}
 
-				&:hover {
+				.no-touch &:hover,
+				.touch &.hover {
 					background-color : $menu-li-bg-hover;
 					color 			 : $menu-li-color-hover;
 					transition 		 : all .1s ease;
@@ -257,6 +265,87 @@ body.menu-is-visible {
 		}
 	}
 
+}
+
+nav.navbar.megamenu {
+	@include media-breakpoint-up(lg){ position : relative; }
+	#mainNavbarCollapsable {
+
+		@include media-breakpoint-up(lg){
+			ul.mainmenu {
+				background 		: transparent;
+				display 		: flex;
+				justify-content : flex-end; 
+				width 			: 100%; 
+
+				>li {
+					position : static;
+
+					.no-touch &:hover,
+					.touch &.hover {
+						background : $megamenu-bg; 
+						color 	   : $megamenu-btn-hover !important;  
+
+						>ul.collapse { display : block; } 
+					}
+
+					>ul.collapse {
+						background-color: $megamenu-bg;
+						columns 		: 5 228px;
+						column-gap 		: .5em;
+						column-rule 	: 1px solid #dcdbd7;
+						display 		: none;
+						padding 		: 1em;
+						min-height		: 10em;
+						max-height		: 50em;  
+
+						>li {
+							display 	 : inline-block;
+							width 	 	 : 100%; 
+
+							&.level1 { 
+								padding : .5em 1em;
+								>a {								
+									color 		: $megamenu-color-top-btn; 
+									font-weight : bold; 
+								}
+							}
+							.no-touch &:hover,
+							.touch &.hover { 
+								background : $megamenu-bg; 
+							}
+							 .level2 { 
+								 padding : .25em 0!important; 
+								 break-inside: avoid;
+							 }
+							 .level3 { 
+							 	padding : 0 1em .25em 1.4em !important; 
+							 }
+							.bt-more>a { 
+								color 			: $gray;
+								text-transform 	: lowercase; 
+							}
+							a {
+								background 	: $white;
+								color 		: $megamenu-color-bottom-btn;
+								padding 	: 0;
+								text-align 	: left;
+
+								.no-touch &:hover,
+								.touch &.hover { 
+									background 	: $megamenu-bg; 
+									color 		: $megamenu-btn-hover !important;  
+								}
+							}
+							ul { background-color : $megamenu-bg; }
+						}
+
+					}
+
+				}
+			}
+		}
+	}
 }
 
 .mobile-navigation{
@@ -325,6 +414,11 @@ body.menu-is-visible {
 
 		&.menu-active {
 			display: block !important;
+		}
+
+		.btn-up {
+			flex: none !important;
+			transform: rotateY(180deg);
 		}
 
 		li 	{

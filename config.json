@@ -1,65 +1,36 @@
 [
 	{
-        "tab"       : "Global",
-        "key"       : "global.globalBackgroundImage",
-        "label"     : "URL to global background image",
-        "type"      : "text",
-        "default"   : "https://unsplash.it/1200/1200?image=876"
-    },
+      "tab"       : "Global",
+      "key"       : "global.globalBackgroundImage",
+      "label"     : "URL to global background image",
+      "type"      : "text",
+      "default"   : "https://unsplash.it/1200/1200?image=876"
+  },
 	{
-        "tab"       : "Homepage",
-        "key"       : "homepage.homepageIcon",
-        "label"     : "Icon Klasse von Font-Awesome ('hidden', zum Ausblenden)",
-        "type"      : "text",
-        "default"   : "fa-gg-circle"
-    },
-    {
-        "tab"       : "Homepage",
-        "key"       : "homepage.homepageTopsellerID",
-        "label"     : "Kategorie ID für die Topseller auf der Startseite",
-        "type"      : "text",
-        "default"   : "17"
-    },
-    {
-        "tab"       : "Homepage",
-        "key"       : "homepage.homepageHeadlineDE",
-        "label"     : "Text für die große Headline auf der Startseite (DE)",
-        "type"      : "text",
-        "default"   : "Das ist ein Mega-Hipster Theme"
-    },
-	{
-	    "tab"       : "Homepage",
-	    "key"       : "homepage.homepageHeadlineEN",
-	    "label"     : "Text for your Big Headline on Homepage (EN)",
-	    "type"      : "text",
-	    "default"   : "This is a super cool hipster theme!"
-	},
+      "tab"       : "Homepage",
+      "key"       : "homepage.homepageIcon",
+      "label"     : "Icon Klasse von Font-Awesome ('hidden', zum Ausblenden)",
+      "type"      : "text",
+      "default"   : "fa-gg-circle"
+  },
+  {
+      "tab"       : "Homepage",
+      "key"       : "homepage.homepageHeadlineDE",
+      "label"     : "Text für die große Headline auf der Startseite",
+      "type"      : "text",
+      "default"   : "Das ist ein Mega-Hipster Theme"
+  },
 	{
 	    "tab"       : "Homepage",
 	    "key"       : "homepage.homepageSublineDE",
-	    "label"     : "Text für die zweite Überschrift (DE)",
+	    "label"     : "Text für die zweite Überschrift",
 	    "type"      : "text",
 	    "default"   : "Weiter unten beginnt erst der Content"
 	},
 	{
-	    "tab"       : "Homepage",
-	    "key"       : "homepage.homepageSublineEN",
-	    "label"     : "Text for second headline (EN)",
-	    "type"      : "text",
-	    "default"   : "Scroll down for more Content"
-	},
-	{
-	    "tab"       : "Homepage",
-	    "key"       : "homepage.homepageSectionHeadingDE",
-	    "label"     : "Text für die Produkt-Übersicht (DE)",
-	    "type"      : "text",
-	    "default"   : "Unsere beliebtesten Hipsters"
-	},
-	{
-	    "tab"       : "Homepage",
-	    "key"       : "homepage.homepageSectionHeadingEN",
-	    "label"     : "Text for product overview (EN)",
-	    "type"      : "text",
-	    "default"   : "Our favorite Hipsters"
+		"tab"       : "Homepage",
+		"key"       : "homepage.homepageCategory1",
+		"label"     : "Kategorieauswahl der Artikelanzeige der Startseite",
+		"type"      : "category_select"
 	}
 ]

@@ -1,0 +1,164 @@
+//Global
+body {
+    background-color: white;
+    font-family: $font-family-serif;
+    > #vue-app, > #vue-error {
+        background-color: white;
+    }
+}
+.home {
+    .teaser {
+        color: $white;
+        margin-top:13em;
+        .headlineText {
+            h1 {
+                font-size: 5em;
+                margin-top: 0.5em;
+                @include media-breakpoint-up(xs) {
+                    font-size: 3em;
+                }
+            }
+            h3 {
+                font-size: 1.75em;
+                margin-top: 0.5em;
+            }
+        }
+        i {
+            font-size: 10em;
+        }
+    }
+    .page-content {
+        margin-top: 40px;
+    }
+}
+#page-body {
+    .section-header {
+        background-color: unset;
+        h2 {
+            color: $brand-primary;
+        }
+        .section-link-all {
+            color: $brand-primary;
+        }
+    }
+}
+.page-content {
+    background-color: #fff;
+}
+body {
+    background: transparent;
+    > #vue-app {
+        background: transparent;
+    }
+    > #vue-error {
+        background: transparent;
+    }
+}
+//Custom End
+.wrapper-main {
+    #page-header.top-bar {
+        background-color: $gray-dark;
+        color: $white;
+        .socialmedia {
+            i {
+                color: $white;
+                padding: 0.5rem 0.5rem 0 0;
+                font-size: 1.5rem;
+            }
+        }
+      .controls-list {
+     	.control-basket {
+     		.toggle-basket-preview {
+     			background-color: transparent;
+     		}
+     	}
+     }
+    }
+    > .top-bar {
+        .navbar {
+            text-transform: uppercase;
+            background-color: transparent;
+            border-bottom: 0;
+        }
+    }
+    > nav.container-max {
+        background: transparent;
+        z-index: 1000;
+        top: 88px;
+        .breadcrumb {
+            + {
+                .breadcrumb-item {
+                    &::before {
+                        color: $white;
+                    }
+                }
+            }
+            .breadcrumb-item {
+                a, i {
+                    color: $white;
+                }
+            }
+        }
+    }
+    #page-body {
+        margin-top: 117px;
+    }
+}
+//Categorie
+.parallax-img-container {
+    .parallax-text-container {
+        position: inherit;
+        color: $white;
+        .category-description {
+            word-wrap: break-word;
+            background: rgba(34,34,34,.75);
+            margin-top: 1rem;
+            p {
+                padding: 1rem 0.5rem;
+            }
+        }
+    }
+}
+
+#mainNavbarCollapsable {
+    ul.mainmenu {
+        > li {
+            > a {
+                padding: 1rem 0.75rem;
+                width: 100%;
+            }
+        }
+        li {
+            a {
+                color: $white;
+                display: inline-block;
+            }
+        }
+    }
+}
+
+//Footer
+.footer {
+    display: block;
+    background-color: transparent;
+    color: white;
+    background-color: transparent;
+    color: $white;
+    .footer-features {
+        background-color: transparent;
+        color: $white;
+        i {
+            color: $white !important;
+        }
+    }
+    a {
+        color: $white;
+    }
+}
+//Footer end
+
+.single {
+    @include media-breakpoint-up(md) {
+        padding: 1rem;
+    }
+}

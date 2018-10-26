@@ -21,7 +21,7 @@ class CeresHipsterServiceProvider extends ServiceProvider
      */
 
     public function register() {
-         
+
     }
 
     public function boot(Twig $twig, Dispatcher $eventDispatcher, ConfigRepository $config)
@@ -34,7 +34,7 @@ class CeresHipsterServiceProvider extends ServiceProvider
         });
 
         $eventDispatcher->listen('IO.init.templates', function (Partial $partial) {
-            $partial->set('page-design', 'CeresHipster::PageDesign.PageDesign');
+            $partial->set('page-design', 'CeresHipster::PageDesign.PageDesign');            
         }, self::EVENT_LISTENER_PRIORITY);
     }
 }

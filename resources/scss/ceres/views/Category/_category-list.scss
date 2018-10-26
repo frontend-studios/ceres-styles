@@ -94,7 +94,6 @@
         
     .parallax-text-container {
         position: inherit;
-        color: $white;
 
         h1 {
             margin-bottom: 0;
@@ -140,7 +139,7 @@
             }
 
             h1 {
-                color: $white;
+                color: $category-text-color;
                 font-size: 300%;
                 text-shadow: 0 0 0.1em rgba(0, 0, 0, 0.75);
                 bottom: 0;

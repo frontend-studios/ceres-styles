@@ -19,6 +19,12 @@
 		padding-left: .5rem;
 	}
 
+	& .item-bundle {
+		width: 300px;
+		font-weight: 700;
+		font-size: 80%;
+	}
+
 	.item-name{
 	    display: -webkit-box;
         text-overflow: ellipsis;
@@ -81,6 +87,15 @@
 	@include media-breakpoint-up(lg){
 
 	}
+
+	.item-word-break {
+		word-wrap: break-word;
+
+		@include media-breakpoint-down(xs){
+			word-break: break-all;
+		}
+	}
+
 }
 
 .payment-link-style {
