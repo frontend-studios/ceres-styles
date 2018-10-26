@@ -31,6 +31,15 @@ body {
         margin-top: 20vh;
     }
 }
+
+.carousel-control {
+@include media-breakpoint-up(md) {
+       top: 20% !important;
+       bottom: 40% !important;
+       width: 10%;
+       }
+}
+
 #page-body {
     .section-header {
         background-color: unset;
