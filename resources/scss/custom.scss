@@ -56,7 +56,10 @@ body {
 }
 //Custom End
 .wrapper-main {
-    #page-header.top-bar {
+    #page-header {
+       background-color: transparent;
+
+    &.top-bar {
         background-color: $gray-dark;
         color: $white;
         .socialmedia {
@@ -74,37 +77,41 @@ body {
      	}
      }
     }
-    > .top-bar {
-        .navbar {
-            text-transform: uppercase;
-            background-color: transparent;
-            border-bottom: 0;
-        }
-    }
-    > nav.container-max {
-        background: transparent;
-        z-index: 1000;
-        top: 88px;
-        .breadcrumb {
-            + {
-                .breadcrumb-item {
-                    &::before {
-                        color: $white;
-                    }
-                }
-            }
-            .breadcrumb-item {
-                a, i {
-                    color: $white;
-                }
-            }
-        }
+    .navbar {
+        text-transform: uppercase;
+        background-color: $gray-darker;
+        border-bottom: 0;
     }
     #page-body {
         margin-top: 117px;
     }
 }
-//Categorie
+}
+.breadcrumbs {
+    background: transparent;
+    z-index: 1000;
+    top: 88px;
+    .breadcrumb {
+        + {
+            .breadcrumb-item {
+                &::before {
+                   color: $white;
+                }
+            }
+        }
+        .breadcrumb-item {
+            a, i {
+                color: $white;
+            }
+        }
+    }
+}
+//Category
+
+.categoriegrid {
+       padding-top: 0rem !important;
+}
+
 .parallax-img-container {
     .parallax-text-container {
         position: inherit;

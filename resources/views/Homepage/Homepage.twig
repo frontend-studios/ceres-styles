@@ -58,6 +58,9 @@
 				{% set homepageHeadlineDE = config("CeresHipster.homepage.homepageHeadlineDE") %}
 				{% set homepageSublineDE = config("CeresHipster.homepage.homepageSublineDE") %}
 
+				{% set homepageHeadlineEN = config("CeresHipster.homepage.homepageHeadlineEN") %}
+				{% set homepageSublineEN = config("CeresHipster.homepage.homepageSublineEN") %}
+
 				{% set category1 = services.category.get(config("CeresHipster.homepage.homepageCategory1"), lang) %}
 				{% set categoryList1 = services.itemList.getItemList("category", category1.id, "variation.position_desc", 12).documents %}
 
@@ -68,8 +71,10 @@
 							<i class="fa {{ homepageIcon }} fa-5x" aria-hidden="true"></i>
 							{% if lang == "de" %}
 								<h1>{{ homepageHeadlineDE }}</h1>
-							{% elseif lang == "en" %}
 								<h3>{{ homepageSublineDE }}</h3>
+							{% elseif lang == "en" %}
+								<h1>{{ homepageHeadlineEN }}</h1>
+								<h3>{{ homepageSublineEN }}</h3>
 							{% endif %}
 						</div>
 					</div>

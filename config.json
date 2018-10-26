@@ -28,6 +28,20 @@
 	    "default"   : "Weiter unten beginnt erst der Content"
 	},
 	{
+           "tab"       : "Homepage",
+           "key"       : "homepage.homepageHeadlineEN",
+           "label"     : "Text for big Headline",
+           "type"      : "text",
+           "default"   : "Mega-Hipster Theme"
+       },
+     	{
+     	    "tab"       : "Homepage",
+     	    "key"       : "homepage.homepageSublineEN",
+     	    "label"     : "Text for second Headline",
+     	    "type"      : "text",
+     	    "default"   : "2nd Headline"
+     	},
+	{
 		"tab"       : "Homepage",
 		"key"       : "homepage.homepageCategory1",
 		"label"     : "Kategorieauswahl der Artikelanzeige der Startseite",
