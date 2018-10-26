@@ -8,7 +8,7 @@
 
 {% block PartialHead %}
 	<meta name="description" content="{{ trans('Ceres::Template.homepageMetaDescription') }}">
-	<meta name="robots" content="{% if forceNoIndex %}NOINDEX{% else %}{{ config(" ceres.meta.robots_home") }}{% endif %}"="Ceres.meta.robots_home") }}{% endif %}"">
+	<meta name="robots" content="{% if forceNoIndex %}NOINDEX{% else %}{{ config(" ceres.meta.robots_home") }}{% endif %}"="Ceres.meta.robots_home" )=")" }}{% endif %}="}}{% endif %}" "">
 	<meta property="og:title" content="{{ companyName }}"/>
 	<meta property="og:type" content="article"/>
 	<meta property="og:url" content="{{ services.webstoreConfig.getWebstoreConfig().domainSsl }}"/>
@@ -69,7 +69,7 @@
 							<i class="fa {{ homepageIcon }} fa-5x" aria-hidden="true"></i>
 							{% if lang == "de" %}
 								<h1>{{ homepageHeadlineDE }}</h1>
-							{% elseif lang == "en" %}
+							{% else lang == "en" %}
 								<h3>{{ homepageSublineDE }}</h3>
 							{% endif %}
 						</div>

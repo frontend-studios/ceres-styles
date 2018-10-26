@@ -17,7 +17,6 @@
 {% set defaultLanguage = services.webstoreConfig.getDefaultLanguage() %}
 
 {% set globalBackgroundImage  = config("CeresHipster.global.globalBackgroundImage") %}
-
 <!DOCTYPE html>
 
 <html lang="{{ lang }}" data-framework="vue" prefix="og: http://ogp.me/ns#">
@@ -362,6 +361,7 @@
         });
     });
 </script>
+
 
 {{ get_shop_builder_scripts( "latest", ceresConfig.log.performanceLevel == 'live') }}
 </body>
