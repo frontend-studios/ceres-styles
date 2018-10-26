@@ -31,16 +31,16 @@ body {
 //Header Start
 #page-header {
 	background-color: transparent !important;
-	&.top-bar {
+	.top-bar {
 		.container-max {
 			background-color: $top-bar-bg;
 		}
-		.navbar {
-			background-color: transparent;
-			.container-max {
-				font-family: $font-family-heading;
-				background: $brand-primary;
-			}
+	}
+	.navbar {
+		background-color: transparent;
+		.container-max {
+			font-family: $font-family-heading;
+			background: $brand-primary;
 		}
 	}
 }
@@ -158,30 +158,19 @@ body {
 		}
 	}
 
-
-	@include media-breakpoint-up(sm){
-		.footer-services{
-			flex-flow: row nowrap;
-		}
-	}
-
-	@include media-breakpoint-up(md){
-
-	}
-
-	@include media-breakpoint-up(lg){
-
-	}
 }
 //Footer End
 
 //Category Start
+.categoriegrid {
+	padding: 1rem !important;
+}
 .parallax-img-container {
 	.parallax-text-container {
 		h1 {
 			margin-bottom: 0;
 			word-wrap: break-word;
-			color: white;
+			color: $brand-primary;
 		}
 	}
 }
@@ -219,24 +208,6 @@ body {
 .single {
 	background-color: $white;
 	padding: 1rem;
-	.nav-tabs {
-        border-bottom:1px solid $gray;
-        .nav-item {
-            .nav-link {
-                border:1px solid $gray;
-                color: $gray;
-                &.active,
-                &:hover {
-                    border:1px solid $gray;
-                    color: $white;
-                    background:$gray;
-                }
-            }
-            &+.nav-item {
-                margin-left: 0;
-            }
-        }
-    }
 }
 //Single end
 
