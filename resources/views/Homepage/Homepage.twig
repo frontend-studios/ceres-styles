@@ -3,20 +3,16 @@
 {% import "Ceres::PageDesign.Macros.LayoutContainer" as LayoutContainer %}
 
 {% set showDefaultHomepage = config("Ceres.default.homepage") %}
-
-{% set ownLogo = config("nvoodTheme.header.ownLogo") %}
-
+{% set companyLogo = config("Ceres.header.company_logo") %}
 {% set companyName = trans("Ceres::Template.headerCompanyName") %}
 
 {% block PartialHead %}
 	<meta name="description" content="{{ trans('Ceres::Template.homepageMetaDescription') }}">
-	<meta name="robots" content="{{ config(" ceres.meta.robots_home") }}"="Ceres.meta.robots_home") }}"">
-
+	<meta name="robots" content="{% if forceNoIndex %}NOINDEX{% else %}{{ config(" ceres.meta.robots_home") }}{% endif %}"="Ceres.meta.robots_home") }}{% endif %}"">
 	<meta property="og:title" content="{{ companyName }}"/>
 	<meta property="og:type" content="article"/>
 	<meta property="og:url" content="{{ services.webstoreConfig.getWebstoreConfig().domainSsl }}"/>
-
-	<meta property="og:image" content="{{ ownLogo }}"/>
+	<meta property="og:image" content="{% if ('http' in companyLogo) or ('layout/' in companyLogo) %}{{ companyLogo }}{% else %}{{ plugin_path('Ceres') }}/{{ companyLogo }}{% endif %}"/>
 
 	<script type="application/ld+json">
 		{
@@ -40,7 +36,7 @@
 
 		<div class="home container-max">
 			<div class="row">
-				<div class="col">
+				<div class="col clearfix">
 					{% for content in container("Ceres::Homepage")if content.plugin == "Plenty" %}
 						{{ content.result|raw }}
 					{% endfor %}
@@ -49,65 +45,69 @@
 		</div>
 
 	{% else %}
-		{% block ThemeHomepage %}
 
-                     {% set category1 = services.category.get(config("CeresCoffee.homepage.homepageCategory1"), lang) %}
-                     {% set categoryList1 = services.itemList.getItemList("category", category1.id, "variation.position_desc", 12).documents %}
+		{% if showDefaultHomepage == "true" %}
+			{% include 'Ceres::Homepage.MarketingHomepage.twig' %}
+		{% else %}
+			{% block ThemeHomepage %}
 
-                     {{ component( "Ceres::ItemList.Components.ItemList") }}
-              	{{ component( "Ceres::ItemList.Components.CategoryImageCarousel") }}
-              	{{ component( "Ceres::Basket.Components.AddToBasket" ) }}
+				{% set category1 = services.category.get(config("CeresCoffee.homepage.homepageCategory1"), lang) %}
+				{% set categoryList1 = services.itemList.getItemList("category", category1.id, "variation.position_desc", 12).documents %}
 
-			<div class="c-edge-l hidden-sm-down"></div>
-			<div class="c-edge-r hidden-sm-down"></div>
-			<div class="home container-max">
+				{{ component( "Ceres::ItemList.Components.ItemList") }}
+				{{ component( "Ceres::ItemList.Components.CategoryImageCarousel") }}
+				{{ component( "Ceres::Basket.Components.AddToBasket" ) }}
 
-				<div class="row teaser">
-					<div class="col-xs-12 text-xs-center">
-						<i class="fa fa-coffee fa-5x" aria-hidden="true"></i>
-						<h1>{{ trans("CeresCoffee::Template.homepageHeadline") }}</h1>
-						<h3>{{ trans("CeresCoffee::Template.homepageSubline") }}</h3>
+				<div class="c-edge-l hidden-sm-down"></div>
+				<div class="c-edge-r hidden-sm-down"></div>
+				<div class="home container-max">
+
+					<div class="row teaser">
+						<div class="col-xs-12 text-xs-center">
+							<i class="fa fa-coffee fa-5x" aria-hidden="true"></i>
+							<h1>{{ trans("CeresCoffee::Template.homepageHeadline") }}</h1>
+							<h3>{{ trans("CeresCoffee::Template.homepageSubline") }}</h3>
+						</div>
 					</div>
+
+					<div class="row page-content">
+						<div class="section-header m-b-1">
+							<h4>{{ category1.details[0].name }}</h4>
+						</div>
+						<div class="col-xs-12 col-lg-12">
+							{% if categoryList1 | length > 4 %}
+								<div class="list-item-carousel owl-carousel owl-theme list-carousel-first">
+									{% for item in categoryList1 %}
+										{% include "Ceres::Category.Item.Partials.CategoryListItem" with {
+											'item' : item,
+											enableCarousel: false,
+											'tags' : item.data.tags,
+											'showOrderProperties' : false,
+											disableLazyLoad: true
+										} %}
+									{% endfor %}
+								</div>
+							{% else %}
+								<ul class="product-list row grid list-carousel-first">
+									{% for item in categoryList1 %}
+										<li class="col-xs-12 col-sm-6 col-md-3">
+											{% include "Ceres::Category.Item.Partials.CategoryListItem" with {
+												'item' : item,
+												enableCarousel: false,
+												'tags' : item.data.tags,
+												'showOrderProperties' : false
+											} %}
+										</li>
+									{% endfor %}
+								</ul>
+							{% endif %}
+						</div>
+					</div>
+
 				</div>
+			{% endblock %}
+		{% endif %}
 
-
-       			<div class="row page-content">
-       				<div class="section-header m-b-1">
-       					<h4>{{ category1.details[0].name }}</h4>
-       				</div>
-       				<div class="col-xs-12 col-lg-12">
-       					{% if categoryList1 | length > 4 %}
-       						<div class="list-item-carousel owl-carousel owl-theme list-carousel-first">
-       							{% for item in categoryList1 %}
-       								{% include "Ceres::Category.Item.Partials.CategoryListItem" with {
-       									'item' : item,
-       									enableCarousel: false,
-       									'tags' : item.data.tags,
-       									'showOrderProperties' : false,
-       									disableLazyLoad: true
-       								} %}
-       							{% endfor %}
-       						</div>
-       					{% else %}
-       						<ul class="product-list row grid list-carousel-first">
-       							{% for item in categoryList1 %}
-       								<li class="col-xs-12 col-sm-6 col-md-3">
-       									{% include "Ceres::Category.Item.Partials.CategoryListItem" with {
-       										'item' : item,
-       										enableCarousel: false,
-       										'tags' : item.data.tags,
-       										'showOrderProperties' : false
-       									} %}
-       								</li>
-       							{% endfor %}
-       						</ul>
-       					{% endif %}
-       				</div>
-       			</div>
-
-
-
-			</div>
-		{% endblock %}
 	{% endif %}
+
 {% endblock %}
