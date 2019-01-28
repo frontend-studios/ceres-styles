@@ -334,6 +334,12 @@ body {
 				right:auto;
 				li {
 					border-color: $brand-primary;
+					box-sizing: border-box;
+					border-radius: .8rem;
+					width: .7rem;
+					height: .7rem;
+					margin: 2px;
+					border: 1px solid $brand-primary;
 					&.active {
 						background:$brand-primary;
 					}
@@ -611,7 +617,10 @@ body {
 
 //thumbnail
 .cmp-product-thumb {
-	border-bottom: 1px solid $brand-primary;
+	border-bottom: transparent;
+	@include media-breakpoint-up(md) {
+		border-bottom: 1px solid $brand-primary;
+	}
 }
 //thumbnail end
 
