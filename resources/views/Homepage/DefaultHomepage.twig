@@ -161,7 +161,14 @@
                                           {% endfor %}
                                    </div>
                             {% else %}
-                                   weniger als 4
+                            <li class="col-12 col-sm-6">
+                                  <category-item
+                                      :item-data="{{ item.data | json_encode }}"
+                                      :decimal-count="{{ decimalCount }}">
+                                      <template slot="BeforePrices">{{ LayoutContainer.show("Ceres::CategoryItem.BeforePrices", item.data) }}</template>
+                                      <template slot="AfterPrices">{{ LayoutContainer.show("Ceres::CategoryItem.AfterPrices", item.data) }}</template>
+                                  </category-item>
+                              </li>
                             {% endif %}
                      </div>
               </div>

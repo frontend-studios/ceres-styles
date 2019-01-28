@@ -463,6 +463,13 @@ body {
 	    }
     }
 }
+
+.list-item-carousel {
+	.owl-item {
+    		list-style-type: none;
+	}
+}
+
 @include media-breakpoint-up(sm){
 	.home {
 		.product-list {
@@ -533,9 +540,15 @@ body {
 				}
 				.carousel-indicators {
 					bottom: auto;
-    				top: 0;
+    					top: 0;
 					li {
 						border-color: $brand-primary;
+						box-sizing: border-box;
+						border-radius: .8rem;
+						width: .6rem;
+						height: .6rem;
+						margin: 2px;
+						border: 1px solid #fff;
 						&.active {
 							background:$brand-primary;
 						}
