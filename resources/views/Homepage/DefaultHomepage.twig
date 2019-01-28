@@ -149,7 +149,32 @@
                             <div class="section-header mb-3">
                                    <h4>{{ category1.details[0].name }}</h4>
                             </div>
-                            
+                            {% if categoryList1 | length > 4 %}
+                                   <div class="list-item-carousel owl-carousel owl-theme list-carousel-first">
+                                          {% for item in categoryList1 %}
+                                                 {% include "Ceres::ItemList.Components.CategoryItem" with {
+                                                        'item' : item,
+                                                        enableCarousel: false,
+                                                        'tags' : item.data.tags,
+                                                        'showOrderProperties' : false,
+                                                        disableLazyLoad: true
+                                                 } %}
+                                          {% endfor %}
+                                   </div>
+                            {% else %}
+                                   <ul class="product-list row grid list-carousel-first">
+                                          {% for item in categoryList1 %}
+                                                 <li class="col-xs-12 col-sm-6 col-md-3">
+                                                        {% include "Ceres::ItemList.Components.CategoryItem" with {
+                                                               'item' : item,
+                                                               enableCarousel: false,
+                                                               'tags' : item.data.tags,
+                                                               'showOrderProperties' : false
+                                                        } %}
+                                                 </li>
+                                          {% endfor %}
+                                   </ul>
+                            {% endif %}
                      </div>
               </div>
        </div>
