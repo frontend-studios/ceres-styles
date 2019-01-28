@@ -161,9 +161,9 @@
                                           {% endfor %}
                                    </div>
                             {% else %}
-                            <div class="list-item-carousel owl-carousel owl-theme list-carousel-first">
+
                                    {% for item in categoryList1 %}
-                                   <li class="col-12 col-sm-6">
+                                   <li class="col-12 col-sm-4">
                                          <category-item
                                              :item-data="{{ item.data | json_encode }}"
                                              :decimal-count="{{ decimalCount }}">
@@ -172,7 +172,7 @@
                                          </category-item>
                                      </li>
                                      {% endfor %}
-                              </div>
+                            
                             {% endif %}
                      </div>
               </div>
