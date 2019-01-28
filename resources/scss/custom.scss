@@ -468,6 +468,11 @@ body {
     		list-style-type: none;
 	}
 }
+.no-carousel {
+	.col-12 {
+	      list-style-type: none;
+      }
+}
 
 @include media-breakpoint-up(sm){
 	.home {

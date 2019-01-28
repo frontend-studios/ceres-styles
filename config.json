@@ -265,7 +265,13 @@
 			"required": false,
 			"label": "Config.homepageHomepageCategory1Label",
 			"options": {}
-              }
+              },
+              "homepage.homepageCategory2": {
+                   "type": "categoryPicker",
+                   "required": false,
+                   "label": "Config.homepageHomepageCategory2Label",
+                   "options": {}
+            }
             }
         }
     }
