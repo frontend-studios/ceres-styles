@@ -6,8 +6,14 @@ body .wrapper-main{
     display: none;
 }
 
+.hidden-sm {
+    @include media-breakpoint-only(sm) {
+        display: none;
+    }
+}
+
 .page-content{
-    @extend .p-t-1;
+    padding-top: $spacer;
     background-color: $gray-lightest;
     &.basket,
     &.checkout,
@@ -47,7 +53,8 @@ body .wrapper-main{
 .rating{
     line-height: 1;
 
-    .tag{
+    .tag,
+    .badge {
         padding-right: 0;
         overflow: hidden;
         cursor: pointer;
@@ -105,44 +112,15 @@ a:active {
     cursor: pointer;
 }
 
-@include media-breakpoint-up(xl){
-    .page-content{
-        padding-left: 0;
-        padding-right: 0;
-        &.basket,
-        &.checkout,
-        &.contact,
-        &.myaccount {
-            padding-left: 15px;
-            padding-right: 15px;
-        }
-    }
-}
-
-.float-right {
-    float: right !important;
+.content-center {
+    margin: 0 auto;
+    float: none;
 }
 
 .bg-white {
     background-color: $white !important;
 }
 
-.text-gray-dark {
-    color: $gray-dark;
-}
-
-.cursor-pointer {
-    cursor: pointer;
-}
-
-.d-table {
-    display: table;
-}
-
-.border-radius-0 {
-    border-radius: 0;
-}
-
-.position-fixed {
-    position: fixed !important;
+.text-wrap {
+  white-space: normal;
 }
