@@ -265,11 +265,10 @@ body {
 .anicon {
 	>.anicon-search-item {
 		&::before {
-			background: $gray-darker;
+			background: $white;
 		}
 		&::after {
-			background: $white;
-			border: 1px solid $gray-darker;
+			border: 1px solid $white;
 		}
 	}
 	&:hover {
@@ -545,10 +544,10 @@ body {
 						border-color: $brand-primary;
 						box-sizing: border-box;
 						border-radius: .8rem;
-						width: .6rem;
-						height: .6rem;
+						width: .7rem;
+						height: .7rem;
 						margin: 2px;
-						border: 1px solid #fff;
+						border: 1px solid $brand-primary;
 						&.active {
 							background:$brand-primary;
 						}
@@ -606,11 +605,15 @@ body {
 
 //Footer
 .footer {
+	background-color: $white;
 	 .footer-features {
 		border-top: 1px solid transparent;
 		background-color: $brand-primary;
 		color: $white;
 		font-family: $font-family-sans-serif;
+		i {
+			color: $white !important;
+		}
 	}
 }
 //Footer End
