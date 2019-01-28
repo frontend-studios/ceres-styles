@@ -265,7 +265,7 @@
 			"required": false,
 			"label": "Config.homepageHomepageCategory1Label",
 			"options": {}
-              },
+              }
             }
         }
     }
