@@ -10,9 +10,7 @@ body {
 .page-content {
     background-color:$white;
 }
-#page-body {
-	margin-top: 2rem;
-}
+
 //Global End
 
 
@@ -28,11 +26,6 @@ body {
 		background: $navbar-background-color;
 		.container-max {
 			border-bottom: 1px solid darken($gray-lighter2, 2%);
-		}
-		.navbar-brand {
-			img {
-				max-height: 5rem;
-			}
 		}
 	}
 
@@ -462,6 +455,29 @@ body {
 	    }
     }
 }
+
+.cmp-country-settings {
+	background-color: $brand-primary;
+}
+.cmp-currency-select {
+	background-color: $brand-primary;
+}
+.shipping-settings {
+	.list-title {
+		color: $white;
+	}
+}
+.language-settings {
+	.list-title {
+		color: $white;
+	}
+}
+.currency-list {
+	.list-title {
+		color: $white;
+	}
+}
+
 
 .list-item-carousel {
 	.owl-item {
