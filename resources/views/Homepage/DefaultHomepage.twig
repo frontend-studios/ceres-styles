@@ -150,7 +150,7 @@
                             {% if categoryList1 | length > 4 %}
                                    <div class="list-item-carousel owl-carousel owl-theme list-carousel-first">
                                           {% for item in categoryList1 %}
-                                          <li class="col-12 col-sm-6 col-md-4 col-lg-3">
+                                          <li class="col-12">
                                                 <category-item
                                                     :item-data="{{ item.data | json_encode }}"
                                                     :decimal-count="{{ decimalCount }}">
