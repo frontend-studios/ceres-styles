@@ -35,10 +35,8 @@
 {% set homepageFeatCat2Link = config("CeresGlamour.homepage.homepageFeatCat2Link") %}
 
 {% set category1 = services.category.get(config("CeresGlamour.homepage.homepageCategory1"), lang) %}
-{% set category2 = services.category.get(config("CeresGlamour.homepage.homepageCategory2"), lang) %}
-
 {% set categoryList1 = services.itemList.getItemList("category", category1.id, "variation.position_desc", 12).documents %}
-{% set categoryList2 = services.itemList.getItemList("category", category2.id, "variation.position_desc", 12).documents %}
+
 
 {{ component( "Ceres::ItemList.Components.ItemList") }}
 {{ component( "Ceres::ItemList.Components.CategoryImageCarousel") }}
@@ -152,28 +150,18 @@
                             {% if categoryList1 | length > 4 %}
                                    <div class="list-item-carousel owl-carousel owl-theme list-carousel-first">
                                           {% for item in categoryList1 %}
-                                                 {% include "Ceres::ItemList.Components.CategoryItem" with {
-                                                        'item' : item,
-                                                        enableCarousel: false,
-                                                        'tags' : item.data.tags,
-                                                        'showOrderProperties' : false,
-                                                        disableLazyLoad: true
-                                                 } %}
+                                          <li class="col-12 col-sm-6 col-md-4 col-lg-3">
+                                                <category-item
+                                                    :item-data="{{ item.data | json_encode }}"
+                                                    :decimal-count="{{ decimalCount }}">
+                                                    <template slot="BeforePrices">{{ LayoutContainer.show("Ceres::CategoryItem.BeforePrices", item.data) }}</template>
+                                                    <template slot="AfterPrices">{{ LayoutContainer.show("Ceres::CategoryItem.AfterPrices", item.data) }}</template>
+                                                </category-item>
+                                            </li>
                                           {% endfor %}
                                    </div>
                             {% else %}
-                                   <ul class="product-list row grid list-carousel-first">
-                                          {% for item in categoryList1 %}
-                                                 <li class="col-xs-12 col-sm-6 col-md-3">
-                                                        {% include "Ceres::ItemList.Components.CategoryItem" with {
-                                                               'item' : item,
-                                                               enableCarousel: false,
-                                                               'tags' : item.data.tags,
-                                                               'showOrderProperties' : false
-                                                        } %}
-                                                 </li>
-                                          {% endfor %}
-                                   </ul>
+                                   weniger als 4
                             {% endif %}
                      </div>
               </div>
@@ -213,17 +201,5 @@
               </div>
        </div>
 
-       <!-- END CATEGORIES -->
-
-       <div class="container-max pt-3 px-0">
-              <div class="row">
-                     <div class="col-xs-12 col-lg-12">
-                            <div class="section-header mb-3">
-                                   <h4>{{ category2.details[0].name }}</h4>
-                            </div>
-
-                     </div>
-              </div>
-       </div>
 
 </div>
