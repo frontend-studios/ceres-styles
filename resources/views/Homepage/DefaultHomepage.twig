@@ -37,7 +37,7 @@
 {% set category1 = services.category.get(config("CeresGlamour.homepage.homepageCategory1"), lang) %}
 {% set categoryList1 = services.itemList.getItemList("category", category1.id, "variation.position_desc", 12).documents %}
 
-{% set category2 = services.category.get(config("CeresGlamour.homepage.homepageCategory1"), lang) %}
+{% set category2 = services.category.get(config("CeresGlamour.homepage.homepageCategory2"), lang) %}
 {% set categoryList2 = services.itemList.getItemList("category", category2.id, "variation.position_desc", 12).documents %}
 
 

@@ -271,7 +271,7 @@
                    "required": false,
                    "label": "Config.homepageHomepageCategory2Label",
                    "options": {}
-            }
+              }
             }
         }
     }
