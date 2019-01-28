@@ -260,54 +260,12 @@
                         "defaultValue": "/"
                     }
                 },
-                "homepage.homepageNewTitleDE": {
-                    "type": "inputText",
-                    "required": false,
-                    "label": "Config.homepageHomepageNewTitleDELabel",
-                    "options": {
-                        "defaultValue": "Unsere Neuheiten"
-                    }
-                },
-                "homepage.homepageNewTitleEN": {
-                    "type": "inputText",
-                    "required": false,
-                    "label": "Config.homepageHomepageNewTitleENLabel",
-                    "options": {
-                        "defaultValue": "NEW"
-                    }
-                },
-                "homepage.homepageNewId": {
-                    "type": "inputText",
-                    "required": false,
-                    "label": "Config.homepageHomepageNewIdLabel",
-                    "options": {
-                        "defaultValue": "16"
-                    }
-                },
-                "homepage.homepageTopsellerTitleDE": {
-                    "type": "inputText",
-                    "required": false,
-                    "label": "Config.homepageHomepageTopsellerTitleDELabel",
-                    "options": {
-                        "defaultValue": "Unsere Topseller"
-                    }
-                },
-                "homepage.homepageTopsellerTitleEN": {
-                    "type": "inputText",
-                    "required": false,
-                    "label": "Config.homepageHomepageTopsellerTitleENLabel",
-                    "options": {
-                        "defaultValue": "TOPSELLER"
-                    }
-                },
-                "homepage.homepageTopsellerId": {
-                    "type": "inputText",
-                    "required": false,
-                    "label": "Config.homepageHomepageTopsellerIdLabel",
-                    "options": {
-                        "defaultValue": "19"
-                    }
-                }
+                "homepage.homepageCategory1": {
+			"type": "categoryPicker",
+			"required": false,
+			"label": "Config.homepageHomepageCategory1Label",
+			"options": {}
+              },
             }
         }
     }
