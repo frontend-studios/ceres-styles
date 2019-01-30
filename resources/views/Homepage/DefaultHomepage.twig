@@ -1,0 +1,70 @@
+{% import "Ceres::PageDesign.Macros.LayoutContainer" as LayoutContainer %}
+{% import "Ceres::PageDesign.Macros.ItemName" as ItemName %}
+
+{{ component( "Ceres::ItemList.Components.ItemList") }}
+{{ component( "Ceres::ItemList.Components.CategoryImageCarousel") }}
+{{ component( "Ceres::Basket.Components.AddToBasket" ) }}
+
+{% set homepageIcon = config("CeresHipster.homepage.homepageIcon") %}
+{% set homepageHeadlineDE = config("CeresHipster.homepage.homepageHeadlineDE") %}
+{% set homepageSublineDE = config("CeresHipster.homepage.homepageSublineDE") %}
+
+{% set homepageHeadlineEN = config("CeresHipster.homepage.homepageHeadlineEN") %}
+{% set homepageSublineEN = config("CeresHipster.homepage.homepageSublineEN") %}
+
+{% set category1 = services.category.get(config("CeresHipster.homepage.homepageCategory1"), lang) %}
+{% set categoryList1 = services.itemList.getItemList("category", category1.id, "variation.position_desc", 12).documents %}
+
+<div class="home container-max">
+
+	<div class="row teaser">
+		<div class="col-12 text-xs-center">
+			<i class="fa {{ homepageIcon }} fa-5x" aria-hidden="true"></i>
+			{% if lang == "de" %}
+				<h1>{{ homepageHeadlineDE }}</h1>
+				<h3>{{ homepageSublineDE }}</h3>
+			{% elseif lang == "en" %}
+				<h1>{{ homepageHeadlineEN }}</h1>
+				<h3>{{ homepageSublineEN }}</h3>
+			{% endif %}
+		</div>
+	</div>
+
+	<div class="row page-content categoriegrid px-0">
+		<div class="col-12">
+			<div class="section-header mb-3">
+				<h2>{{ category1.details[0].name }}</h2>
+				<a href="{{ services.category.getURL(category1, lang) }}" class="section-link-all">
+					<i class="fa fa-angle-double-right" aria-hidden="true"></i>
+					{{ trans("Ceres::Template.homepageShowAll") }}</a>
+			</div>
+			{% if categoryList1 | length > 4 %}
+                                   <div class="list-item-carousel owl-carousel owl-theme list-carousel-first">
+                                          {% for item in categoryList1 %}
+                                          <li class="col-12">
+                                                <category-item
+                                                    :item-data="{{ item.data | json_encode }}"
+                                                    :decimal-count="{{ decimalCount }}">
+                                                    <template slot="BeforePrices">{{ LayoutContainer.show("Ceres::CategoryItem.BeforePrices", item.data) }}</template>
+                                                    <template slot="AfterPrices">{{ LayoutContainer.show("Ceres::CategoryItem.AfterPrices", item.data) }}</template>
+                                                </category-item>
+                                            </li>
+                                          {% endfor %}
+                                   </div>
+                            {% else %}
+                            <div class="row no-carousel">
+                                   {% for item in categoryList1 %}
+                                   <li class="col-12 col-sm-4">
+                                         <category-item
+                                             :item-data="{{ item.data | json_encode }}"
+                                             :decimal-count="{{ decimalCount }}">
+                                             <template slot="BeforePrices">{{ LayoutContainer.show("Ceres::CategoryItem.BeforePrices", item.data) }}</template>
+                                             <template slot="AfterPrices">{{ LayoutContainer.show("Ceres::CategoryItem.AfterPrices", item.data) }}</template>
+                                         </category-item>
+                                     </li>
+                                     {% endfor %}
+                            </div>
+                     {% endif %}
+		</div>
+	</div>
+</div>

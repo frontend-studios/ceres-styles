@@ -32,6 +32,17 @@ body {
     }
 }
 
+.list-item-carousel {
+	.owl-item {
+    		list-style-type: none;
+	}
+}
+.no-carousel {
+	.col-12 {
+	      list-style-type: none;
+      }
+}
+
 .carousel-control {
 @include media-breakpoint-up(md) {
        top: 20% !important;
