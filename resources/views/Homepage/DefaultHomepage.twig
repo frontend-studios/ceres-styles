@@ -1,0 +1,292 @@
+{% import "Ceres::PageDesign.Macros.LayoutContainer" as LayoutContainer %}
+{% import "Ceres::PageDesign.Macros.ItemName" as ItemName %}
+
+
+{% set homepageFirstSlideTitleDE = config("CeresElectronic.homepage.homepageFirstSlideTitleDE") %}
+{% set homepageFirstSlideTitleEN = config("CeresElectronic.homepage.homepageFirstSlideTitleEN") %}
+{% set homepageFirstSlideImgUrl = config("CeresElectronic.homepage.homepageFirstSlideImgUrl") %}
+{% set homepageFirstSlideLink = config("CeresElectronic.homepage.homepageFirstSlideLink") %}
+
+{% set homepageSecondSlideTitleDE = config("CeresElectronic.homepage.homepageSecondSlideTitleDE") %}
+{% set homepageSecondSlideTitleEN = config("CeresElectronic.homepage.homepageSecondSlideTitleEN") %}
+{% set homepageSecondSlideImgUrl = config("CeresElectronic.homepage.homepageSecondSlideImgUrl") %}
+{% set homepageSecondSlideLink = config("CeresElectronic.homepage.homepageSecondSlideLink") %}
+
+{% set homepageExtraHero1TitleDE = config("CeresElectronic.homepage.homepageExtraHero1TitleDE") %}
+{% set homepageExtraHero1TitleEN = config("CeresElectronic.homepage.homepageExtraHero1TitleEN") %}
+{% set homepageExtraHero1ImgUrl = config("CeresElectronic.homepage.homepageExtraHero1ImgUrl") %}
+{% set homepageExtraHero1Link = config("CeresElectronic.homepage.homepageExtraHero1Link") %}
+
+{% set homepageExtraHero2TitleDE = config("CeresElectronic.homepage.homepageExtraHero2TitleDE") %}
+{% set homepageExtraHero2TitleEN = config("CeresElectronic.homepage.homepageExtraHero2TitleEN") %}
+{% set homepageExtraHero2ImgUrl = config("CeresElectronic.homepage.homepageExtraHero2ImgUrl") %}
+{% set homepageExtraHero2Link = config("CeresElectronic.homepage.homepageExtraHero2Link") %}
+
+{% set homepageSale2TitleDE = config("CeresElectronic.homepage.homepageSale2TitleDE") %}
+{% set homepageSale2TitleEN = config("CeresElectronic.homepage.homepageSale2TitleEN") %}
+{% set homepageSaleImgUrl = config("CeresElectronic.homepage.homepageSaleImgUrl") %}
+{% set homepageSaleLink = config("CeresElectronic.homepage.homepageSaleLink") %}
+
+{% set homepageFeatCat1TitleDE = config("CeresElectronic.homepage.homepageFeatCat1TitleDE") %}
+{% set homepageFeatCat1TitleEN = config("CeresElectronic.homepage.homepageFeatCat1TitleEN") %}
+{% set homepageFeatCat1ImgUrl = config("CeresElectronic.homepage.homepageFeatCat1ImgUrl") %}
+{% set homepageFeatCat1Link = config("CeresElectronic.homepage.homepageFeatCat1Link") %}
+
+{% set homepageFeatCat2TitleDE = config("CeresElectronic.homepage.homepageFeatCat2TitleDE") %}
+{% set homepageFeatCat2TitleEN = config("CeresElectronic.homepage.homepageFeatCat2TitleEN") %}
+{% set homepageFeatCat2ImgUrl = config("CeresElectronic.homepage.homepageFeatCat2ImgUrl") %}
+{% set homepageFeatCat2Link = config("CeresElectronic.homepage.homepageFeatCat2Link") %}
+
+
+{% set category1 = services.category.get(config("CeresElectronic.homepage.homepageCategory1"), lang) %}
+{% set category2 = services.category.get(config("CeresElectronic.homepage.homepageCategory2"), lang) %}
+
+{% set categoryList1 = services.itemList.getItemList("category", category1.id, "variation.position_desc", 12).documents %}
+{% set categoryList2 = services.itemList.getItemList("category", category2.id, "variation.position_desc", 12).documents %}
+
+{{ component( "Ceres::ItemList.Components.ItemList") }}
+{{ component( "Ceres::ItemList.Components.CategoryImageCarousel") }}
+{{ component( "Ceres::Basket.Components.AddToBasket" ) }}
+
+<div class="home container-max page-content">
+
+	<div class="cmp cmp-hero">
+
+		<div class="hero-main">
+			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+				<div class="carousel-inner" role="listbox">
+					<div class="carousel-item active">
+						<a class="hero-category" href="{{ homepageFirstSlideLink }}">
+							<img src="{{ homepageFirstSlideImgUrl }}" alt="{{ homepageFirstSlideTitleDE }}" class="img-fluid">
+							<div class="hero-category-inner">
+								<h4 class="hero-category-headline">
+									{% if lang == "de" %}
+										{{ homepageFirstSlideTitleDE }}
+									{% elseif lang == "en" %}
+										{{ homepageFirstSlideTitleEN }}
+									{% endif %}
+								</h4>
+								<div class="hero-category-cta">
+									{% if lang == "de" %}
+										Ansehen
+									{% elseif lang == "en" %}
+										Show
+									{% endif %}
+									<i class="fa fa-chevron-right" aria-hidden="true"></i>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="carousel-item">
+						<a class="hero-category" href="{{ homepageSecondSlideLink }}">
+							<img src="{{ homepageSecondSlideImgUrl }}" alt="{{ homepageSecondSlideTitleDE }}" class="img-fluid">
+							<div class="hero-category-inner">
+								<h4 class="hero-category-headline">
+									{% if lang == "de" %}
+										{{ homepageSecondSlideTitleDE }}
+									{% elseif lang == "en" %}
+										{{ homepageSecondSlideTitleEN }}
+									{% endif %}
+								</h4>
+								<div class="hero-category-cta">
+									{% if lang == "de" %}
+										Ansehen
+									{% elseif lang == "en" %}
+										Show
+									{% endif %}
+									<i class="fa fa-chevron-right" aria-hidden="true"></i>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+
+				<ol class="carousel-indicators">
+					<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+					<li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
+				</ol>
+
+			</div>
+		</div>
+
+		<div class="hero-xtras">
+			<a class="hero-category" href="{{ homepageExtraHero1Link }}">
+				<img src="{{ homepageExtraHero1ImgUrl }}" alt="{{ homepageExtraHero1TitleDE }}">
+				<div class="hero-category-inner">
+					<h4 class="hero-category-headline">
+						{% if lang == "de" %}
+							{{ homepageExtraHero1TitleDE }}
+						{% elseif lang == "en" %}
+							{{ homepageExtraHero1TitleEN }}
+						{% endif %}
+					</h4>
+
+				</div>
+			</a>
+			<a class="hero-category" href="{{ homepageExtraHero2Link }}">
+				<img src="{{ homepageExtraHero2ImgUrl }}" alt="{{ homepageExtraHero2TitleDE }}">
+				<div class="hero-category-inner">
+					<h4 class="hero-category-headline">
+						{% if lang == "de" %}
+							{{ homepageExtraHero2TitleDE }}
+						{% elseif lang == "en" %}
+							{{ homepageExtraHero2TitleEN }}
+						{% endif %}
+					</h4>
+
+				</div>
+			</a>
+		</div>
+
+	</div>
+
+	<!-- SALE -->
+	<div class="row prop-row m-y-2">
+		<div class="col-xs-12">
+			<div class="prop-xs-2-1 prop-sm-4-1 prop-md-6-1">
+				<div class="prop-inner">
+					<a class="featured-sale-new" href="{{ homepageSaleLink }}">
+						<img src="{{ homepageSaleImgUrl }}" alt="{{ homepageSale2TitleDE }}">
+						<div class="featured-category-inner">
+							<h4 class="featured-category-headline">
+								{% if lang == "de" %}
+									{{ homepageSale2TitleDE }}
+								{% elseif lang == "en" %}
+									{{ homepageSale2TitleEN }}
+								{% endif %}
+							</h4>
+
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- END SALE -->
+
+	<div class="container-max p-t-1 p-x-0">
+		<div class="row">
+			<div class="section-header m-b-1">
+				<h4>{{ category1.details[0].name }}</h4>
+			</div>
+			<div class="col-xs-12 col-lg-12">
+				{% if categoryList1 | length > 4 %}
+                                   <div class="list-item-carousel owl-carousel owl-theme list-carousel-first">
+                                          {% for item in categoryList1 %}
+                                          <li class="col-12">
+                                                <category-item
+                                                    :item-data="{{ item.data | json_encode }}"
+                                                    :decimal-count="{{ decimalCount }}">
+                                                    <template slot="BeforePrices">{{ LayoutContainer.show("Ceres::CategoryItem.BeforePrices", item.data) }}</template>
+                                                    <template slot="AfterPrices">{{ LayoutContainer.show("Ceres::CategoryItem.AfterPrices", item.data) }}</template>
+                                                </category-item>
+                                            </li>
+                                          {% endfor %}
+                                   </div>
+                            {% else %}
+                            <div class="row no-carousel">
+                                   {% for item in categoryList1 %}
+                                   <li class="col-12 col-sm-4">
+                                         <category-item
+                                             :item-data="{{ item.data | json_encode }}"
+                                             :decimal-count="{{ decimalCount }}">
+                                             <template slot="BeforePrices">{{ LayoutContainer.show("Ceres::CategoryItem.BeforePrices", item.data) }}</template>
+                                             <template slot="AfterPrices">{{ LayoutContainer.show("Ceres::CategoryItem.AfterPrices", item.data) }}</template>
+                                         </category-item>
+                                     </li>
+                                     {% endfor %}
+                            </div>
+                            {% endif %}
+			</div>
+		</div>
+	</div>
+
+	<!-- CATEGORIES -->
+
+	<div class="row prop-row m-b-2">
+		<div class="col-xs-12 col-md-8">
+			<div class="prop-xs-2-1">
+				<div class="prop-inner">
+					<a class="featured-category" href="{{ homepageFeatCat1Link }}">
+						<img src="{{ homepageFeatCat1ImgUrl }}" alt="{{ homepageFeatCat1TitleDE }}">
+						<div class="featured-category-inner">
+							<h4 class="featured-category-headline">
+								{% if lang == "de" %}
+									{{ homepageFeatCat1TitleDE }}
+								{% elseif lang == "en" %}
+									{{ homepageFeatCat1TitleEN }}
+								{% endif %}
+							</h4>
+
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-xs-12 col-md-4">
+			<div class="prop-xs-2-1 prop-md-1-1">
+				<div class="prop-inner">
+					<a class="featured-category" href="{{ homepageFeatCat2Link }}">
+						<img src="{{ homepageFeatCat2ImgUrl }}" alt="{{ homepageFeatCat2TitleDE }}">
+						<div class="featured-category-inner">
+							<h4 class="featured-category-headline">
+								{% if lang == "de" %}
+									{{ homepageFeatCat2TitleDE }}
+								{% elseif lang == "en" %}
+									{{ homepageFeatCat2TitleEN }}
+								{% endif %}
+							</h4>
+
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- END CATEGORIES -->
+
+	<div class="container-fluid grey-bg">
+		<div class="container-max p-t-1 p-x-0">
+			<div class="row">
+				<div class="section-header m-b-1">
+					<h4>{{ category2.details[0].name }}</h4>
+				</div>
+				<div class="col-xs-12 col-lg-12">
+					{% if categoryList2 | length > 4 %}
+                                   <div class="list-item-carousel owl-carousel owl-theme list-carousel-first">
+                                          {% for item in categoryList2 %}
+                                          <li class="col-12">
+                                                <category-item
+                                                    :item-data="{{ item.data | json_encode }}"
+                                                    :decimal-count="{{ decimalCount }}">
+                                                    <template slot="BeforePrices">{{ LayoutContainer.show("Ceres::CategoryItem.BeforePrices", item.data) }}</template>
+                                                    <template slot="AfterPrices">{{ LayoutContainer.show("Ceres::CategoryItem.AfterPrices", item.data) }}</template>
+                                                </category-item>
+                                            </li>
+                                          {% endfor %}
+                                   </div>
+                            {% else %}
+                            <div class="row no-carousel">
+                                   {% for item in categoryList2 %}
+                                   <li class="col-12 col-sm-4">
+                                         <category-item
+                                             :item-data="{{ item.data | json_encode }}"
+                                             :decimal-count="{{ decimalCount }}">
+                                             <template slot="BeforePrices">{{ LayoutContainer.show("Ceres::CategoryItem.BeforePrices", item.data) }}</template>
+                                             <template slot="AfterPrices">{{ LayoutContainer.show("Ceres::CategoryItem.AfterPrices", item.data) }}</template>
+                                         </category-item>
+                                     </li>
+                                     {% endfor %}
+                            </div>
+                            {% endif %}
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</div>
