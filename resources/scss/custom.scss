@@ -14,6 +14,7 @@ body {
             h1 {
                 font-size: 5em;
                 margin-top: 0.5em;
+                font-family: $font-family-heading;
                 @include media-breakpoint-up(xs) {
                     font-size: 3em;
                 }
@@ -21,6 +22,7 @@ body {
             h3 {
                 font-size: 1.75em;
                 margin-top: 0.5em;
+                font-family: $font-family-heading;
             }
         }
         i {
@@ -76,6 +78,7 @@ body {
         background-color: unset;
         h2 {
             color: $brand-primary;
+            font-family: $font-family-heading;
         }
         .section-link-all {
             color: $brand-primary;
@@ -159,6 +162,9 @@ body {
     .parallax-text-container {
         position: inherit;
         color: $white;
+        h1 {
+               font-family: $font-family-heading;
+        }
         .category-description {
             word-wrap: break-word;
             background-color: rgba($gray-darker,.75);
@@ -172,12 +178,20 @@ body {
 
 #mainNavbarCollapsable {
     ul.mainmenu {
-        li {
+        > li {
             a {
                 color: $white;
                 display: inline-block;
+                font-family: $font-family-heading;
             }
-        }
+            > ul {
+                   > li {
+                          a {
+                            font-family: $font-family-heading;
+                          }
+                   }
+            }
+       }
     }
 }
 
