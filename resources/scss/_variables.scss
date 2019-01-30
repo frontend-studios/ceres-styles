@@ -82,11 +82,11 @@ $top-bar-basket-color:      color-yiq($top-bar-basket-btn);
 //
 // Footer
 //
-$footer-bg:                 $gray-lightest;
-$footer-color:              $gray-dark;
+$footer-bg:                 $gray-darker;
+$footer-color:              $white;
 
-$footer-features-bg:        darken($gray-lightest, 10%);
-$footer-features-color:     $gray-dark;
+$footer-features-bg:        $black;;
+$footer-features-color:     $white;
 
 //
 // Availability
