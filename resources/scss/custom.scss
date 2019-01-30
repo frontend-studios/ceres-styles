@@ -109,7 +109,7 @@ body {
 			}
 		}
 	}
-	.hero-xtras {		
+	.hero-xtras {
 		.hero-category {
 			.hero-category-inner {
 				padding: .5rem 1rem;
@@ -369,7 +369,10 @@ body {
 	background-color: $footer-bg;
 
 	a{
-		color: $footer-color;
+		color: $white;
+	}
+	h1, h2, h3, h4, h5, .h1, .h2, .h3, .h4, .h5 {
+		color: $white;
 	}
 
 	.svg.plenty-brand {
