@@ -11,7 +11,7 @@ body {
     background-color: transparent;
 }
 #page-body {
-	margin-top: 2rem;
+	background-color: $gray-darker;
 }
 //Global End
 
@@ -109,8 +109,7 @@ body {
 			}
 		}
 	}
-	.hero-xtras {
-		padding-left: 1rem;
+	.hero-xtras {		
 		.hero-category {
 			.hero-category-inner {
 				padding: .5rem 1rem;
@@ -162,11 +161,12 @@ body {
 }
 
 .section-header{
-	padding: 1rem 1.5rem;
+	padding: 1rem 1.5rem 1rem 0;
 	border-bottom: 0;
-	background: $brand-primary;
+	background: transparent;
     position: relative;
     font-family: $font-family-heading;
+    border-bottom: 1px solid $white;
     h4 {
     	padding: .2rem 0 0;
 	    margin: 0;
@@ -323,7 +323,7 @@ body {
 
 //Header Start
 .top-bar{
-	color: $top-bar-color;
+	color: $white;
 	background-color: $top-bar-bg;
 	.navbar{
 		font-family:$font-family-heading;
@@ -342,7 +342,22 @@ body {
 		>li {
 			>a {
 				font-family: $font-family-menu;
+				color: $white;
 			}
+			> ul {
+			 	> li {
+					> a {
+					font-family: $font-family-menu;
+					}
+				}
+			}
+		}
+	}
+}
+.anicon {
+	>.anicon-search-item {
+		&::after {
+			background: $black;
 		}
 	}
 }

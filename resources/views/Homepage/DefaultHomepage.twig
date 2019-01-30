@@ -107,7 +107,7 @@
 			</div>
 		</div>
 
-		<div class="hero-xtras">
+		<div class="hero-xtras pl-0 pl-lg-3">
 			<a class="hero-category" href="{{ homepageExtraHero1Link }}">
 				<img src="{{ homepageExtraHero1ImgUrl }}" alt="{{ homepageExtraHero1TitleDE }}">
 				<div class="hero-category-inner">
@@ -138,7 +138,7 @@
 
 	</div>
 
-	<div class="row prop-row m-y-2 sale-new">
+	<div class="row prop-row my-5 sale-new">
 		<div class="col-12">
 			<div class="prop-xs-2-1 prop-sm-4-1 prop-md-6-1">
 				<div class="prop-inner">
@@ -170,7 +170,7 @@
 			{% if categoryList1 | length > 4 %}
                                    <div class="list-item-carousel owl-carousel owl-theme list-carousel-first">
                                           {% for item in categoryList1 %}
-                                          <li class="col-12">
+                                          <li class="col-12 px-0">
                                                 <category-item
                                                     :item-data="{{ item.data | json_encode }}"
                                                     :decimal-count="{{ decimalCount }}">
@@ -183,7 +183,7 @@
                             {% else %}
                             <div class="row no-carousel">
                                    {% for item in categoryList1 %}
-                                   <li class="col-12 col-sm-4">
+                                   <li class="col-12 col-sm-4 px-2">
                                          <category-item
                                              :item-data="{{ item.data | json_encode }}"
                                              :decimal-count="{{ decimalCount }}">
@@ -252,7 +252,7 @@
 			{% if categoryList2 | length > 4 %}
                                    <div class="list-item-carousel owl-carousel owl-theme list-carousel-first">
                                           {% for item in categoryList2 %}
-                                          <li class="col-12">
+                                          <li class="col-12 px-0">
                                                 <category-item
                                                     :item-data="{{ item.data | json_encode }}"
                                                     :decimal-count="{{ decimalCount }}">
@@ -265,7 +265,7 @@
                             {% else %}
                             <div class="row no-carousel">
                                    {% for item in categoryList2 %}
-                                   <li class="col-12 col-sm-4">
+                                   <li class="col-12 col-sm-4 px-2">
                                          <category-item
                                              :item-data="{{ item.data | json_encode }}"
                                              :decimal-count="{{ decimalCount }}">

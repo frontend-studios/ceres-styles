@@ -74,7 +74,7 @@ $fa-font-path:              "#{$root-directory}/documents/fonts" !default;
 //
 // Top Bar
 //
-$top-bar-bg:                $gray-dark;
+$top-bar-bg:                $black;
 $top-bar-color:             color-yiq($top-bar-bg);
 $top-bar-basket-btn:        $brand-primary;
 $top-bar-basket-color:      color-yiq($top-bar-basket-btn);
@@ -245,7 +245,7 @@ $zindex-popover:                    $zIndex-10 !default;
 $zindex-tooltip:                    $zIndex-7 !default;
 
 // Navbar
-$navbar-background-color:           $gray-lightest !default;
+$navbar-background-color:           $gray-darker !default;
 $navbar-dark-color:                 $gray !default;
 $navbar-dark-disabled-color:        $gray-light !default;
 
