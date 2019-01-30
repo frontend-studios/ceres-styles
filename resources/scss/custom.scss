@@ -388,6 +388,13 @@ body {
 				color: white;
 				font-family: $font-family-menu;
 			}
+			>ul {
+				>li {
+					>a {
+						font-family: $font-family-menu;
+					}
+				}
+			}
 		}
 	}
 }
