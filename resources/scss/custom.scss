@@ -32,6 +32,26 @@ body {
     }
 }
 
+.breadcrumb-item.active {
+	span {
+		color: white;
+		font-weight: bold;
+	}
+}
+.breadcrumb-item {
+	+ {
+		.breadcrumb-item {
+			&::before {
+				color: white;
+			}
+		}
+	}
+	a {
+		color: white;
+	}
+}
+
+
 .list-item-carousel {
 	.owl-item {
     		list-style-type: none;
