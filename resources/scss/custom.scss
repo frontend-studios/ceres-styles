@@ -91,6 +91,12 @@ body {
 				right:auto;
 				li {
 					border-color: $brand-primary;
+					box-sizing: border-box;
+					border-radius: .8rem;
+					width: .7rem;
+					height: .7rem;
+					margin: 2px;
+					border: 1px solid $brand-primary;
 					&.active {
 						background:$brand-primary;
 					}
@@ -122,7 +128,7 @@ body {
 	}
 	.hero-xtras {
 		flex: 1 0 34%;
-	      padding-left: 1rem;
+
 		.hero-category {
 			.hero-category-inner {
 				padding: .5rem 1rem;
@@ -190,7 +196,7 @@ body {
 .section-header {
 	padding: 1rem 1.5rem;
 	border-bottom: 0;
-	background: $brand-primary;
+	background: transparent;
     position: relative;
     font-family: $font-family-heading;
     h1, h2, h3, h4, h5, h6 {
@@ -198,7 +204,7 @@ body {
 	    margin: 0;
 	    text-transform: uppercase;
 	    font-size: 1.75rem;
-	    color: $white;
+	    color: $gray-dark;
     }
     a.section-link-all {
     	position: absolute;
@@ -211,6 +217,18 @@ body {
 	    }
     }
 }
+
+.list-item-carousel {
+	.owl-item {
+    		list-style-type: none;
+	}
+}
+.no-carousel {
+	.col-12 {
+	      list-style-type: none;
+      }
+}
+
 @include media-breakpoint-up(sm){
 	.home {
 		.product-list {
@@ -283,9 +301,15 @@ body {
 				}
 				.carousel-indicators {
 					bottom: 0;
-    				top: auto;
+    					top: auto;
 					li {
 						border-color: $brand-primary;
+						box-sizing: border-box;
+						border-radius: .8rem;
+						width: .7rem;
+						height: .7rem;
+						margin: 2px;
+						border: 1px solid $brand-primary;
 						&.active {
 							background:$brand-primary;
 						}
