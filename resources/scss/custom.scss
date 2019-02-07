@@ -45,7 +45,7 @@ body {
 			a{
 				padding: 0.5rem .8rem;
 				display: inline-block;
-				color: $top-bar-color !important;
+				color: $gray-600 !important;
 				font-size: .85rem;
 
 				&[aria-expanded="true"],
@@ -78,7 +78,7 @@ body {
 						border:0;
 						border-top: 1px solid $gray-lighter;
 						display: block;
-						color: $brand-primary;
+						color: $black;
 						&:first-child {
 							border-top:0;
 						}
@@ -630,6 +630,7 @@ body {
 		cursor: pointer;
 		border: 1px solid black;
 		padding: 1rem 1.25rem;
+		top: unset;
 		border-radius: 3px;
 		>i {
 			right: 10px;
