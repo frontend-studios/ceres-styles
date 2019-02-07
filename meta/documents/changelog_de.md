@@ -1,5 +1,11 @@
 # Release Notes für Dark Theme
 
+
+## v3.0.1 (2019-02-07)
+
+### Änderungen
+- Kompatibilität mit Ceres und IO ab Version 3.0.0
+
 ## v2.16.0 (2018-10-26)
 
 ### Änderungen
