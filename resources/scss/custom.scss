@@ -268,7 +268,7 @@ body {
 		>.anicon-search-item {
 			&::after {
 				background: $gray-darker;
-				border: 1px solid #white;
+				border: 1px solid white;
 			}
 			&::before {
 				background: $white;
@@ -618,11 +618,49 @@ body {
 
 //thumbnail
 .cmp-product-thumb {
-	border-bottom: transparent;
-	@include media-breakpoint-up(md) {
-		border-bottom: 1px solid $brand-primary;
+	.add-to-basket-lg-container {
+		border-style: solid;
+		border-width: 1px;
+		border-color: black;
+		position: absolute;
+		z-index: 99;
+		bottom: 1.75rem;
+		right: 1rem;
+		transition: .3s ease-out;
+		cursor: pointer;
+		border: 1px solid black;
+		padding: 1rem 1.25rem;
+		border-radius: 3px;
+		>i {
+			right: 10px;
+			top: 6px;
+			position: absolute;
+			transition: .3s ease-out;
+		}
+		&:hover {
+			border-color: black;
+			background: black;
+			>i {
+				color: white;
+			}
+		}
+	}
+	.thumb-content {
+		.vat {
+			display: none;
+		}
+		padding: .8rem;
+		width: 100%;
+		margin: 0;
+		border-bottom: 1px solid black;
+		margin-bottom: 1rem;
+	}
+	.prices {
+		display: flex;
+		flex-direction: column;
 	}
 }
+
 //thumbnail end
 
 .parallax-img-container {
