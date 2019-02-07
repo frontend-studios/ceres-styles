@@ -439,7 +439,7 @@ body {
 .section-header{
 	padding: 1rem 1.5rem;
 	border-bottom: 0;
-	background: $brand-primary;
+	background: $gray-lightest;
     position: relative;
     font-family: $font-family-menu;
 	color: $black;
@@ -600,6 +600,7 @@ body {
 						margin: 0;
 					    width: 100%;
 					    font-size: 1.5rem;
+						color: $black;
 					}
 				}
 			}
