@@ -50,7 +50,7 @@
         document.body.classList.add("no-touch");
     }
 </script>
-<div id="vue-app" style="background: url('{{ globalBackgroundImage }}') no-repeat center center fixed; background-size:cover;">
+<div id="vue-app" style="background: url({{ globalBackgroundImage }}) no-repeat center center fixed; background-size:cover;">
     <div class="wrapper wrapper-top">
         <!-- messages -->
         <notifications template="#vue-notifications" :initial-notifications="{{ notifications | json_encode() }}"></notifications>
