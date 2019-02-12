@@ -33,8 +33,12 @@ class CeresHipsterServiceProvider extends ServiceProvider
             return false;
         });
 
-        $eventDispatcher->listen('IO.init.templates', function (Partial $partial) {
-            $partial->set('page-design', 'CeresHipster::PageDesign.PageDesign');            
+        $eventDispatcher->listen('IO.init.templates', function(Partial $partial)
+        {
+            $partial->set('page-design', 'MegaSportTheme::CeresHipster.PageDesign');
+
         }, self::EVENT_LISTENER_PRIORITY);
+
+
     }
 }
