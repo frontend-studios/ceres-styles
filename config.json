@@ -9,7 +9,7 @@
                     "required": false,
                     "label": "Config.globalGlobalBackgroundImageLabel",
                     "options": {
-                        "defaultValue": "https://unsplash.it/1200/1200?image=876"
+                        "defaultValue": "https://picsum.photos/1200/1200?image=876"
                     }
                 }
             }
