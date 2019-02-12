@@ -245,14 +245,9 @@
                         bodyOffset += children[i].getBoundingClientRect().height;
                     }
 
-                    //document.getElementById('vue-app').style.marginTop = bodyOffset + 'px';
-                    //document.getElementById('vue-app').style.minHeight = "calc(100vh - " + bodyOffset + "px)";
-                    $('#vue-app').css({
-                        'margin-top' : bodyOffset+'px',
-                        'min-height' : 'calc(100vh-'+bodyOffset+'px )',
-                        'background' : 'url('{{ globalBackgroundImage }}') no-repeat center center fixed',
-                        'background-size' : 'cover'
-                    });
+                    document.getElementById('vue-app').style.marginTop = bodyOffset + 'px';
+                    document.getElementById('vue-app').style.minHeight = "calc(100vh - " + bodyOffset + "px)";
+
                 }
             }
 
@@ -352,6 +347,12 @@
 
 <script>
     $( document ).ready(function() {
+        $('body').css({
+            'margin-top' : bodyOffset+'px',
+            'min-height' : 'calc(100vh-'+bodyOffset+'px )',
+            'background' : 'url('{{ globalBackgroundImage }}') no-repeat center center fixed',
+            'background-size' : 'cover'
+        });
         $(".list-item-carousel").each(function(){
             $(this).owlCarousel({
                 autoHeight       : true,
