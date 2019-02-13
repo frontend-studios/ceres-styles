@@ -35,7 +35,7 @@ class CeresHipsterServiceProvider extends ServiceProvider
 
         $eventDispatcher->listen('IO.init.templates', function(Partial $partial)
         {
-            $partial->set('page-design', 'MegaSportTheme::CeresHipster.PageDesign');
+            $partial->set('page-design', 'CeresHipster::CeresHipster.PageDesign');
 
         }, self::EVENT_LISTENER_PRIORITY);
 
