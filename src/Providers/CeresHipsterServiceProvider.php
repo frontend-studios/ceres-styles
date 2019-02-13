@@ -23,8 +23,9 @@ class CeresHipsterServiceProvider extends ServiceProvider
             $container->setTemplate("CeresHipster::Homepage.Homepage");
             return false;
         });
-        //partial replacement
-        $eventDispatcher->listen('IO.init.templates', function (Partial $partial) {
+
+        $eventDispatcher->listen('IO.init.templates', function (Partial $partial){
+
             $partial->set('page-design', 'CeresHipster::PageDesign.PageDesign');
         }, self::EVENT_LISTENER_PRIORITY);
     }
