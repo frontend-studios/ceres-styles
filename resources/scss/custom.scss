@@ -84,6 +84,12 @@ body {
 
 
 .home {
+	.section-header {
+       	background-color: white;
+   		h4 {
+   			color: $brand-primary;
+   		}
+   	}
 	.carousel-control {
 		@include media-breakpoint-up(md) {
 			top: 30%;
@@ -108,12 +114,6 @@ body {
     .page-content {
         margin-top: 40vh;
     }
-    section-header {
-    	background-color: white;
-		h4 {
-			color: $brand-primary;
-		}
-	}
 }
 
 .list-item-carousel {
