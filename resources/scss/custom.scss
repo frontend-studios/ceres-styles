@@ -36,6 +36,8 @@ body {
 				}
 			}
 			.carousel-control {
+				position: absolute;
+				bottom: 0;
 				span {
 					font-size: 60px;
 					bottom: 10%;
@@ -44,6 +46,14 @@ body {
 						color: $brand-primary;
 					}
 				}
+			}
+			.left.carousel-control {
+				padding: 2rem;
+				left: 0;
+			}
+			.right.carousel-control {
+				right: 0;
+				padding: 2rem;
 			}
 		}
 	}
@@ -63,8 +73,7 @@ body {
 
 //Header Start
 #page-header {
-	background-color: transparent !important;
-	.top-bar {
+	&.top-bar {
 		background-color: $top-bar-bg;
 	}
 	.navbar {
