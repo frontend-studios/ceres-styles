@@ -237,14 +237,6 @@ body {
 	color: $gray-light;
 }
 
-
-.list-controls {
-	position:relative;
-	.list-controls-inner {
-		background:$gray;
-		padding:.5em;
-	}
-}
 //Category End
 
 //Single Start
@@ -274,4 +266,16 @@ body {
 
 .cmp-product-thumb {
 	border: 1px solid $gray-light;
+	.thumb-title {
+		text-align: center;
+	}
+	.prices {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.vat.small {
+	    	text-align: center;
+	    	display: block;
+	}
 }
