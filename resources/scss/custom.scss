@@ -17,10 +17,34 @@ body {
 
 //Homepage Start
 .home {
-	.carousel-control {
-		@include media-breakpoint-up(md) {
-			top: 30%;
-			bottom: 30% !important;
+	.hero-main {
+		.carousel {
+			.carousel-indicators {
+				bottom: 0;
+				top: auto;
+				li {
+					border-color: $brand-primary;
+					box-sizing: border-box;
+					border-radius: .8rem;
+					width: .7rem;
+					height: .7rem;
+					margin: 2px;
+					border: 1px solid $brand-primary;
+					&.active {
+						background:$brand-primary;
+					}
+				}
+			}
+			.carousel-control {
+				span {
+					font-size: 60px;
+					bottom: 10%;
+					top: auto;
+					&:before {
+						color: $brand-primary;
+					}
+				}
+			}
 		}
 	}
 }
