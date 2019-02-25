@@ -24,47 +24,48 @@
 {{ component( "Ceres::Basket.Components.AddToBasket" ) }}
 
 <div class="home container-max">
-	<div class="cmp cmp-hero">
-		<div class="hero-main mb-0">
-			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-				<div class="carousel-inner" role="listbox">
-					<div class="carousel-item active">
-						<a class="hero-category" href="{{ homepageProductLinkFirstSlide }}">
-							<img src="{{ homepageImageFirstSlide }}" alt="{{ homepageProductNameFirstSlide }}" class="img-fluid">
-						</a>
+	<div class="row">
+		<div class="cmp cmp-hero">
+			<div class="hero-main mb-0">
+				<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+					<div class="carousel-inner" role="listbox">
+						<div class="carousel-item active">
+							<a class="hero-category" href="{{ homepageProductLinkFirstSlide }}">
+								<img src="{{ homepageImageFirstSlide }}" alt="{{ homepageProductNameFirstSlide }}" class="img-fluid">
+							</a>
+						</div>
+						<div class="carousel-item">
+							<a class="hero-category" href="{{ homepageProductLinkSecondSlide }}">
+								<img src="{{ homepageImageSecondSlide }}" alt="{{ homepageProductNameSecondSlide }}" class="img-fluid">
+							</a>
+						</div>
+						<div class="carousel-item">
+							<a class="hero-category" href="{{ homepageProductLinkThirdSlide }}">
+								<img src="{{ homepageImageThirdSlide }}" alt="{{ homepageProductNameThirdSlide }}" class="img-fluid">
+							</a>
+						</div>
 					</div>
-					<div class="carousel-item">
-						<a class="hero-category" href="{{ homepageProductLinkSecondSlide }}">
-							<img src="{{ homepageImageSecondSlide }}" alt="{{ homepageProductNameSecondSlide }}" class="img-fluid">
-						</a>
-					</div>
-					<div class="carousel-item">
-						<a class="hero-category" href="{{ homepageProductLinkThirdSlide }}">
-							<img src="{{ homepageImageThirdSlide }}" alt="{{ homepageProductNameThirdSlide }}" class="img-fluid">
-						</a>
-					</div>
+
+					<ol class="carousel-indicators">
+						<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+						<li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
+						<li data-target="#carousel-example-generic" data-slide-to="2" class=""></li>
+					</ol>
+
+					<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+						<span class="icon-prev" aria-hidden="true"></span>
+						<span class="sr-only">Zurück</span>
+					</a>
+
+					<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+						<span class="icon-next" aria-hidden="true"></span>
+						<span class="sr-only">Nächste</span>
+					</a>
+
 				</div>
-
-				<ol class="carousel-indicators">
-					<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-					<li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
-					<li data-target="#carousel-example-generic" data-slide-to="2" class=""></li>
-				</ol>
-
-				<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-					<span class="icon-prev" aria-hidden="true"></span>
-					<span class="sr-only">Zurück</span>
-				</a>
-
-				<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-					<span class="icon-next" aria-hidden="true"></span>
-					<span class="sr-only">Nächste</span>
-				</a>
-
 			</div>
 		</div>
 	</div>
-
 
 	<div class="row page-content">
 		<div class="mb-3 px-4">
