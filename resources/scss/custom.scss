@@ -24,7 +24,7 @@ body {
 		.navbar {
 			font-family:$font-family-menu;
        		text-transform: uppercase;
-       		background:$navbar-background-color;
+       		background:$brand-primary;
 			#mainNavbarCollapsable {
 				ul.mainmenu {
 					>li {
@@ -108,6 +108,23 @@ body {
     .page-content {
         margin-top: 40vh;
     }
+    section-header {
+    	background-color: white;
+		h4 {
+			color: $brand-primary;
+		}
+	}
+}
+
+.list-item-carousel {
+	.owl-item {
+    		list-style-type: none;
+	}
+}
+.no-carousel {
+	.col-12 {
+	      list-style-type: none;
+      }
 }
 
 .sale {
