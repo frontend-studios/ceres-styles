@@ -66,20 +66,20 @@
 
 
        <div class="row page-content">
-              <div class="mb-3 px-3">
-                     <h2 class="text-uppercase font-weight-bold">{{ category1.details[0].name }}</h2>
+              <div class="section-header mb-3">
+                     <h4>{{ category1.details[0].name }}</h4>
               </div>
               <div class="col-12 col-lg-12">
                      {% if categoryList1 | length > 4 %}
                                    <div class="list-item-carousel owl-carousel owl-theme list-carousel-first">
                                           {% for item in categoryList1 %}
                                           <li class="col-12 px-0">
-                                                 <category-item
-                                                      :item-data="{{ item.data | json_encode }}"
-                                                      :decimal-count="{{ decimalCount }}">
-                                                      <template slot="BeforePrices">{{ LayoutContainer.show("Ceres::CategoryItem.BeforePrices", item.data) }}</template>
-                                                      <template slot="AfterPrices">{{ LayoutContainer.show("Ceres::CategoryItem.AfterPrices", item.data) }}</template>
-                                                  </category-item>
+                                                <category-item
+                                                    :item-data="{{ item.data | json_encode }}"
+                                                    :decimal-count="{{ decimalCount }}">
+                                                    <template slot="BeforePrices">{{ LayoutContainer.show("Ceres::CategoryItem.BeforePrices", item.data) }}</template>
+                                                    <template slot="AfterPrices">{{ LayoutContainer.show("Ceres::CategoryItem.AfterPrices", item.data) }}</template>
+                                                </category-item>
                                             </li>
                                           {% endfor %}
                                    </div>
@@ -87,16 +87,16 @@
                             <div class="row no-carousel">
                                    {% for item in categoryList1 %}
                                    <li class="col-12 col-sm-4 px-2">
-                                          <category-item
-                                               :item-data="{{ item.data | json_encode }}"
-                                               :decimal-count="{{ decimalCount }}">
-                                               <template slot="BeforePrices">{{ LayoutContainer.show("Ceres::CategoryItem.BeforePrices", item.data) }}</template>
-                                               <template slot="AfterPrices">{{ LayoutContainer.show("Ceres::CategoryItem.AfterPrices", item.data) }}</template>
-                                           </category-item>
+                                         <category-item
+                                             :item-data="{{ item.data | json_encode }}"
+                                             :decimal-count="{{ decimalCount }}">
+                                             <template slot="BeforePrices">{{ LayoutContainer.show("Ceres::CategoryItem.BeforePrices", item.data) }}</template>
+                                             <template slot="AfterPrices">{{ LayoutContainer.show("Ceres::CategoryItem.AfterPrices", item.data) }}</template>
+                                         </category-item>
                                      </li>
                                      {% endfor %}
                             </div>
-                     {% endif %}
+                            {% endif %}
               </div>
        </div>
 </div>
