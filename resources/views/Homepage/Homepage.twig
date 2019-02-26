@@ -36,18 +36,14 @@
             </div>
         </div>
 
-    {% else %}
-
-        {% if showDefaultHomepage == "true" %}
-            {% include 'Ceres::Homepage.MarketingHomepage.twig' %}
         {% else %}
-            {% block ThemeHomepage %}
-                {% include 'CeresFood::Homepage.DefaultHomepage.twig' %}
-            {% endblock %}
-        {% endif %}
+               {% if showDefaultHomepage == "true" %}
+                   {% include 'Ceres::Homepage.MarketingHomepage.twig' %}
+               {% else %}
+                   {% block ThemeHomepage %}
+                            {% include 'CeresFood::Homepage.DefaultHomepage.twig' %}
+                     {% endblock %}
 
-    {% endif %}
-
-
-
+              {% endif %}
+       {% endif %}
 {% endblock %}

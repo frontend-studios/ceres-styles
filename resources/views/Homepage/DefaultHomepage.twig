@@ -1,6 +1,10 @@
 {% import "Ceres::PageDesign.Macros.LayoutContainer" as LayoutContainer %}
 {% import "Ceres::PageDesign.Macros.ItemName" as ItemName %}
 
+{{ component( "Ceres::ItemList.Components.ItemList") }}
+{{ component( "Ceres::ItemList.Components.CategoryImageCarousel") }}
+{{ component( "Ceres::Basket.Components.AddToBasket" ) }}
+
 {% set homepageHeadline = config("CeresFood.homepage.homepageHeadline") %}
 {% set homepageSubline = config("CeresFood.homepage.homepageSubline") %}
 
@@ -19,10 +23,6 @@
 {% set category1 = services.category.get(config("CeresFood.homepage.homepageCategory1"), lang) %}
 {% set categoryList1 = services.itemList.getItemList("category", category1.id, "variation.position_desc", 12).documents %}
 
-
-{{ component( "Ceres::ItemList.Components.ItemList") }}
-{{ component( "Ceres::ItemList.Components.CategoryImageCarousel") }}
-{{ component( "Ceres::Basket.Components.AddToBasket" ) }}
 
 <div class="home container-max">
 
