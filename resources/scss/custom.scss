@@ -18,40 +18,78 @@ body {
 
 //Homepage Start
 .home {
-	.carousel-control {
-		@include media-breakpoint-up(md) {
-			top: 30%;
-			bottom: 40% !important;
-			width: 10%;
+	.hero-main {
+		.carousel {
+			.carousel-indicators {
+				bottom: 0;
+				top: auto;
+				li {
+					border-color: $brand-primary;
+					box-sizing: border-box;
+					border-radius: .8rem;
+					width: .7rem;
+					height: .7rem;
+					margin: 2px;
+					border: 1px solid $brand-primary;
+					&.active {
+						background:$brand-primary;
+					}
+				}
+			}
+			.carousel-control {
+				position: absolute;
+				bottom: 0;
+				span {
+					font-size: 60px;
+					bottom: 10%;
+					top: auto;
+					&:before {
+						color: $brand-primary;
+					}
+				}
+			}
+			.left.carousel-control {
+				padding: 2rem;
+				left: 0;
+			}
+			.right.carousel-control {
+				right: 0;
+				padding: 2rem;
+			}
 		}
 	}
 }
 
+.section-header.mb-3 {
+	background: transparent;
+	padding: 0;
+	h4 {
+		color: $black;
+	}
+}
 
 //Homepage End
 
 //Header Start
 #page-header {
-	background-color: transparent !important;
+background-color: transparent !important;
 	&.top-bar {
+		background-color: $top-bar-bg !important;
+	}
+	.navbar {
+		background-color: transparent;
+		border-bottom: none;
 		.container-max {
-			background-color: $top-bar-bg;
+			font-family: $font-family-menu;
+			color: $brand-primary;
+			background: $white;
 		}
-		.navbar {
-			background-color: transparent;
-			border-bottom: none;
-			.container-max {
-				font-family: $font-family-menu;
-				color: $brand-primary;
-				background: $white;
-			}
-		}
-		.controls-list {
-			.control-basket{
-				.toggle-basket-preview{
-					background-color: $top-bar-basket-btn;
-					color: $top-bar-basket-color;
-
+	}
+	.controls-list {
+		.control-basket{
+			.toggle-basket-preview{
+				background-color: $top-bar-basket-btn;
+				color: $top-bar-basket-color;
 					.badge{
 						margin-left: .5rem;
 					}
@@ -63,6 +101,17 @@ body {
 			}
 		}
 	}
+
+
+.list-item-carousel {
+	.owl-item {
+    		list-style-type: none;
+	}
+}
+.no-carousel {
+	.col-12 {
+	      list-style-type: none;
+      }
 }
 
 #mainNavbarCollapsable {
@@ -259,7 +308,7 @@ body {
 		margin-top: 2.5rem;
 	}
 	.nav-tabs {
-        
+
         .nav-item {
 		 .nav-link {
                    border:1px solid $nav-tabs-border-color;
@@ -329,5 +378,17 @@ body {
 			padding: .5rem .75rem;
 			border-radius: 3px;
 		}
+	}
+	.thumb-title {
+		text-align: center;
+	}
+	.prices {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.vat.small {
+	    	text-align: center;
+	    	display: block;
 	}
 }
