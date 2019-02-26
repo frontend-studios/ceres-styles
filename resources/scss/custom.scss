@@ -65,6 +65,8 @@ body {
 	padding: 0;
 	h4 {
 		color: $black;
+		text-transform: none;
+		padding: 1rem;
 	}
 }
 
@@ -74,7 +76,9 @@ body {
 #page-header {
 background-color: transparent !important;
 	&.top-bar {
-		background-color: $top-bar-bg !important;
+		.container-max {
+			background-color: $top-bar-bg !important;
+		}
 	}
 	.navbar {
 		background-color: transparent;
@@ -82,7 +86,7 @@ background-color: transparent !important;
 		.container-max {
 			font-family: $font-family-menu;
 			color: $brand-primary;
-			background: $white;
+			background: $white !important;
 		}
 	}
 	.controls-list {
@@ -121,6 +125,7 @@ background-color: transparent !important;
 				font-family: $font-family-menu;
 				color: $brand-primary;
 				text-transform: uppercase;
+				font-size: 1.25rem;
 			}
 			&:hover {
 				a {
@@ -131,6 +136,20 @@ background-color: transparent !important;
 	}
 }
 //Header End
+
+.breadcrumb-item.active {
+	color: $white;
+}
+.breadcrumb-item {
+	+ {
+		.breadcrumb-item {
+			&::before {
+				color: $white;
+			}
+		}
+	}
+}
+
 
 //Footer Start
 .footer{
@@ -386,9 +405,9 @@ background-color: transparent !important;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		min-height: 42px;
 	}
 	.vat.small {
-	    	text-align: center;
-	    	display: block;
+	    	display: none;
 	}
 }
