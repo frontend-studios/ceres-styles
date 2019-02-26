@@ -5,8 +5,6 @@
 {{ component( "Ceres::ItemList.Components.CategoryImageCarousel") }}
 {{ component( "Ceres::Basket.Components.AddToBasket" ) }}
 
-{% set homepageHeadline = config("CeresFood.homepage.homepageHeadline") %}
-{% set homepageSubline = config("CeresFood.homepage.homepageSubline") %}
 
 {% set homepageImageFirstSlide = config("CeresFood.homepage.homepageImageFirstSlide") %}
 {% set homepageProductLinkFirstSlide = config("CeresFood.homepage.homepageProductLinkFirstSlide") %}
@@ -22,7 +20,6 @@
 
 {% set category1 = services.category.get(config("CeresFood.homepage.homepageCategory1"), lang) %}
 {% set categoryList1 = services.itemList.getItemList("category", category1.id, "variation.position_desc", 12).documents %}
-
 
 <div class="home container-max">
 
@@ -77,12 +74,12 @@
                                    <div class="list-item-carousel owl-carousel owl-theme list-carousel-first">
                                           {% for item in categoryList1 %}
                                           <li class="col-12 px-0">
-                                                <category-item
-                                                    :item-data="{{ item.data | json_encode }}"
-                                                    :decimal-count="{{ decimalCount }}">
-                                                    <template slot="BeforePrices">{{ LayoutContainer.show("Ceres::CategoryItem.BeforePrices", item.data) }}</template>
-                                                    <template slot="AfterPrices">{{ LayoutContainer.show("Ceres::CategoryItem.AfterPrices", item.data) }}</template>
-                                                </category-item>
+                                                 <category-item
+                                                      :item-data="{{ item.data | json_encode }}"
+                                                      :decimal-count="{{ decimalCount }}">
+                                                      <template slot="BeforePrices">{{ LayoutContainer.show("Ceres::CategoryItem.BeforePrices", item.data) }}</template>
+                                                      <template slot="AfterPrices">{{ LayoutContainer.show("Ceres::CategoryItem.AfterPrices", item.data) }}</template>
+                                                  </category-item>
                                             </li>
                                           {% endfor %}
                                    </div>
@@ -90,12 +87,12 @@
                             <div class="row no-carousel">
                                    {% for item in categoryList1 %}
                                    <li class="col-12 col-sm-4 px-2">
-                                         <category-item
-                                             :item-data="{{ item.data | json_encode }}"
-                                             :decimal-count="{{ decimalCount }}">
-                                             <template slot="BeforePrices">{{ LayoutContainer.show("Ceres::CategoryItem.BeforePrices", item.data) }}</template>
-                                             <template slot="AfterPrices">{{ LayoutContainer.show("Ceres::CategoryItem.AfterPrices", item.data) }}</template>
-                                         </category-item>
+                                          <category-item
+                                               :item-data="{{ item.data | json_encode }}"
+                                               :decimal-count="{{ decimalCount }}">
+                                               <template slot="BeforePrices">{{ LayoutContainer.show("Ceres::CategoryItem.BeforePrices", item.data) }}</template>
+                                               <template slot="AfterPrices">{{ LayoutContainer.show("Ceres::CategoryItem.AfterPrices", item.data) }}</template>
+                                           </category-item>
                                      </li>
                                      {% endfor %}
                             </div>
