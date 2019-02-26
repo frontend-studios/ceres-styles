@@ -1,9 +1,6 @@
 {% import "Ceres::PageDesign.Macros.LayoutContainer" as LayoutContainer %}
 {% import "Ceres::PageDesign.Macros.ItemName" as ItemName %}
 
-{% set category1 = services.category.get(config("CeresFood.homepage.homepageCategory1"), lang) %}
-{% set categoryList1 = services.itemList.getItemList("category", category1.id, "variation.position_desc", 12).documents %}
-
 {% set homepageHeadline = config("CeresFood.homepage.homepageHeadline") %}
 {% set homepageSubline = config("CeresFood.homepage.homepageSubline") %}
 
@@ -18,6 +15,10 @@
 {% set homepageImageThirdSlide = config("CeresFood.homepage.homepageImageThirdSlide") %}
 {% set homepageProductLinkThirdSlide = config("CeresFood.homepage.homepageProductLinkThirdSlide") %}
 {% set homepageProductNameThirdSlide = config("CeresFood.homepage.homepageProductNameThirdSlide") %}
+
+{% set category1 = services.category.get(config("CeresFood.homepage.homepageCategory1"), lang) %}
+{% set categoryList1 = services.itemList.getItemList("category", category1.id, "variation.position_desc", 12).documents %}
+
 
 {{ component( "Ceres::ItemList.Components.ItemList") }}
 {{ component( "Ceres::ItemList.Components.CategoryImageCarousel") }}
@@ -68,7 +69,7 @@
 
 
        <div class="row page-content">
-		<div class="col-xs-12 col-lg-12">
+		<div class="col-12 col-lg-12">
 			<div class="section-header mb-3">
 				<h4>{{ category1.details[0].name }}</h4>
 			</div>
@@ -85,7 +86,7 @@
                                             </li>
                                           {% endfor %}
                                    </div>
-                            {% else %}
+                     {% else %}
                             <div class="row no-carousel">
                                    {% for item in categoryList1 %}
                                    <li class="col-12 col-sm-4 px-2">
@@ -98,7 +99,7 @@
                                      </li>
                                      {% endfor %}
                             </div>
-                            {% endif %}
+                     {% endif %}
 		</div>
 	</div>
 
