@@ -40,12 +40,6 @@ h1, h2, h3, h4, h5, h6 {
        .page-content {
        	margin-top: 20vh;
       }
-	.carousel-control {
-		@include media-breakpoint-up(md) {
-			top: 20%;
-			bottom: 40% !important;
-		}
-	}
 }
 
 
@@ -291,5 +285,17 @@ h1, h2, h3, h4, h5, h6 {
 		>i {
 			color: $brand-primary;
 		}
+	}
+	.thumb-title {
+		text-align: center;
+	}
+	.prices {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.vat.small {
+	    	text-align: center;
+	    	display: block;
 	}
 }

@@ -1,7 +1,7 @@
 {
   "name": "CeresRockstar",
   "license": "AGPL-3.0",
-  "version": "2.16.0",
+  "version": "3.0.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/plentymarkets/plugin-ceres"
