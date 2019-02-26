@@ -13,7 +13,7 @@
 
 <div class="home container-max">
        <div class="row teaser">
-              <div class="col-12 text-xs-center">
+              <div class="col-12 text-center">
                      <i class="fa fa-bolt fa-5x" aria-hidden="true"></i>
                      <h1>
                             {{ homepageHeadlineDE }}
@@ -26,8 +26,8 @@
 
 
        <div class="row page-content mb-5">
-              <div class="mb-3 px-4">
-                     <h2>{{ category1.details[0].name }}</h2>
+              <div class="section-header mb-3 px-4">
+                     <h2 class="text-uppercase font-weight-bold">{{ category1.details[0].name }}</h2>
               </div>
               <div class="col-12 col-lg-12">
                      {% if categoryList1 | length > 4 %}
