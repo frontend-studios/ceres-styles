@@ -76,10 +76,8 @@ body {
 //Header Start
 #page-header {
 	background-color: transparent !important;
-	.top-bar {
-		.container-max {
-			background-color: $top-bar-bg;
-		}
+	&.top-bar {
+		background-color: $top-bar-bg;
 	}
 	.navbar {
 		background-color: transparent;
@@ -258,4 +256,16 @@ body {
 
 .cmp-product-thumb {
 	border: 1px solid $gray-light;
+	.thumb-title {
+		text-align: center;
+	}
+	.prices {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.vat.small {
+	    	text-align: center;
+	    	display: block;
+	}
 }
