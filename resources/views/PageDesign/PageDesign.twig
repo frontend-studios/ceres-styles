@@ -24,7 +24,6 @@
 {% set defaultLanguage = services.webstoreConfig.getDefaultLanguage() %}
 
 {% set globalBackgroundImage  = config("CeresFood.global.globalBackgroundImage") %}
-
 <!DOCTYPE html>
 
 <html lang="{{ lang }}" data-framework="vue" prefix="og: http://ogp.me/ns#">
@@ -40,7 +39,7 @@
     {% endfor %}
 </head>
 
-<body style="background: url(' {{ globalBackgroundImage }} ') no-repeat center center fixed; background-size:cover;">
+<body style="background: url(' {{ globalBackgroundImage }} ') no-repeat center center fixed; background-size:cover;">>
 <script>
     if('ontouchstart' in document.documentElement)
     {
@@ -204,17 +203,13 @@
 
 <script>
     vueEventHub = new Vue();
-
     {% if ceresConfig.log.checkSyntax %}
         var rootElement = document.getElementById("vue-app");
         rootElement.innerHTML = rootElement.innerHTML.replace(/(?:^|\s)(?::|v-bind:)\S+=(?:""|'')/g, '');
-
         var vueApp = new Vue({
             store: window.ceresStore
         });
-
         vueApp.$mount( rootElement.cloneNode(true) );
-
         if ( vueApp.$el.id === "vue-app")
         {
             document.body.replaceChild( vueApp.$el, rootElement );
@@ -225,13 +220,9 @@
             store: window.ceresStore
         });
     {% endif %}
-
-
     (function($) {
-
         var header = document.getElementById('page-header');
         var unfixedElements = [];
-
         if ( !!header )
         {
             function calculateBodyOffset()
@@ -245,12 +236,10 @@
                     {
                         bodyOffset += children[i].getBoundingClientRect().height;
                     }
-
                     document.getElementById('vue-app').style.marginTop = bodyOffset + 'px';
                     document.getElementById('vue-app').style.minHeight = "calc(100vh - " + bodyOffset + "px)";
                 }
             }
-
             function getUnfixedElements()
             {
                 unfixedElements = [];
@@ -265,7 +254,6 @@
                 });
                 scrollUnfixedElements();
             }
-
             function scrollUnfixedElements()
             {
                 var scrollTop = window.scrollY;
@@ -284,11 +272,8 @@
                     unfixed.element.style.top = unfixed.top - scrollTop + 'px';
                 });
             }
-
             getUnfixedElements();
-
             $(window).scroll(scrollUnfixedElements);
-
             $(document).on('shopbuilder.after.ready', function()
             {
                 unfixedElements.forEach(function(unfixed)
@@ -297,15 +282,12 @@
                 });
                 scrollUnfixedElements = function() {};
             });
-
             $(document).on('shopbuilder.before.viewUpdate shopbuilder.after.viewUpdate', function()
             {
                 calculateBodyOffset();
                 $('.owl-carousel').trigger('refresh.owl.carousel');
             });
-
             var headerImages = header.querySelectorAll("img");
-
             if(headerImages.length)
             {
                 for (var img in headerImages)
@@ -316,10 +298,8 @@
                     }
                 }
             }
-
             calculateBodyOffset();
         }
-
         $(document).on('shopbuilder.after.drop shopbuilder.after.widget_replace', function(event, eventData, widgetElement)
         {
             var compiled = Vue.compile(widgetElement[0].outerHTML );
@@ -334,14 +314,11 @@
                     event.preventDefault();
                 });
             });
-
             $(component.$el).find('.owl-carousel').on('resized.owl.carousel', function()
             {
                 window.dispatchEvent(new Event('resize'));
             });
         });
-
-
     })(jQuery);
 </script>
 
@@ -367,7 +344,6 @@
                     "<i class=\"owl-single-item-control fa fa-chevron-right\" aria-hidden=\"true\"></i>"
                 ],
                 smartSpeed       : 350,
-
                 responsive : {
                     // breakpoint from 0 up
                     0 : {
@@ -394,6 +370,5 @@
 </script>
 
 {{ get_shop_builder_scripts( "latest", ceresConfig.log.performanceLevel == 'live') }}
-
 </body>
 </html>
