@@ -77,7 +77,7 @@ body {
 #page-header {
 	background-color: transparent !important;
 	&.top-bar {
-		background-color: $top-bar-bg;
+		background-color: $top-bar-bg !important;
 	}
 	.navbar {
 		background-color: transparent;
@@ -87,6 +87,15 @@ body {
 		}
 	}
 }
+
+.section-header.mb-3 {
+	background: transparent;
+	padding: 0;
+	h4 {
+		color: $brand-primary;
+	}
+}
+
 
 #mainNavbarCollapsable {
 	ul.mainmenu {
@@ -108,9 +117,6 @@ body {
 	margin:0 auto;
 	>.container-max {
 		background-color:$footer-bg;
-		hr {
-			border-top:1px solid white;
-		}
 	}
 
 	a{
@@ -118,7 +124,9 @@ body {
 	}
 
 	.footer-features{
-		border-top: 0;
+		border-bottom: 1px solid $footer-features-color;
+		margin: 0 auto;
+		padding-bottom: 4rem !important;
 		background-color: $footer-features-bg;
 		color: $footer-features-color;
 		i {
