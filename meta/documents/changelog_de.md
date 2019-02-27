@@ -1,5 +1,10 @@
 # Release Notes für Rockstar Theme
 
+## v3.0.2 (2019-02-27)
+
+### Änderungen
+- Kompatibilität mit Ceres und IO ab Version 3.0.0
+
 ## v2.16.0 (2018-10-24)
 
 ### Änderungen
