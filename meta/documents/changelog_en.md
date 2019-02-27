@@ -1,5 +1,10 @@
 # Release Notes for Colorful Ceres
 
+## v3.0.2 (2019-02-27)
+
+### Changes
+- Compatibility with Ceres and IO greater than 3.0.0
+
 ## v2.16.0 (2017-10-26)
 
 ### Changes

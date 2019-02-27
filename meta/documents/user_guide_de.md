@@ -1,11 +1,12 @@
-# Ceres Colorful – Das Ceres Plugin in Colorful-Style
+# Ceres Food – Das Ceres Plugin in Food-Style
 
 <div class="container-toc"></div>
 
-## Colorful Theme aktivieren
+## Food Theme aktivieren
 
-Im plentymarkets Backend in der Plugin-Liste das Colorful Plugin in Productive bereitstellen und den Mandant zuweisen.
-Anschließend im Tab "Content" im Bereich "CeresFood" den Haken bei "Template: Override style" setzen, speichern, fertig!
+1. Im plentymarkets Backend unter Plugins - Plugin-Übersicht ein Plugin Set wählen
+2. Das Theme installieren und zwischen Ceres und IO positionieren (Spalte Aktion) und anschließend Plugin Set speichern (Diskettensymbol) - Kann ein paar Minuten dauern
+3. Danach unter CMS - Container Verknüpfung das Plugin Set wählen und anschließend bei "CeresFood" den Haken bei "<b>Template: Override Style</b>" setzen, speichern, fertig!
 
 <div class="alert alert-info" role="alert">
     Sie benötigen das Ceres und IO Plugin als Basis
