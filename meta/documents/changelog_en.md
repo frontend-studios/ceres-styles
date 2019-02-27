@@ -1,5 +1,10 @@
 # Release Notes for Coffee Ceres
 
+## v3.0.2 (2019-02-27)
+
+### Changes
+- Compatibility with Ceres and IO greater than 3.0.0
+
 ## v2.16.0 (2018-10-26)
 
 ### Changes
