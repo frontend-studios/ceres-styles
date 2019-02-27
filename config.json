@@ -12,14 +12,6 @@
                         "defaultValue": "Bist du ein Rockstar?"
                     }
                 },
-                "homepage.homepageHeadlineEN": {
-                    "type": "inputText",
-                    "required": false,
-                    "label": "Config.homepageHomepageHeadlineENLabel",
-                    "options": {
-                        "defaultValue": "Are you a Rockstar?"
-                    }
-                },
                 "homepage.homepageSublineDE": {
                     "type": "inputText",
                     "required": false,
@@ -27,15 +19,7 @@
                     "options": {
                         "defaultValue": "Dann bist du hier genau richtig!"
                     }
-                },
-                "homepage.homepageSublineEN": {
-                    "type": "inputText",
-                    "required": false,
-                    "label": "Config.homepageHomepageSublineENLabel",
-                    "options": {
-                        "defaultValue": "You are right then!"
-                    }
-                },
+                },                
                 "homepage.homepageCategory1": {
                     "type": "categoryPicker",
                     "required": false,
