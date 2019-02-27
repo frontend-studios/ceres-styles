@@ -17,12 +17,57 @@ body {
 
 //Homepage Start
 .home {
-	.carousel-control {
-		@include media-breakpoint-up(md) {
-			top: 15%;
-			bottom: 30% !important;
+	.hero-main {
+		.carousel {
+			.carousel-indicators {
+				bottom: 0;
+				top: auto;
+				li {
+					border-color: $brand-primary;
+					box-sizing: border-box;
+					border-radius: .8rem;
+					width: .7rem;
+					height: .7rem;
+					margin: 2px;
+					border: 1px solid $brand-primary;
+					&.active {
+						background:$brand-primary;
+					}
+				}
+			}
+			.carousel-control {
+				position: absolute;
+				bottom: 0;
+				span {
+					font-size: 60px;
+					bottom: 10%;
+					top: auto;
+					&:before {
+						color: $brand-primary;
+					}
+				}
+			}
+			.left.carousel-control {
+				padding: 2rem;
+				left: 0;
+			}
+			.right.carousel-control {
+				right: 0;
+				padding: 2rem;
+			}
 		}
 	}
+}
+
+.list-item-carousel {
+	.owl-item {
+    		list-style-type: none;
+	}
+}
+.no-carousel {
+	.col-12 {
+	      list-style-type: none;
+      }
 }
 
 
@@ -31,10 +76,8 @@ body {
 //Header Start
 #page-header {
 	background-color: transparent !important;
-	.top-bar {
-		.container-max {
-			background-color: $top-bar-bg;
-		}
+	&.top-bar {
+		background-color: $top-bar-bg !important;
 	}
 	.navbar {
 		background-color: transparent;
@@ -44,6 +87,15 @@ body {
 		}
 	}
 }
+
+.section-header.mb-3 {
+	background: transparent;
+	padding: 0;
+	h4 {
+		color: $black;
+	}
+}
+
 
 #mainNavbarCollapsable {
 	ul.mainmenu {
@@ -65,9 +117,6 @@ body {
 	margin:0 auto;
 	>.container-max {
 		background-color:$footer-bg;
-		hr {
-			border-top:1px solid white;
-		}
 	}
 
 	a{
@@ -75,7 +124,9 @@ body {
 	}
 
 	.footer-features{
-		border-top: 0;
+		border-bottom: 1px solid $footer-features-color;
+		margin: 0 auto;
+		padding-bottom: 4rem !important;
 		background-color: $footer-features-bg;
 		color: $footer-features-color;
 		i {
@@ -213,4 +264,16 @@ body {
 
 .cmp-product-thumb {
 	border: 1px solid $gray-light;
+	.thumb-title {
+		text-align: center;
+	}
+	.prices {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.vat.small {
+	    	text-align: center;
+	    	display: block;
+	}
 }
