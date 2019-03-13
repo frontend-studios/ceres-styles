@@ -219,7 +219,7 @@ body {
 
 .cmp-country-settings, .cmp-currency-select {
 	background-color: $gray-lightest;
-	color: $brand-primary;
+	color: $black;
 }
 
 .cmp-country-settings {
@@ -228,14 +228,14 @@ body {
 			a {
 				&:hover {
 					background: $brand-primary;
-					color: $white;
+					color: $black;
 				}
 			}
 		}
 		li.active {
 			a {
 				background: $brand-primary;
-				color: $white;
+				color: $black;
 			}
 		}
 	}
@@ -246,14 +246,14 @@ body {
 			a {
 				&:hover {
 					background: $brand-primary;
-					color: $white;
+					color: $black;
 				}
 			}
 		}
 		li.active {
 			a {
 				background: $brand-primary;
-				color: $white;
+				color: $black;
 			}
 		}
 	}
