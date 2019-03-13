@@ -6,6 +6,10 @@ body {
 	> #vue-error {
 		background-color: $white;
 	}
+
+	a {
+		color: $gray-600;
+	}
 }
 .page-content {
     background-color:$white;
@@ -670,6 +674,13 @@ li.nav-item {
 		border: 1px solid #ddd;
 		color: #7a7f7f;
 		background: #fff;
+	}
+}
+
+.breadcrumb-item
+{
+	a {
+		color: $gray-600;
 	}
 }
 
