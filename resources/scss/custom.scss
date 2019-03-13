@@ -223,19 +223,22 @@ body {
 }
 
 .cmp-country-settings {
+
 	ul {
 		li {
 			a {
+				color: $black;
+
 				&:hover {
-					background: $brand-primary;
-					color: $black;
+					background: $gray-600;
+					color: $white;
 				}
 			}
 		}
 		li.active {
 			a {
-				background: $brand-primary;
-				color: $black;
+				background: $gray-600;
+				color: $white;
 			}
 		}
 	}
@@ -244,16 +247,17 @@ body {
 	ul {
 		li {
 			a {
+				color: $black;
 				&:hover {
-					background: $brand-primary;
-					color: $black;
+					bbackground: $gray-600;
+					color: $white;
 				}
 			}
 		}
 		li.active {
 			a {
-				background: $brand-primary;
-				color: $black;
+				background: $gray-600;
+				color: $white;
 			}
 		}
 	}
