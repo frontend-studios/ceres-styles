@@ -3,160 +3,47 @@
 {% import "Ceres::PageDesign.Macros.LayoutContainer" as LayoutContainer %}
 
 {% set showDefaultHomepage = config("Ceres.default.homepage") %}
-
-{% set ownLogo = config("nvoodTheme.header.ownLogo") %}
-
-{% set companyName = trans("Ceres::Template.headerCompanyName") %}
+{% set companyLogo  = config("Ceres.header.company_logo") %}
+{% set companyName  = trans("Ceres::Template.headerCompanyName") %}
 
 {% block PartialHead %}
-	<meta name="description" content="{{ trans('Ceres::Template.homepageMetaDescription') }}">
-	<meta name="robots" content="{{ config(" ceres.meta.robots_home") }}"="Ceres.meta.robots_home") }}"">
+    <meta name="description" content="{{ trans('Ceres::Template.homepageMetaDescription') }}">
+    <meta name="robots" content="{% if forceNoIndex %}NOINDEX{% else %}{{ config("Ceres.meta.robots_home") }}{% endif %}">
+    <meta property="og:title" content="{{ companyName }}"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content="{{ services.webstoreConfig.getWebstoreConfig().domainSsl }}"/>
+    <meta property="og:image"
+          content="{% if ('http' in companyLogo) or ('layout/' in companyLogo) %}{{ companyLogo }}{% else %}{{ plugin_path('Ceres') }}/{{ companyLogo }}{% endif %}"/>
 
-	<meta property="og:title" content="{{ companyName }}"/>
-	<meta property="og:type" content="article"/>
-	<meta property="og:url" content="{{ services.webstoreConfig.getWebstoreConfig().domainSsl }}"/>
+    <script type="application/ld+json">
+        {"@context": "http://schema.org","@type": "WebSite","url": "{{ services.webstoreConfig.getWebstoreConfig().domainSsl }}","potentialAction":{"@type": "SearchAction","target": "{{ services.webstoreConfig.getWebstoreConfig().domainSsl }}/search?query={search_term}","query-input": "required name=search_term"}}
+    </script>
 
-	<meta property="og:image" content="{{ ownLogo }}"/>
-
-	<script type="application/ld+json">
-		{
-			"@context": "http://schema.org",
-			"@type": "WebSite",
-			"url": "{{ services.webstoreConfig.getWebstoreConfig().domainSsl }}",
-			"potentialAction": {
-				"@type": "SearchAction",
-				"target": "{{ services.webstoreConfig.getWebstoreConfig().domainSsl }}/search?query={search_term}",
-				"query-input": "required name=search_term"
-			}
-		}
-	</script>
-
-	<title>{{ companyName }}</title>
+    <title>{{ companyName }}</title>
 {% endblock %}
 
 {% block PageBody %}
 
-	{% if ceresConfig.homepage.showShopBuilderContent or request.get('isContentBuilder') == 1 %}
+    {% if ceresConfig.homepage.showShopBuilderContent or request.get('isContentBuilder') == 1 %}
 
-		<div class="home container-max">
-			<div class="row">
-				<div class="col">
-					{% for content in container("Ceres::Homepage")if content.plugin == "Plenty" %}
-						{{ content.result|raw }}
-					{% endfor %}
-				</div>
-			</div>
-		</div>
+        <div class="home container-max">
+            <div class="row">
+                <div class="col">
+                    {% for content in container("Ceres::Homepage") if content.plugin == "Plenty" %}
+                        {{ content.result|raw }}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
 
-	{% else %}
-		{% block ThemeHomepage %}
+        {% else %}
+               {% if showDefaultHomepage == "true" %}
+                   {% include 'Ceres::Homepage.MarketingHomepage.twig' %}
+               {% else %}
+                   {% block ThemeHomepage %}
+                            {% include 'CeresKids::Homepage.DefaultHomepage.twig' %}
+                     {% endblock %}
 
-                     {% set category1 = services.category.get(config("CeresKids.homepage.homepageCategory1"), lang) %}
-                     {% set categoryList1 = services.itemList.getItemList("category", category1.id, "variation.position_desc", 12).documents %}
-
-                     {{ component( "Ceres::ItemList.Components.ItemList") }}
-              	{{ component( "Ceres::ItemList.Components.CategoryImageCarousel") }}
-              	{{ component( "Ceres::Basket.Components.AddToBasket" ) }}
-
-                     {% set homepageHeadline  = config("CeresKids.homepage.homepageHeadline") %}
-                     {% set homepageSubline  = config("CeresKids.homepage.homepageSubline") %}
-
-			{% set homepageImageFirstSlide  = config("CeresKids.homepage.homepageImageFirstSlide") %}
-		        {% set homepageProductLinkFirstSlide  = config("CeresKids.homepage.homepageProductLinkFirstSlide") %}
-		        {% set homepageProductNameFirstSlide  = config("CeresKids.homepage.homepageProductNameFirstSlide") %}
-
-		        {% set homepageImageSecondSlide  = config("CeresKids.homepage.homepageImageSecondSlide") %}
-		        {% set homepageProductLinkSecondSlide  = config("CeresKids.homepage.homepageProductLinkSecondSlide") %}
-		        {% set homepageProductNameSecondSlide  = config("CeresKids.homepage.homepageProductNameSecondSlide") %}
-
-		        {% set homepageImageThirdSlide  = config("CeresKids.homepage.homepageImageThirdSlide") %}
-		        {% set homepageProductLinkThirdSlide  = config("CeresKids.homepage.homepageProductLinkThirdSlide") %}
-		        {% set homepageProductNameThirdSlide = config("CeresKids.homepage.homepageProductNameThirdSlide") %}
-
-			<div class="home container-max">
-				<div class="row">
-			                <div class="cmp cmp-hero">
-			                    <div class="hero-main m-b-0">
-			                        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-			                            <div class="carousel-inner" role="listbox">
-			                                <div class="carousel-item active">
-			                                    <a class="hero-category" href="{{ homepageProductLinkFirstSlide }}">
-			                                        <img src="{{ homepageImageFirstSlide }}" alt="{{ homepageProductNameFirstSlide }}" class="img-fluid">
-			                                    </a>
-			                                </div>
-			                                <div class="carousel-item">
-			                                    <a class="hero-category" href="{{ homepageProductLinkSecondSlide }}">
-			                                        <img src="{{ homepageImageSecondSlide }}" alt="{{ homepageProductNameSecondSlide }}" class="img-fluid">
-			                                    </a>
-			                                </div>
-			                                {% if homepageImageThirdSlide != '' %}
-			                                    <div class="carousel-item">
-			                                        <a class="hero-category" href="{{ homepageProductLinkThirdSlide }}">
-			                                            <img src="{{ homepageImageThirdSlide }}" alt="{{ homepageProductNameThirdSlide }}" class="img-fluid">
-			                                        </a>
-			                                    </div>
-			                                {% endif %}
-			                            </div>
-
-			                            <ol class="carousel-indicators">
-			                                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-			                                <li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
-			                                <li data-target="#carousel-example-generic" data-slide-to="2" class=""></li>
-			                            </ol>
-
-			                            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-			                                <span class="icon-prev" aria-hidden="true"></span>
-			                                <span class="sr-only">Zurück</span>
-			                            </a>
-
-			                            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-			                                <span class="icon-next" aria-hidden="true"></span>
-			                                <span class="sr-only">Nächste</span>
-			                            </a>
-
-			                        </div>
-			                    </div>
-			                </div>
-			            </div>
-
-
-       			<div class="row page-content">
-       				<div class="m-b-1 p-x-2">
-       					<h2>{{ category1.details[0].name }}</h2>
-       				</div>
-       				<div class="col-xs-12 col-lg-12">
-       					{% if categoryList1 | length > 4 %}
-       						<div class="list-item-carousel owl-carousel owl-theme list-carousel-first">
-       							{% for item in categoryList1 %}
-       								{% include "Ceres::Category.Item.Partials.CategoryListItem" with {
-       									'item' : item,
-       									enableCarousel: false,
-       									'tags' : item.data.tags,
-       									'showOrderProperties' : false,
-       									disableLazyLoad: true
-       								} %}
-       							{% endfor %}
-       						</div>
-       					{% else %}
-       						<ul class="product-list row grid list-carousel-first">
-       							{% for item in categoryList1 %}
-       								<li class="col-xs-12 col-sm-6 col-md-3">
-       									{% include "Ceres::Category.Item.Partials.CategoryListItem" with {
-       										'item' : item,
-       										enableCarousel: false,
-       										'tags' : item.data.tags,
-       										'showOrderProperties' : false
-       									} %}
-       								</li>
-       							{% endfor %}
-       						</ul>
-       					{% endif %}
-       				</div>
-       			</div>
-
-
-
-			</div>
-		{% endblock %}
-	{% endif %}
+              {% endif %}
+       {% endif %}
 {% endblock %}
