@@ -1,5 +1,10 @@
 # Release Notes für Kids Theme
 
+## v3.0.2 (2019-03-13)
+
+### Änderungen
+- Kompatibilität mit Ceres und IO ab Version 3.0.0
+
 ## v2.0.0 (2018-10-24)
 
 ### Änderungen

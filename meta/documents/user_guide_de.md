@@ -1,11 +1,12 @@
-# Ceres Kids – Das Ceres Plugin in Kids-Style
+# Ceres Kids – Das Ceres Plugin im Kids-Style
 
 <div class="container-toc"></div>
 
 ## Kids Theme aktivieren
 
-Im plentymarkets Backend in der Plugin-Liste das Kids Plugin in Productive bereitstellen und den Mandant zuweisen.
-Anschließend im Tab "Content" im Bereich "CeresKids" den Haken bei "Template: Override style" setzen, speichern, fertig!
+1. Im plentymarkets Backend unter Plugins - Plugin-Übersicht ein Plugin Set wählen
+2. Das Theme installieren und zwischen Ceres und IO positionieren (Spalte Aktion) und anschließend Plugin Set speichern (Diskettensymbol) - Kann ein paar Minuten dauern
+3. Danach unter CMS - Container Verknüpfung das Plugin Set wählen und anschließend bei "Ceres Kids" den Haken bei "<b>Template: Override Style</b>" setzen, speichern, fertig!
 
 <div class="alert alert-info" role="alert">
     Sie benötigen das Ceres und IO Plugin als Basis
