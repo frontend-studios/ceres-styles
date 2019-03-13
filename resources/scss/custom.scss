@@ -18,8 +18,8 @@ body {
 
 .wrapper-main {
 	.top-bar {
-		color: $gray-darker;
-		background-color: $white;
+		color: $black!important;
+		background-color: $brand-primary;
 	}
 	.navbar {
 		border-bottom: none;
@@ -48,11 +48,11 @@ body {
 				color: $gray-600 !important;
 				font-size: .85rem;
 
-				&[aria-expanded="true"],
+				/*&[aria-expanded="true"],
 				&:hover{
 					background-color: $brand-primary !important;
 					color: #FFF !important;
-				}
+				}*/
 			}
 
 			// icons should be slightly larger
@@ -158,11 +158,6 @@ body {
 					background-color: darken($top-bar-basket-btn, 10%);
 				}
 			}
-		}
-	}
-	#page-header {
-		.top-bar {
-			background-color: #fff!important;
 		}
 	}
 }
