@@ -162,7 +162,7 @@ body {
 	}
 	#page-header {
 		.top-bar {
-			background-color: #fff;
+			background-color: #fff!important;
 		}
 	}
 }
@@ -406,7 +406,7 @@ body {
 				    display: block;
 				    width: auto;
 				    text-align: left;
-				    color: $white;
+				    color: $black;
 				    transition: all .3s ease;
 				}
 			}
