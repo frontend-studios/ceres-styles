@@ -121,7 +121,7 @@ body {
 
 		.control-languages a[aria-expanded="true"],
 		.control-search a[aria-expanded="true"] {
-			background:$gray-darker;
+			background:$gray-lighter;
 
 			& > i.fa.fa-search {
 				display: none;
@@ -249,7 +249,7 @@ body {
 			a {
 				color: $black;
 				&:hover {
-					bbackground: $gray-600;
+					background: $gray-600;
 					color: $white;
 				}
 			}
@@ -480,17 +480,17 @@ body {
 }
 .shipping-settings {
 	.list-title {
-		color: $white;
+		color: $black;
 	}
 }
 .language-settings {
 	.list-title {
-		color: $white;
+		color: $black;
 	}
 }
 .currency-list {
 	.list-title {
-		color: $white;
+		color: $black;
 	}
 }
 
