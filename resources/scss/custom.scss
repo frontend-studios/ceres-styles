@@ -15,8 +15,10 @@ body {
 
 
 //Header
-
 .wrapper-main {
+	#page-header.top-bar {
+		background-color: #fff;
+	}
 	.top-bar {
 		color: $black!important;
 		background-color: $brand-primary;
@@ -659,6 +661,15 @@ body {
 	.prices {
 		display: flex;
 		flex-direction: column;
+	}
+}
+
+
+li.nav-item {
+	a {
+		border: 1px solid #ddd;
+		color: #7a7f7f;
+		background: #fff;
 	}
 }
 
