@@ -1,5 +1,12 @@
 # Changelog für Glamour Theme
 
+## v3.1.1 (2019-03-21)
+
+### Änderungen
+- Kompatibilität mit Ceres und IO ab Version 3.1.1
+- Bugfixes (Fehlerhafte Suche, Keine Kategorien im Mobilen Menü, kleinere Bugfixes)
+
+
 ## v3.1.0 (2019-03-13)
 
 ### Änderungen

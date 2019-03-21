@@ -268,24 +268,14 @@ body {
 .anicon {
 	>.anicon-search-item {
 		&::before {
-			background: $black;
+			background: $black!important;
 		}
 		&::after {
 			border: 1px solid $white;
-          background: $black;
+          background: $black!important;
 		}
 	}
-	&:hover {
-		>.anicon-search-item {
-			&::after {
-				background: $gray-darker;
-				border: 1px solid white;
-			}
-			&::before {
-				background: $white;
-			}
-		}
-	}
+
 }
 
 //Header End
