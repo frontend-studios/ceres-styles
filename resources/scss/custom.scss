@@ -268,10 +268,11 @@ body {
 .anicon {
 	>.anicon-search-item {
 		&::before {
-			background: $white;
+			background: $black;
 		}
 		&::after {
 			border: 1px solid $white;
+          background: $black;
 		}
 	}
 	&:hover {
@@ -713,3 +714,8 @@ li.nav-item {
 	}
 }
 //Footer End
+
+
+.ddown {
+  color: $gray-darker
+}
