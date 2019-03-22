@@ -649,6 +649,7 @@ body {
 	}
 
 	.thumb-background {
+
 		@include media-breakpoint-down(sm) {
 			border-bottom: 1px solid black;
 		}
@@ -727,4 +728,8 @@ li.nav-item {
 i.fa.fa-search.sm-up
 {
 	color: $gray-darker;
+}
+
+button.btn.btn-block.btn-primary {
+	background-color: $gray-lighter;
 }
