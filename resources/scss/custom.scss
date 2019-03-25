@@ -268,12 +268,18 @@ body {
 .anicon {
 	>.anicon-search-item {
 		&::before {
-			background: $black!important;
+			background: $gray-600!important;
 		}
 		&::after {
-			border: 1px solid $white;
-          background: $black!important;
+			border: 1px solid $gray-600;
+			background: #fff!important;
 		}
+	}
+
+	.anicon-search-xcross[aria-expanded="true"] > .anicon-search-item::after {
+
+		background: $gray-600!important;
+
 	}
 
 }
