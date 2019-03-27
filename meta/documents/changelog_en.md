@@ -1,6 +1,6 @@
 # Changelog for Glamour Theme
 
-## v3.1.1 (2019-03-21)
+## v3.1.1 (2019-03-27)
 
 ### Changes
 - Compatibility with Ceres and IO greater than 3.1.1
