@@ -272,7 +272,7 @@ body {
 		}
 		&::after {
 			border: 1px solid $gray-600;
-			background: #fff!important;
+			background: #6c757d!important;
 		}
 	}
 
@@ -738,4 +738,10 @@ i.fa.fa-search.sm-up
 
 button.btn.btn-block.btn-primary {
 	background-color: $gray-lighter;
+}
+
+
+.btn-outline-primary {
+	color: $gray-darker;
+	border-color: $gray-darker;
 }
